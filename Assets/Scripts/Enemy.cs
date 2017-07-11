@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemyType type;
+
     public int curHealth;
     public int maxHealth;
 
@@ -14,12 +16,12 @@ public class Enemy : MonoBehaviour
 
     //Conveyor Belt
     public ConveyorBelt curConveyorBelt;
-    private Vector3 positionToMoveTo;           //The position in the middle of the next conveyor belt.
+    private Vector3 positionToMoveTo;               //The position in the middle of the next conveyor belt.
     public float horizontalOffsetOnConveyorBelt;    //The horizontal offset of the enemy on the conveyor belt.
 
-    void Update()
+    void Update ()
     {
-        //Move enemy to next position on the next conveyor belt.
+        //If the enemy is at the positionToMoveTo, then get the next position. Otherwise, move the enemy to that position.
         if (Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
         {
             positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
@@ -32,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     //This function gets called when the enemy takes damage.
     //damageTaken, is the amount of damage that needs to be taken.
-    public void TakeDamage(int damageTaken)
+    public void TakeDamage (int damageTaken)
     {
         if (curHealth - damageTaken <= 0)
         {
@@ -47,7 +49,7 @@ public class Enemy : MonoBehaviour
 
     //This function gets called when the enemy's health is less than or equals to 0.
     //It destroys the enemy, as well as removing it from lists.
-    void Die()
+    void Die ()
     {
         //Play and destroy the death particle effect.
         deathParticleEffect.transform.parent = null;
@@ -55,28 +57,34 @@ public class Enemy : MonoBehaviour
         Destroy(deathParticleEffect.gameObject, deathParticleEffect.main.duration);
 
         /*
-        - Remove from lists.
+        - Remove from GameManager lists.
         - Play death audio.
-        - If enemy type is molten metal, then call function is MoltenMetalRobot.cs.
         */
+
+        if(type == EnemyType.MoltenMetal)
+        {
+            //Call explode function.
+        }
 
         Destroy(gameObject);
     }
 
     //This function gets called whent the enemy takes damage.
     //It checks to see if the health is below a certain amount and plays damage particle effects if so.
-    void CheckDamageParticleEffects()
+    void CheckDamageParticleEffects ()
     {
-        //Check to see if we should start to emit the spark particle effect.
+        //if the enemy's health is below 50%, then start to emit the spark particle effect.
         if (curHealth / maxHealth <= 0.5f)
         {
             sparkParticleEffect.Play();
         }
 
-        //Check to see if we should start to emit the smoke particle effect.
+        //If the enemy's health is below 20%, then start to emit the smoke particle effect.
         if (curHealth / maxHealth <= 0.2f)
         {
             smokeParticleEffect.Play();
         }
     }
 }
+
+public enum EnemyType { Basic, TowerAttraction, EMP, Quick, MoltenMetal }

@@ -12,7 +12,7 @@ public class ConveyorBelt : MonoBehaviour
 
     //Returns the position that the enemy needs to move to on the next conveyor belt.
     //Position also has the enemy's horizontal offset based on the conveyor belt orientation.
-    public Vector3 GetNextConveyorBeltPosition(float enemyHorizontalOffset)
+    public Vector3 GetNextConveyorBeltPosition (float enemyHorizontalOffset)
     {
         Vector3 pos = nextConveyorBelt.transform.position;  //Set a base position for the next pos without the added offset.
 
@@ -49,7 +49,7 @@ public class ConveyorBelt : MonoBehaviour
         return pos;
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter (Collider col)
     {
         //If the enemy enters the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
@@ -60,7 +60,7 @@ public class ConveyorBelt : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider col)
+    void OnTriggerExit (Collider col)
     {
         //If the enemy exits the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
