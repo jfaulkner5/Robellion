@@ -16,10 +16,6 @@ public class ConveyorBelt : MonoBehaviour
     {
         Vector3 pos = nextConveyorBelt.transform.position;  //Set a base position for the next pos without the added offset.
 
-        //-------------------------------------------------------------------------------------
-        //Need to add a Y offset above when we have the models complete, so we know distances.
-        //-------------------------------------------------------------------------------------
-
         //Is the next conveyor belt moving along a different axis direction than the current one?
         if (axisOrientation != nextConveyorBelt.axisOrientation)
         {
