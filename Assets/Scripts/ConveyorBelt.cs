@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the enemies on the belt as well as positioning for those enemies.
+/// </summary>
 public class ConveyorBelt : MonoBehaviour
 {
     public ConveyorBeltType type;
@@ -22,7 +25,7 @@ public class ConveyorBelt : MonoBehaviour
             //Is the current conveyor belt moving along the X axis and the next one moving along the Z axis?
             if (axisOrientation == AxisOrientation.X && nextConveyorBelt.axisOrientation == AxisOrientation.Z)
             {
-                pos = new Vector3(pos.x + enemyHorizontalOffset, pos.y, pos.z);
+				pos = new Vector3(pos.x - enemyHorizontalOffset, pos.y, pos.z + enemyHorizontalOffset);
             }
             else
             {
@@ -38,7 +41,7 @@ public class ConveyorBelt : MonoBehaviour
             }
             else
             {
-                pos = new Vector3(pos.x + enemyHorizontalOffset, pos.y, pos.z);
+                pos = new Vector3(pos.x - enemyHorizontalOffset, pos.y, pos.z);
             }
         }
 
@@ -53,6 +56,9 @@ public class ConveyorBelt : MonoBehaviour
             //Get enemy script and set curConveyorBelt to this one.
             //Add enemy to curEnemies.
             //Set enemy speed to this conveyor belt's speed.
+
+			//DEBUG AND TESTING ONLY
+			col.GetComponent<Enemy>().curConveyorBelt = this;
         }
     }
 

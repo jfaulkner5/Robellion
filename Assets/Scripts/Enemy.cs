@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages enemy data, damage taken, death and movement.
+/// </summary>
 public class Enemy : MonoBehaviour
 {
     public EnemyType type;
@@ -19,11 +22,17 @@ public class Enemy : MonoBehaviour
     private Vector3 positionToMoveTo;               //The position in the middle of the next conveyor belt.
     public float horizontalOffsetOnConveyorBelt;    //The horizontal offset of the enemy on the conveyor belt.
 
+	void Start ()
+	{
+		positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
+	}
+
     void Update ()
     {
         //If the enemy is at the positionToMoveTo, then get the next position. Otherwise, move the enemy to that position.
         if (Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
         {
+			Debug.Log("New pos");
             positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
         }
         else
