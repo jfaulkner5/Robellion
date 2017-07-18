@@ -30,10 +30,10 @@ public class Enemy : MonoBehaviour
     void Update ()
     {
         //If the enemy is at the positionToMoveTo, then get the next position. Otherwise, move the enemy to that position.
-        if (Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
+        if (Vector3.Distance(transform.position, positionToMoveTo) < 0.01f)
         {
-			Debug.Log("New pos");
             positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
+			transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
         }
         else
         {
