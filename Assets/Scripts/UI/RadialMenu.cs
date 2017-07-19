@@ -9,15 +9,23 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class RadialMenu : MonoBehaviour 
 {
+	private RectTransform rect;
+
 	public GameObject towerPlatformMenu;	//Tower platform menu that is child to radial menu.
 	public GameObject existingTowerMenu;	//Existing tower menu that is child to radial menu.
 
 	public Button[] towerPlatformMenuButtons;
 	public Button[] existingTowerMenuButtons;
 
+	public float openSpeed;
+
 	void Start ()
 	{
-		DisableRadialMenu();
+		rect = GetComponent<RectTransform>();
+
+		//Disable the radial menu objects.
+		towerPlatformMenu.SetActive(false);
+		existingTowerMenu.SetActive(false);
 	}
 
 	void Update ()
@@ -65,10 +73,14 @@ public class RadialMenu : MonoBehaviour
 	void SetRadialMenu (Vector2 posOnScreen/*, TowerPlatform towerPlatform*/)
 	{
 		towerPlatformMenu.SetActive(true);
+		StartCoroutine(RadialMenuOpenAnimation());
 
 		SetTowerPlatformMenuButtons();
 
+		//Set the radial menu position to the same as the touch position on screen.
 		transform.localPosition = new Vector3(posOnScreen.x - (Screen.width / 2), posOnScreen.y - (Screen.height / 2), 0);
+
+		FixRadialMenuPosition();
 	}
 
 	//Enables the existing tower platform menu.
@@ -77,11 +89,42 @@ public class RadialMenu : MonoBehaviour
 
 	}*/
 
+	//Increases the scale of the radial menu over time to 1,1,1.
+	IEnumerator RadialMenuOpenAnimation ()
+	{
+		transform.localScale = Vector3.zero;
+
+		while(transform.localScale.x < 1.0f)
+		{
+			transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.one, openSpeed * Time.deltaTime);
+			yield return null;
+		}
+
+		transform.localScale = Vector3.one;
+	}
+
+	//Decreases the scale of the radial menu over time to 0,0,0.
+	IEnumerator RadialMenuCloseAnimation ()
+	{
+		transform.localScale = Vector3.one;
+
+		while(transform.localScale.x > 0.0f)
+		{
+			transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.zero, openSpeed * Time.deltaTime);
+			yield return null;
+		}
+
+		transform.localScale = Vector3.zero;
+
+		//Disable the radial menu objects.
+		towerPlatformMenu.SetActive(false);
+		existingTowerMenu.SetActive(false);
+	}
+
 	//De activates the radial menu object.
 	void DisableRadialMenu ()
 	{
-		towerPlatformMenu.SetActive(false);
-		existingTowerMenu.SetActive(false);
+		StartCoroutine(RadialMenuCloseAnimation());
 	}
 
 	//Sets the tower platform buttons to disable when pressed.
@@ -114,5 +157,14 @@ public class RadialMenu : MonoBehaviour
 
 		//existingTowerMenuButtons[0].onClick.AddListener();
 		//existingTowerMenuButtons[0].onClick.AddListener();
+	}
+
+	//Makes sure that the radial menu doesn't go off screen.
+	void FixRadialMenuPosition ()
+	{
+		float clampX = Mathf.Clamp(transform.localPosition.x, (-Screen.width / 2) + (rect.sizeDelta.x / 2) + 10, (Screen.width / 2) - (rect.sizeDelta.x / 2) - 10);
+		float clampY = Mathf.Clamp(transform.localPosition.y, (-Screen.height / 2) + (rect.sizeDelta.y / 2) + 10, (Screen.height / 2) - (rect.sizeDelta.y / 2) - 10);
+
+		transform.localPosition = new Vector3(clampX, clampY, 0);
 	}
 }
