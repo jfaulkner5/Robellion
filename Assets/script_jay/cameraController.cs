@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour {
 
     public GameObject target;//the target object
-    public float viewAngle = 40; //angle to look down at target
-    public float speedMod = 10.0f;//a speed modifier
+    public float viewAngle = 40f; //angle to look down at target
+    public float speedMod = 50f; //a speed modifier
     private Vector3 targetLoc;//the coord to the point where the camera looks at
 
 
