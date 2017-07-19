@@ -465,6 +465,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 32156888}
+--- !u!114 &35900806 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1138615693}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &37627247
 Prefab:
   m_ObjectHideFlags: 0
@@ -782,6 +788,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 67404105}
+--- !u!114 &68057758 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 194269928}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &71778586
 Prefab:
   m_ObjectHideFlags: 0
@@ -884,6 +896,18 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 77741648}
+--- !u!114 &78729030 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 180508917}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
+--- !u!114 &78751902 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 829176710}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &86993412
 Prefab:
   m_ObjectHideFlags: 0
@@ -1198,6 +1222,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 103243680}
+--- !u!114 &114750628 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1560316093}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &119856111
 Prefab:
   m_ObjectHideFlags: 0
@@ -1500,6 +1530,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 142865881}
+--- !u!114 &143874140 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 282756303}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &150803589
 Prefab:
   m_ObjectHideFlags: 0
@@ -1713,6 +1749,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1991916759}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -1946,19 +1987,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_RootOrder
@@ -1966,12 +2007,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
       propertyPath: axisOrientation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
@@ -1985,6 +2026,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 876862396}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -2155,6 +2201,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1203900072}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -2274,6 +2325,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 869983089}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -2342,6 +2398,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 721279125}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -2810,6 +2871,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1821850850}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -2920,6 +2986,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 242535915}
+--- !u!114 &248133648 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 756013821}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &251866643
 Prefab:
   m_ObjectHideFlags: 0
@@ -3133,6 +3205,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 616266155}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -3219,19 +3296,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_RootOrder
@@ -3239,12 +3316,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
       propertyPath: axisOrientation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
@@ -3258,6 +3335,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 886558253}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -3585,6 +3667,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 114750628}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -4233,6 +4320,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 319376970}
+--- !u!114 &327729444 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 623227436}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &331009248
 Prefab:
   m_ObjectHideFlags: 0
@@ -4438,6 +4531,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1060091714}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -4498,6 +4596,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &340775917 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 334637720}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &344337349
 Prefab:
   m_ObjectHideFlags: 0
@@ -4660,6 +4764,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1930172919}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -6266,6 +6375,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 447634671}
+--- !u!114 &452745143 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1158742210}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &460663244
 Prefab:
   m_ObjectHideFlags: 0
@@ -6827,6 +6942,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 492786344}
+--- !u!114 &493919322 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1841979690}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &498852149
 Prefab:
   m_ObjectHideFlags: 0
@@ -7287,6 +7408,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1025007008}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -8652,6 +8778,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1165747566}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -8824,6 +8955,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 615095397}
   m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
+--- !u!114 &616266155 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1057105272}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &623227436
 Prefab:
   m_ObjectHideFlags: 0
@@ -8884,6 +9021,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1649127199}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -9687,6 +9829,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1108045911}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -9959,6 +10106,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1281367244}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -10455,6 +10607,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 493919322}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -10514,6 +10671,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 721017636}
+--- !u!114 &721279125 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1943930718}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &728684288
 Prefab:
   m_ObjectHideFlags: 0
@@ -10667,6 +10830,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 731099927}
+--- !u!114 &733977166 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1222510017}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &735576121
 Prefab:
   m_ObjectHideFlags: 0
@@ -11155,6 +11324,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1753077758}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -11797,6 +11971,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 808150870}
+--- !u!114 &810075151 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 160164158}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &811703708
 Prefab:
   m_ObjectHideFlags: 0
@@ -11857,6 +12037,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 2053136413}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -12231,6 +12416,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1097500088}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -12647,6 +12837,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 868969315}
+--- !u!114 &869983089 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 925213933}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &871591790
 Prefab:
   m_ObjectHideFlags: 0
@@ -12749,6 +12945,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 871969878}
+--- !u!114 &876862396 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 930833517}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &882406662
 Prefab:
   m_ObjectHideFlags: 0
@@ -12800,6 +13002,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 882406662}
+--- !u!114 &886558253 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 231173213}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!114 &887564528 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
@@ -13250,6 +13458,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 327729444}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -13420,6 +13633,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 78729030}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -13480,6 +13698,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1675998326}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -14069,6 +14292,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 78751902}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -14302,19 +14530,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_RootOrder
@@ -14322,12 +14550,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
       propertyPath: axisOrientation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
@@ -14341,6 +14569,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 340775917}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -14349,6 +14582,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 979938771}
+--- !u!114 &980466449 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 642876486}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &986257938
 Prefab:
   m_ObjectHideFlags: 0
@@ -14615,6 +14854,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1003301985}
+--- !u!114 &1005775067 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1913927347}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1014687263
 Prefab:
   m_ObjectHideFlags: 0
@@ -14870,6 +15115,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1023033348}
+--- !u!114 &1025007008 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 594040919}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1030115468
 Prefab:
   m_ObjectHideFlags: 0
@@ -15043,6 +15294,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 2058992482}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -15111,6 +15367,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 733977166}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -15170,6 +15431,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1059944542}
+--- !u!114 &1060091714 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 205667709}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1061707380
 Prefab:
   m_ObjectHideFlags: 0
@@ -15272,6 +15539,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1069307981}
+--- !u!114 &1083160595 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1185111498}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1083203519
 Prefab:
   m_ObjectHideFlags: 0
@@ -15425,6 +15698,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1084821468}
+--- !u!114 &1086819309 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 961567314}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1088674362
 Prefab:
   m_ObjectHideFlags: 0
@@ -15500,6 +15779,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 1088674362}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
+--- !u!114 &1097500088 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 262487840}
   m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1105244762
 Prefab:
@@ -15612,6 +15897,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 452745143}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -15671,6 +15961,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1106401071}
+--- !u!114 &1108045911 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1053587098}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1109832192
 Prefab:
   m_ObjectHideFlags: 0
@@ -16183,6 +16479,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1230432073}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -16251,6 +16552,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1445478285}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -16370,6 +16676,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1083160595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -16540,6 +16851,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 810075151}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -16609,6 +16925,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 1162909256}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
+--- !u!114 &1165747566 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1201330747}
   m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1168620899
 Prefab:
@@ -16794,6 +17116,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1005775067}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -16862,6 +17189,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1243841004}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -17349,6 +17681,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 980466449}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -17357,6 +17694,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 1201330747}
+--- !u!114 &1203900072 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 658117168}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1222510017
 Prefab:
   m_ObjectHideFlags: 0
@@ -17417,6 +17760,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1780355723}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -17476,6 +17824,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1227188008}
+--- !u!114 &1230432073 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 519583854}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1237790585
 Prefab:
   m_ObjectHideFlags: 0
@@ -17578,6 +17932,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1240508313}
+--- !u!114 &1243841004 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 354987985}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1246328450
 Prefab:
   m_ObjectHideFlags: 0
@@ -17782,6 +18142,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1249761949}
+--- !u!114 &1253645437 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1729878287}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1254885286
 Prefab:
   m_ObjectHideFlags: 0
@@ -17935,6 +18301,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1264951831}
+--- !u!114 &1276969770 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 979938771}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!114 &1277994819 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
@@ -17997,6 +18369,18 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1279755339}
+--- !u!114 &1281200405 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 914327408}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
+--- !u!114 &1281367244 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 2027843085}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1288382345
 Prefab:
   m_ObjectHideFlags: 0
@@ -19380,6 +19764,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1402978038}
+--- !u!114 &1410430331 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1770269188}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1410674079
 Prefab:
   m_ObjectHideFlags: 0
@@ -19737,6 +20127,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1440077045}
+--- !u!114 &1445478285 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 191331031}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1445563344
 Prefab:
   m_ObjectHideFlags: 0
@@ -20761,6 +21157,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1276969770}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -21300,19 +21701,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_RootOrder
@@ -21320,12 +21721,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
       propertyPath: axisOrientation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
@@ -21339,6 +21740,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 248133648}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -21407,6 +21813,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 68057758}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -22384,6 +22795,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1646877888}
+--- !u!114 &1649127199 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1516017006}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1651563442
 Prefab:
   m_ObjectHideFlags: 0
@@ -22639,6 +23056,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1674610965}
+--- !u!114 &1675998326 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1105307379}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1677801749
 Prefab:
   m_ObjectHideFlags: 0
@@ -23221,6 +23644,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1281200405}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -23281,6 +23709,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveryorBelt (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 143874140}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -23289,6 +23722,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 1729878287}
+--- !u!114 &1732055795 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 716094786}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1735800308
 Prefab:
   m_ObjectHideFlags: 0
@@ -23464,6 +23903,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1752958555}
   m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
+--- !u!114 &1753077758 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1727654489}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1761648025
 Prefab:
   m_ObjectHideFlags: 0
@@ -23626,6 +24071,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 35900806}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -23736,6 +24186,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1777714018}
+--- !u!114 &1780355723 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1140565429}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1787237182
 Prefab:
   m_ObjectHideFlags: 0
@@ -24450,6 +24906,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1821364886}
+--- !u!114 &1821850850 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1149704488}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1824753826
 Prefab:
   m_ObjectHideFlags: 0
@@ -26010,19 +26472,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_RootOrder
@@ -26030,12 +26492,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
       propertyPath: axisOrientation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
@@ -26049,6 +26511,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1732055795}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -26159,6 +26626,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1929742851}
+--- !u!114 &1930172919 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1180349033}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1943930718
 Prefab:
   m_ObjectHideFlags: 0
@@ -26219,6 +26692,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1086819309}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -26839,6 +27317,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1982770281}
+--- !u!114 &1991916759 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 811703708}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &1992493668
 Prefab:
   m_ObjectHideFlags: 0
@@ -27154,6 +27638,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1410430331}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -27570,6 +28059,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 2038411535}
+--- !u!114 &2053136413 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557516903}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &2054127033
 Prefab:
   m_ObjectHideFlags: 0
@@ -27642,19 +28137,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_RootOrder
@@ -27662,12 +28157,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
       propertyPath: axisOrientation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
@@ -27681,6 +28176,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+        type: 2}
+      propertyPath: nextConveyorBelt
+      value: 
+      objectReference: {fileID: 1253645437}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -27842,6 +28342,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 2058245416}
+--- !u!114 &2058992482 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054453735}
+  m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
 --- !u!1001 &2066207336
 Prefab:
   m_ObjectHideFlags: 0
