@@ -29,7 +29,7 @@ public class ConveyorBelt : MonoBehaviour
             }
             else
             {
-                pos = new Vector3(pos.x, pos.y, pos.z + enemyHorizontalOffset);
+				pos = new Vector3(pos.x - enemyHorizontalOffset, pos.y, pos.z + enemyHorizontalOffset);
             }
         }
         else
