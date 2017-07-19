@@ -13,6 +13,12 @@ public class ConveyorBelt : MonoBehaviour
     public List<Enemy> curEnemies = new List<Enemy>();
     public ConveyorBelt nextConveyorBelt;   //The conveyor belt that this one pushes objects onto.
 
+    [System.Serializable]
+    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy> { }
+    public UnityEventEnemyEvent OnEnemyEnter;
+    public UnityEventEnemyEvent OnEnemyLeave;
+
+
     //Returns the position that the enemy needs to move to on the next conveyor belt.
     //Position also has the enemy's horizontal offset based on the conveyor belt orientation.
     public Vector3 GetNextConveyorBeltPosition (float enemyHorizontalOffset)
@@ -53,6 +59,7 @@ public class ConveyorBelt : MonoBehaviour
         //If the enemy enters the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
         {
+            OnEnemyEnter.Invoke(col.GetComponent<Enemy>());
             //Get enemy script and set curConveyorBelt to this one.
             //Add enemy to curEnemies.
             //Set enemy speed to this conveyor belt's speed.
@@ -67,6 +74,7 @@ public class ConveyorBelt : MonoBehaviour
         //If the enemy exits the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
         {
+            OnEnemyLeave.Invoke(col.GetComponent<Enemy>());
             //Remove enemy from curEnemies.
         }
     }
