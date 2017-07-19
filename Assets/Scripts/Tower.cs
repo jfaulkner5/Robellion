@@ -19,6 +19,16 @@ public class Tower : MonoBehaviour
     
     public Enemy target = null;
 
+    public LineRenderer lr;
+
+    private void Start()
+    {
+        lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
+        
+    }
+
+ 
+
 	void Update () 
 	{
         //enemiesWithinRange.RemoveAll(null);
@@ -69,6 +79,11 @@ public class Tower : MonoBehaviour
 		if (target != null)
         {
             Attack(target);
+            lr.enabled = true;
+            lr.SetPosition(1, target.transform.position);
+        }else
+        {
+            lr.enabled = false;
         }
 	}
 
@@ -86,6 +101,7 @@ public class Tower : MonoBehaviour
     {
         if(attack.canAttack())
         {
+            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
             target.TakeDamage(1);	//Random.Range(attack.damageMin, attack.damageMax));
         }
     }

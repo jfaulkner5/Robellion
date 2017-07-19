@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Pedestal
+  - SoundManager
   layers:
   - Default
   - TransparentFX

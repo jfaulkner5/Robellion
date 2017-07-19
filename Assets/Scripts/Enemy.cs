@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDamage();
             curHealth -= damageTaken;
             CheckDamageParticleEffects();
         }
@@ -90,8 +91,9 @@ public class Enemy : MonoBehaviour
         /*
         - Play death audio.
         */
+        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
-		GameManager.gm.enemies.Remove(this);
+        GameManager.gm.enemies.Remove(this);
 		GameManager.gm.curScrap += 20;
 
         if(type == EnemyType.MoltenMetal)

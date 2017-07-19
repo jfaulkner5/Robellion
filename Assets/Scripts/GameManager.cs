@@ -71,13 +71,19 @@ public class GameManager : MonoBehaviour
 				NextWave();
 			}
 		}
+
+        if(health <= 0)
+        {
+            Application.LoadLevel(0);
+        }
     }
 
 	void NextWave ()
 	{
 		curWave++;
 		timer = 0.0f;
-		canBuildOrModify = false;
+        waveTime = 0.0f;
+		//canBuildOrModify = false;
 		curGameState = GameState.WaveActive;
 		enemySpawner.SpawnEnemies(curWave);
 	}
