@@ -109,9 +109,9 @@ MonoBehaviour:
   range: 2
   attack:
     attackAnimation: {fileID: 0}
-    timeBetweenAttacks: 0
-    damageMin: 0
-    damageMax: 0
+    timeBetweenAttacks: 0.3
+    damageMin: 1
+    damageMax: 1
     attackParticleEffect: {fileID: 0}
     timer: 1000
   enemiesWithinRange: []
