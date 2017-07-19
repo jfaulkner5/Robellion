@@ -5,12 +5,12 @@ using UnityEngine;
 /// <summary>
 /// Manages tower data, tower damage, target, attacking.
 /// </summary>
-public class Tower : MonoBehaviour {
-
+public class Tower : MonoBehaviour 
+{
     public TowerType type;
 
     //Range In Game Tiles min 1 max 3
-    [Range(1,3)]public int range;
+    [Range(1,3)] public int range;
 
     public AttackData attack;
 
@@ -19,22 +19,17 @@ public class Tower : MonoBehaviour {
     
     public Enemy target = null;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
         //enemiesWithinRange.RemoveAll(null);
         attack.timer += Time.deltaTime;
 
-        if (!enemiesWithinRange.Contains(target))
+        if(!enemiesWithinRange.Contains(target))
         {
             target = null;
         }
 
-        for (int index = 0; index < enemiesWithinRange.Count; ++index)
+        for(int index = 0; index < enemiesWithinRange.Count; ++index)
         {
             if(enemiesWithinRange[index].type == EnemyType.TowerAttraction)
             {
@@ -53,26 +48,26 @@ public class Tower : MonoBehaviour {
         }
 	}
 
-    public void AddEnemyToRange(Enemy enemyInRange)
+    public void AddEnemyToRange (Enemy enemyInRange)
     {
         enemiesWithinRange.Add(enemyInRange);
     }
 
-    public void RemoveEnemyFromRange(Enemy enemyOutOfRange)
+    public void RemoveEnemyFromRange (Enemy enemyOutOfRange)
     {
         enemiesWithinRange.Remove(enemyOutOfRange);
     }
 
-    protected virtual void Attack(Enemy target)
+    protected virtual void Attack (Enemy target)
     {
         if(attack.canAttack())
         {
-            target.TakeDamage(1);//Random.Range(attack.damageMin, attack.damageMax));
+            target.TakeDamage(1);	//Random.Range(attack.damageMin, attack.damageMax));
         }
     }
 }
 
-public enum TowerType { RobotArm, Crusher, Lazer, AcidEtcher}
+public enum TowerType { RobotArm, Crusher, Lazer, AcidEtcher }
 
 /// <summary>
 /// 

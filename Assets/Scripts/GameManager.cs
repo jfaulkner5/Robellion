@@ -4,42 +4,39 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    int health;
+    public int health;
 
-    float waveTimer = 5f; //adjust time later
-    float timer;
+    public float waveTimer = 5f; //adjust time later
+    public float timer;
 
-    public GameManager instance = null;
+    public GameManager gameManager;
 
-    int enemiesLeft;
+    public int enemiesLeft;
 
-    private void Awake()
+    void Awake ()
     {
         //check if instance already exists
-        if (instance == null)
+		if (gameManager == null)
             
             //if not, set to this
-            instance = this;
+			gameManager = this;
 
         //if instance exists but isnt this: destroy it
-        else if (instance != this)
+		else if (gameManager != this)
             Destroy(gameObject);
 
         //reloading the scene wont destroy it
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
+    void Update ()
     {
         timer += Time.deltaTime;
+
         if(timer >= waveTimer)
         {
             /* either start wave spawning or stop wave spawning
              * not sure which we're doing here*/
         }
-
-        //find game objects with the enemy tag
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemiesLeft = enemies.Length;
     }
 }

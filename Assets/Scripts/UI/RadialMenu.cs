@@ -19,6 +19,10 @@ public class RadialMenu : MonoBehaviour
 
 	public float openSpeed;
 
+	//Selected objects
+	public TowerPlatform selectedTowerPlatform;
+	public Tower selectedTower;
+
 	void Start ()
 	{
 		rect = GetComponent<RectTransform>();
@@ -56,7 +60,17 @@ public class RadialMenu : MonoBehaviour
 			//Is the mouse cursor currently not over a UI element?
 			if(!EventSystem.current.IsPointerOverGameObject())
 			{
-				SetRadialMenu(posOnScreen);
+				if(hit.collider.gameObject.layer == 8)
+				{
+					if(!hit.collider.GetComponent<TowerPlatform>().hasTower)
+					{
+						SetRadialMenu(posOnScreen, hit.collider.GetComponent<TowerPlatform>());
+					}
+				}
+				else if(hit.collider.gameObject.layer == 9)
+				{
+					SetRadialMenu(posOnScreen, hit.collider.GetComponent<Tower>());
+				}
 			}
 		}
 		else
@@ -70,12 +84,12 @@ public class RadialMenu : MonoBehaviour
 	}
 
 	//Enables the tower platform radial menu.
-	void SetRadialMenu (Vector2 posOnScreen/*, TowerPlatform towerPlatform*/)
+	void SetRadialMenu (Vector2 posOnScreen, TowerPlatform towerPlatform)
 	{
 		towerPlatformMenu.SetActive(true);
 		StartCoroutine(RadialMenuOpenAnimation());
 
-		SetTowerPlatformMenuButtons();
+		SetTowerPlatformMenuButtons(towerPlatform);
 
 		//Set the radial menu position to the same as the touch position on screen.
 		transform.localPosition = new Vector3(posOnScreen.x - (Screen.width / 2), posOnScreen.y - (Screen.height / 2), 0);
@@ -84,10 +98,18 @@ public class RadialMenu : MonoBehaviour
 	}
 
 	//Enables the existing tower platform menu.
-	/*void SetRadialMenu (Vector2 posOnScreen, Tower towerP)
+	void SetRadialMenu (Vector2 posOnScreen, Tower tower)
 	{
+		existingTowerMenu.SetActive(true);
+		StartCoroutine(RadialMenuOpenAnimation());
 
-	}*/
+		SetExistingTowerMenuButtons(tower);
+
+		//Set the radial menu position to the same as the touch position on screen.
+		transform.localPosition = new Vector3(posOnScreen.x - (Screen.width / 2), posOnScreen.y - (Screen.height / 2), 0);
+
+		FixRadialMenuPosition();
+	}
 
 	//Increases the scale of the radial menu over time to 1,1,1.
 	IEnumerator RadialMenuOpenAnimation ()
@@ -129,7 +151,7 @@ public class RadialMenu : MonoBehaviour
 
 	//Sets the tower platform buttons to disable when pressed.
 	//Sets the tower platform buttons to build a tower on the platform when pressed.
-	void SetTowerPlatformMenuButtons (/*TowerPlatform towerPlatform*/)
+	void SetTowerPlatformMenuButtons (TowerPlatform towerPlatform)
 	{
 		foreach(Button button in towerPlatformMenuButtons)
 		{
@@ -137,17 +159,17 @@ public class RadialMenu : MonoBehaviour
 			button.onClick.AddListener(DisableRadialMenu);
 		}
 
-		//towerPlatformMenuButtons[0].onClick.AddListener();
-		//towerPlatformMenuButtons[0].onClick.AddListener();
-		//towerPlatformMenuButtons[0].onClick.AddListener();
-		//towerPlatformMenuButtons[0].onClick.AddListener();
-		//towerPlatformMenuButtons[0].onClick.AddListener();
+		towerPlatformMenuButtons[0].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.RobotArm));
+		towerPlatformMenuButtons[1].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Crusher));
+		towerPlatformMenuButtons[2].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Lazer));
+		towerPlatformMenuButtons[3].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.AcidEtcher));
+		//towerPlatformMenuButtons[4].onClick.AddListener(towerPlatform.BuildTower(TowerType.TeslaCoil));
 	}
 
 	//Sets the existing tower buttons to disable when pressed.
 	//Sets the upgrade button to upgrade the tower when pressed.
 	//Sets the sell button to sell the tower when pressed.
-	void SetExistingTowerMenuButtons (/*Tower tower*/)
+	void SetExistingTowerMenuButtons (Tower tower)
 	{
 		foreach(Button button in existingTowerMenuButtons)
 		{
