@@ -12,6 +12,7 @@ public class ConveyorBelt : MonoBehaviour
     public float speed = 1.0f;
     public List<Enemy> curEnemies = new List<Enemy>();
     public ConveyorBelt nextConveyorBelt;   //The conveyor belt that this one pushes objects onto.
+	public bool isFinalConveyorBelt;		//Is this the final conveyor belt in the chain?
 
     [System.Serializable]
     public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy> { }
@@ -59,12 +60,12 @@ public class ConveyorBelt : MonoBehaviour
         //If the enemy enters the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
         {
-            OnEnemyEnter.Invoke(col.GetComponent<Enemy>());
+			curEnemies.Add(col.GetComponent<Enemy>());
+            //OnEnemyEnter.Invoke(col.GetComponent<Enemy>());
             //Get enemy script and set curConveyorBelt to this one.
             //Add enemy to curEnemies.
             //Set enemy speed to this conveyor belt's speed.
 
-			//DEBUG AND TESTING ONLY
 			col.GetComponent<Enemy>().curConveyorBelt = this;
         }
     }
@@ -74,8 +75,13 @@ public class ConveyorBelt : MonoBehaviour
         //If the enemy exits the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
         {
-            OnEnemyLeave.Invoke(col.GetComponent<Enemy>());
-            //Remove enemy from curEnemies.
+            //OnEnemyLeave.Invoke(col.GetComponent<Enemy>());
+			curEnemies.Remove(col.GetComponent<Enemy>());
+
+			if(isFinalConveyorBelt)
+			{
+				col.GetComponent<Enemy>().GetToEndOfPath();
+			}
         }
     }
 }

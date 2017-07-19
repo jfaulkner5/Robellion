@@ -32,8 +32,15 @@ public class Enemy : MonoBehaviour
         //If the enemy is at the positionToMoveTo, then get the next position. Otherwise, move the enemy to that position.
         if(Vector3.Distance(transform.position, positionToMoveTo) < 0.01f)
         {
-            positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
-			transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
+			if(!curConveyorBelt.nextConveyorBelt)
+			{
+				GetToEndOfPath();
+			}
+			else
+			{
+            	positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
+				transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
+			}
         }
         else
         {
@@ -77,6 +84,13 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+	public void GetToEndOfPath ()
+	{
+		GameManager.gm.enemies.Remove(this);
+		GameManager.gm.health--;
+		Destroy(gameObject);
+	}
 
     //This function gets called whent the enemy takes damage.
     //It checks to see if the health is below a certain amount and plays damage particle effects if so.

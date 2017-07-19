@@ -2,41 +2,92 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-
+public class GameManager : MonoBehaviour 
+{
+	public GameState curGameState;
     public int health;
+	public int curScrap;
 
-    public float waveTimer = 5f; //adjust time later
+	public int curWave;
+    public float waveTime; 
     public float timer;
+	public int wavesToWin;
 
-    public GameManager gameManager;
+    public static GameManager gm;
+	public EnemySpawner enemySpawner;
 
+	public List<Enemy> enemies = new List<Enemy>();
     public int enemiesLeft;
+
+	//Bools
+	public bool canBuildOrModify;
+
+	//Tower Costs
+	public int basicTowerCost;
+
+	//Times
+	public float timeBetweenWaves;
 
     void Awake ()
     {
         //check if instance already exists
-		if (gameManager == null)
+		if (gm == null)
             
             //if not, set to this
-			gameManager = this;
+			gm = this;
 
         //if instance exists but isnt this: destroy it
-		else if (gameManager != this)
+		else if (gm != this)
             Destroy(gameObject);
 
         //reloading the scene wont destroy it
         DontDestroyOnLoad(gameObject);
     }
 
+	void Start ()
+	{
+		curGameState = GameState.WaveDone;
+		timer = timeBetweenWaves;
+		canBuildOrModify = true;
+	}
+
     void Update ()
     {
-        timer += Time.deltaTime;
+		if(curGameState == GameState.WaveActive)
+		{
+			waveTime += Time.deltaTime;
 
-        if(timer >= waveTimer)
-        {
-            /* either start wave spawning or stop wave spawning
-             * not sure which we're doing here*/
-        }
+			if(waveTime > 5.0f && enemies.Count == 0)
+			{
+				WaveComplete();
+			}
+		}
+		else if(curGameState == GameState.WaveDone)
+		{
+			timer -= Time.deltaTime;
+
+			if(timer <= 0)
+			{
+				NextWave();
+			}
+		}
     }
+
+	void NextWave ()
+	{
+		curWave++;
+		canBuildOrModify = false;
+		curGameState = GameState.WaveActive;
+		enemySpawner.SpawnEnemies(curWave);
+	}
+
+	public void WaveComplete ()
+	{
+		canBuildOrModify = true;
+		curGameState = GameState.WaveDone;
+		timer = timeBetweenWaves;
+		enemies.Clear();
+	}
 }
+
+public enum GameState { WaveActive, WaveDone }

@@ -37,13 +37,19 @@ public class RadialMenu : MonoBehaviour
 		//Checks for a single touch input.
 		if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
 		{
-			RaycastToPlatformOrTower(Input.GetTouch(0).position);
+			if(GameManager.gm.canBuildOrModify)
+			{
+				RaycastToPlatformOrTower(Input.GetTouch(0).position);
+			}
 		}
 
 		//Checks for a mouse click.
 		if(Input.GetMouseButtonDown(0))
 		{
-			RaycastToPlatformOrTower(Input.mousePosition);
+			if(GameManager.gm.canBuildOrModify)
+			{
+				RaycastToPlatformOrTower(Input.mousePosition);
+			}
 		}
 	}
 

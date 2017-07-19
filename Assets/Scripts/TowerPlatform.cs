@@ -12,8 +12,13 @@ public class TowerPlatform : MonoBehaviour
 		//DEBUG TESTING
 		if(!hasTower)
 		{
-			GameObject tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
-			hasTower = true;
+			if(GameManager.gm.curScrap >= GameManager.gm.basicTowerCost)
+			{
+				GameObject tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
+				hasTower = true;
+
+				GameManager.gm.curScrap -= GameManager.gm.basicTowerCost;
+			}
 		}
 	}
 }
