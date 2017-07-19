@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
     private Vector3 positionToMoveTo;               //The position in the middle of the next conveyor belt.
     public float horizontalOffsetOnConveyorBelt;    //The horizontal offset of the enemy on the conveyor belt.
 
+	//Components
+	public GameObject model;
+
 	void Start ()
 	{
 		positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
@@ -61,21 +64,35 @@ public class Enemy : MonoBehaviour
             curHealth -= damageTaken;
             CheckDamageParticleEffects();
         }
+
+		StartCoroutine(DamageFlash());
     }
+
+	IEnumerator DamageFlash ()
+	{
+		Material mat = model.GetComponent<MeshRenderer>().material;
+		Color startColour = mat.color;
+
+		mat.color = Color.red;
+		yield return new WaitForSeconds(0.05f);
+		mat.color = startColour;
+	}
 
     //This function gets called when the enemy's health is less than or equals to 0.
     //It destroys the enemy, as well as removing it from lists.
     void Die ()
     {
         //Play and destroy the death particle effect.
-        deathParticleEffect.transform.parent = null;
+        /*deathParticleEffect.transform.parent = null;
         deathParticleEffect.Play();
-        Destroy(deathParticleEffect.gameObject, deathParticleEffect.main.duration);
+        Destroy(deathParticleEffect.gameObject, deathParticleEffect.main.duration);*/
 
         /*
-        - Remove from GameManager lists.
         - Play death audio.
         */
+
+		GameManager.gm.enemies.Remove(this);
+		GameManager.gm.curScrap += 20;
 
         if(type == EnemyType.MoltenMetal)
         {
@@ -99,13 +116,13 @@ public class Enemy : MonoBehaviour
         //if the enemy's health is below 50%, then start to emit the spark particle effect.
         if (curHealth / maxHealth <= 0.5f)
         {
-            sparkParticleEffect.Play();
+            //sparkParticleEffect.Play();
         }
 
         //If the enemy's health is below 20%, then start to emit the smoke particle effect.
         if (curHealth / maxHealth <= 0.2f)
         {
-            smokeParticleEffect.Play();
+            //smokeParticleEffect.Play();
         }
     }
 }

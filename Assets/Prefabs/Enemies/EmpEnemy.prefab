@@ -164,10 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  curHealth: 0
-  maxHealth: 0
+  curHealth: 5
+  maxHealth: 5
   sparkParticleEffect: {fileID: 0}
   smokeParticleEffect: {fileID: 0}
   deathParticleEffect: {fileID: 0}
   curConveyorBelt: {fileID: 0}
   horizontalOffsetOnConveyorBelt: 0
+  model: {fileID: 0}

@@ -42,6 +42,30 @@ public class Tower : MonoBehaviour
             target = enemiesWithinRange[0];
         }
 
+		//REALLY BAD THING FOR THE CLIENT MEETING
+		//JUST TRYING TO MAKE THE TOWER WORK
+		for(int x = 0; x < GameManager.gm.enemies.Count; x++)
+		{
+			if(Vector3.Distance(transform.position, GameManager.gm.enemies[x].transform.position) <= range)
+			{
+				enemiesWithinRange.Add(GameManager.gm.enemies[x]);
+			}
+		}
+
+		for(int x = 0; x < enemiesWithinRange.Count; x++)
+		{
+			if(enemiesWithinRange[x] == null)
+			{
+				enemiesWithinRange.Remove(enemiesWithinRange[x]);
+				continue;
+			}
+
+			if(Vector3.Distance(transform.position, enemiesWithinRange[x].transform.position) > range)
+			{
+				enemiesWithinRange.Remove(enemiesWithinRange[x]);
+			}
+		}
+
 		if (target != null)
         {
             Attack(target);

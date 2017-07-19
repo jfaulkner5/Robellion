@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 	void NextWave ()
 	{
 		curWave++;
+		timer = 0.0f;
 		canBuildOrModify = false;
 		curGameState = GameState.WaveActive;
 		enemySpawner.SpawnEnemies(curWave);
