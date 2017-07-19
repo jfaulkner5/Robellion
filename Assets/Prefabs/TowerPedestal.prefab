@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33147258807768532}
   - component: {fileID: 65972012230253784}
   - component: {fileID: 23343712725699858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TowerPedestal
   m_TagString: Pedestal
   m_Icon: {fileID: 0}
