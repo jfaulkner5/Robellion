@@ -104,7 +104,10 @@ public class Enemy : MonoBehaviour
 
         if(type == EnemyType.MoltenMetal)
         {
-            //Call explode function.
+            if(GetComponent<MoltenMetalRobot>().isHot)
+            {
+                //Damage nearby enemies.
+            }
         }
 
         Destroy(gameObject);
