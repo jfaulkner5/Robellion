@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  range: 2
+  range: 3
   attack:
     attackAnimation: {fileID: 0}
     timeBetweenAttacks: 0.5

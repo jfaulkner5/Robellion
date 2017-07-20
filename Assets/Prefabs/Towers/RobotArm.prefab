@@ -116,3 +116,4 @@ MonoBehaviour:
     timer: 1000
   enemiesWithinRange: []
   target: {fileID: 0}
+  lr: {fileID: 0}

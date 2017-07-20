@@ -12850,8 +12850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bacdc18d9e3e54989bccfa6b0cbdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc,
-    type: 2}
+  enemyPrefab:
+  - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
   spawningBelt: {fileID: 628871707}
 --- !u!1001 &2041958804
 Prefab:

@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         //reloading the scene wont destroy it
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
 	void Start ()
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
 
         if(health <= 0)
         {
-            Application.LoadLevel(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
 
