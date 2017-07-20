@@ -504,6 +504,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 550441716}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -634,6 +639,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 793160567}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -783,6 +793,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 628871707}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -936,6 +951,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1075643442}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1432,6 +1452,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 623127404}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1534,6 +1559,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 309766800}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1636,6 +1666,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 382818794}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1687,6 +1722,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1027819428}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1817,6 +1857,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 107125131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1868,6 +1913,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1221885897}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -1979,6 +2029,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 380713619}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -2081,6 +2136,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 607388412}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -2132,6 +2192,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1386308461}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -2454,6 +2519,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1149747999}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -2556,6 +2626,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1392697939}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -2658,6 +2733,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 568811795}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -2913,6 +2993,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1225127177}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -3377,6 +3462,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 623127404}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -3558,6 +3648,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 694639625}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -3609,6 +3704,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 987687151}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -4133,6 +4233,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1580308373}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -4263,6 +4368,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 382818794}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -4982,6 +5092,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1982149859}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -5248,6 +5363,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 374888723}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -5350,6 +5470,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 472136229}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -6061,6 +6186,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1767907091}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -6316,6 +6446,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1149747999}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -6571,6 +6706,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1038447326}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -6622,6 +6762,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 2141209782}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -7357,6 +7502,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 694639625}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -7459,6 +7609,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 607388412}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -7658,6 +7813,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1221885897}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -7709,6 +7869,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1225127177}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -7822,6 +7987,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 107125131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -7924,6 +8094,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1580308373}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -8031,6 +8206,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 628871707}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -9179,6 +9359,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 550441716}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -9524,6 +9709,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1257662882}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -10128,6 +10318,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 380713619}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -10332,6 +10527,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1027819428}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -10666,6 +10866,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 374888723}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -10751,8 +10956,6 @@ Transform:
   - {fileID: 889470006}
   - {fileID: 280351552}
   - {fileID: 1395133695}
-  - {fileID: 1918942356}
-  - {fileID: 2132492790}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10961,6 +11164,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 2141209782}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11244,6 +11452,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1075643442}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11448,6 +11661,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 309766800}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11499,6 +11717,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 472136229}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11601,6 +11824,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1767907091}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11703,6 +11931,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1392697939}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11754,6 +11987,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 987687151}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11915,57 +12153,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 1917174790}
---- !u!1001 &1918942355
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1631716028}
-    m_Modifications:
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_RootOrder
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_Name
-      value: TowerPedestal (50)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1918942356 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628,
-    type: 2}
-  m_PrefabInternal: {fileID: 1918942355}
 --- !u!1001 &1924896730
 Prefab:
   m_ObjectHideFlags: 0
@@ -12414,6 +12601,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1038447326}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -12465,6 +12657,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 1982149859}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -12912,6 +13109,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 495437381}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -13014,6 +13216,11 @@ Prefab:
       propertyPath: m_Name
       value: TowerPedestal (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: firstConveyorInRange
+      value: 
+      objectReference: {fileID: 568811795}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -13505,57 +13712,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4647546565937864, guid: b6e2ed38e6a99b746bbdb8bfc51b7bbb,
     type: 2}
   m_PrefabInternal: {fileID: 2126581350}
---- !u!1001 &2132492789
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1631716028}
-    m_Modifications:
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_RootOrder
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_Name
-      value: TowerPedestal (53)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &2132492790 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628,
-    type: 2}
-  m_PrefabInternal: {fileID: 2132492789}
 --- !u!1001 &2139469591
 Prefab:
   m_ObjectHideFlags: 0

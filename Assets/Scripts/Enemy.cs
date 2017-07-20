@@ -25,7 +25,12 @@ public class Enemy : MonoBehaviour
 	//Components
 	public GameObject model;
 
-	void Start ()
+    //events
+    [System.Serializable]
+    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy> { }
+    public UnityEventEnemyEvent OnEnemyDeath;
+
+    void Start ()
 	{
 		positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
 	}
@@ -91,6 +96,7 @@ public class Enemy : MonoBehaviour
         /*
         - Play death audio.
         */
+        OnEnemyDeath.Invoke(this);
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
         GameManager.gm.enemies.Remove(this);

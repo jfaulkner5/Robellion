@@ -7,6 +7,9 @@ public class TowerPlatform : MonoBehaviour
 	public bool hasTower;
 	public GameObject towerPrefab;
 
+    public ConveyorBelt firstConveyorInRange;
+    public TowerPlatform oppositePlatform;
+
 	public void BuildTower (TowerType towerType)
 	{
 		//DEBUG TESTING
@@ -15,7 +18,28 @@ public class TowerPlatform : MonoBehaviour
 			if(GameManager.gm.curScrap >= GameManager.gm.basicTowerCost)
 			{
 				GameObject tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
-				hasTower = true;
+
+                Tower t = tower.GetComponent<Tower>();
+                ConveyorBelt curConveyor = firstConveyorInRange;
+                for (int index = t.range; index < 3; ++index)
+                {
+                    if (!curConveyor.isFinalConveyorBelt)
+                    {
+                        curConveyor = curConveyor.nextConveyorBelt;
+                    }
+                }
+                curConveyor.OnEnemyEnter.AddListener(t.AddEnemyToRange);
+
+                for (int index = 1; index < t.range; ++index)
+                {
+                    if (!curConveyor.isFinalConveyorBelt)
+                    {
+                        curConveyor = curConveyor.nextConveyorBelt;
+                    }
+                }
+                curConveyor.OnEnemyLeave.AddListener(t.RemoveEnemyFromRange);
+
+                hasTower = true;
 
 				GameManager.gm.curScrap -= GameManager.gm.basicTowerCost;
 			}

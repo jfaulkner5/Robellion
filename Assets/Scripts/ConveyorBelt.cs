@@ -61,7 +61,7 @@ public class ConveyorBelt : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
 			curEnemies.Add(col.GetComponent<Enemy>());
-            //OnEnemyEnter.Invoke(col.GetComponent<Enemy>());
+            OnEnemyEnter.Invoke(col.GetComponent<Enemy>());
             //Get enemy script and set curConveyorBelt to this one.
             //Add enemy to curEnemies.
             //Set enemy speed to this conveyor belt's speed.
@@ -75,7 +75,7 @@ public class ConveyorBelt : MonoBehaviour
         //If the enemy exits the conveyor belt trigger.
         if (col.gameObject.tag == "Enemy")
         {
-            //OnEnemyLeave.Invoke(col.GetComponent<Enemy>());
+            OnEnemyLeave.Invoke(col.GetComponent<Enemy>());
 			curEnemies.Remove(col.GetComponent<Enemy>());
 
 			if(isFinalConveyorBelt)
