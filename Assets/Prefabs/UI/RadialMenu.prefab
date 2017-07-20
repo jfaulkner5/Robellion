@@ -648,6 +648,8 @@ MonoBehaviour:
   - {fileID: 114071635348413772}
   - {fileID: 114892262979583338}
   openSpeed: 20
+  selectedTowerPlatform: {fileID: 0}
+  selectedTower: {fileID: 0}
 --- !u!114 &114451671138098174
 MonoBehaviour:
   m_ObjectHideFlags: 1

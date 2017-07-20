@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b8fbfe462e47b8246b0685a171bb5ebc
-timeCreated: 1500526361
-licenseType: Pro
+timeCreated: 1500560761
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
@@ -34,7 +34,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 3
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,10 +82,60 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: -205, y: -277}
+      - {x: -174, y: -232}
+      - {x: -151, y: -206}
+      - {x: -151, y: -184}
+      - {x: -160, y: -184}
+      - {x: -186, y: -158}
+      - {x: -189, y: -151}
+      - {x: -208, y: -123}
+      - {x: -233, y: -78}
+      - {x: -232, y: -67}
+      - {x: -241, y: -31}
+      - {x: -245, y: -7}
+      - {x: -244, y: 17}
+      - {x: -238, y: 49}
+      - {x: -235, y: 70}
+      - {x: -239, y: 75}
+      - {x: -348, y: 109}
+      - {x: -387, y: 125}
+      - {x: -415, y: 132}
+      - {x: -439, y: 139}
+      - {x: -451, y: 141}
+      - {x: -464, y: 141}
+      - {x: -470, y: 134}
+      - {x: -480, y: 92}
+      - {x: -483, y: 75}
+      - {x: -486, y: 45}
+      - {x: -486, y: -41}
+      - {x: -483, y: -57}
+      - {x: -483, y: -81}
+      - {x: -467, y: -151}
+      - {x: -459, y: -173}
+      - {x: -443, y: -209}
+      - {x: -423, y: -244}
+      - {x: -399, y: -285}
+      - {x: -380, y: -308}
+      - {x: -367, y: -322}
+      - {x: -325, y: -366}
+      - {x: -302, y: -386}
+      - {x: -285, y: -386}
+      - {x: -269, y: -365}
+      - {x: -262, y: -353}
+      - {x: -237, y: -321}
   spritePackingTag: 
   userData: 
   assetBundleName: 
