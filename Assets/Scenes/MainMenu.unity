@@ -912,7 +912,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Faulty Factory
+  m_Text: ROBELLION
 --- !u!222 &1326268969
 CanvasRenderer:
   m_ObjectHideFlags: 0
