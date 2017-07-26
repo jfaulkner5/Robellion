@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  resistType: 0
+  resistValue: 0
   curHealth: 5
   maxHealth: 5
   sparkParticleEffect: {fileID: 0}
@@ -172,3 +174,9 @@ MonoBehaviour:
   curConveyorBelt: {fileID: 0}
   horizontalOffsetOnConveyorBelt: 0
   model: {fileID: 0}
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Enemy+UnityEventEnemyEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  budgetValue: 100

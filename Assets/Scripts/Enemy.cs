@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
 {
     public EnemyType type;
 
+    public DamageType resistType;
+    [Range(0, 100)] public int resistValue;
+
     public int curHealth;
     public int maxHealth;
 
@@ -27,8 +30,11 @@ public class Enemy : MonoBehaviour
 
     //events
     [System.Serializable]
-    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy> { }
+    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy,int> { }
     public UnityEventEnemyEvent OnEnemyDeath;
+
+    //how much this takes off of the total budget for the wave
+    public float budgetValue;
 
     void Start ()
 	{
@@ -58,11 +64,11 @@ public class Enemy : MonoBehaviour
 
     //This function gets called when the enemy takes damage.
     //damageTaken, is the amount of damage that needs to be taken.
-    public void TakeDamage (int damageTaken)
+    public void TakeDamage (int damageTaken, DamageType dam)
     {
         if(curHealth - damageTaken <= 0)
         {
-            Die();
+            Die(dam);
         }
         else
         {
@@ -86,7 +92,7 @@ public class Enemy : MonoBehaviour
 
     //This function gets called when the enemy's health is less than or equals to 0.
     //It destroys the enemy, as well as removing it from lists.
-    void Die ()
+    void Die (DamageType dam)
     {
         //Play and destroy the death particle effect.
         /*deathParticleEffect.transform.parent = null;
@@ -96,7 +102,7 @@ public class Enemy : MonoBehaviour
         /*
         - Play death audio.
         */
-        OnEnemyDeath.Invoke(this);
+        OnEnemyDeath.Invoke(this, (int)dam);
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
         GameManager.gm.enemies.Remove(this);

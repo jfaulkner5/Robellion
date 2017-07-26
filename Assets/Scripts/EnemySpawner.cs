@@ -2,31 +2,108 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class BudgetCalculations
+{
+    [Header("((X*wVM)+wVA)^e")]
+    public float waveValueMultiplier;
+    public float exponent;
+    public float waveValueAdditive;
+
+    public float CalculateBudget(int wave)
+    {
+        return Mathf.Pow(((wave * waveValueMultiplier) + waveValueAdditive),exponent);
+    }
+}
+
 public class EnemySpawner : MonoBehaviour 
 {
+    public Transform enemyParentObject;
+
 	public GameObject[] enemyPrefab;
 	public ConveyorBelt spawningBelt;
+    public int[] bossWaves;
+    public BudgetCalculations budget;
+
+    [Header("count equivalent to # of damage types")]
+    public float[] deathsInPrevWave = {0, 0, 0, 0};
+    public int totalDeathsInPrevWave;
 	
 	public void SpawnEnemies (int wave)
 	{
 		int amount = 3 + (wave * 3);
-		float rate = 1.0f;
+		float rate = Mathf.Clamp(1.0f - (0.01f * wave), 0.3f, 1.0f);
+        List<GameObject> enemies = new List<GameObject>();
 
-		StartCoroutine(SpawnEnemiesTimer(amount, Mathf.Clamp(rate - (0.01f * wave),0.3f,rate)));
+        float budgetForWave = budget.CalculateBudget(wave);
+        
+        while (budgetForWave > 0)
+        {
+            int index = Random.Range(0, enemyPrefab.Length-1);
+            enemies.Add(enemyPrefab[index]);
+            budgetForWave -= enemyPrefab[index].GetComponent<Enemy>().budgetValue;
+        }
+        
+		StartCoroutine(SpawnEnemiesTimer(enemies, CalculateDeathPercentages(), rate));
 	}
 
-	IEnumerator SpawnEnemiesTimer (int amount, float rate)
+    public float[] CalculateDeathPercentages()
+    {
+        float[] temp = deathsInPrevWave;
+        for (int index = 0; index < temp.Length; ++index)
+        {
+            temp[index] /= totalDeathsInPrevWave;
+
+            //reset deaths
+            deathsInPrevWave[index] = 0;
+        }
+        totalDeathsInPrevWave = 0;
+        return temp;
+    }
+
+    //event to add to death counts
+    public void OnEnemyDeath(Enemy e, int damtype)
+    {
+        totalDeathsInPrevWave++;
+        deathsInPrevWave[damtype]++;
+    }
+
+	IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, float rate)
 	{
-		for(int x = 0; x < amount; x++)
+		for(int index = 0; index < enemies.Count; ++index)
 		{
-            float horizOffset = Random.Range(-0.2f, 0.2f);
-            GameObject enemy = Instantiate(enemyPrefab[0], transform.position + new Vector3(0, 0, horizOffset), Quaternion.identity);
+            float horizOffset = 0;// Random.Range(-0.2f, 0.2f);
+            if(Random.value > 0.5f)
+            {
+                horizOffset = -0.2f;
+            }
+            else
+            {
+                horizOffset = 0.2f;
+            }
+            GameObject enemy = Instantiate(enemies[index], transform.position + new Vector3(0, 0, horizOffset), Quaternion.identity, enemyParentObject);
 
 			Enemy enemyScript = enemy.GetComponent<Enemy>();
 
             enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
 			enemyScript.curConveyorBelt = spawningBelt;
 
+            enemyScript.OnEnemyDeath.AddListener(OnEnemyDeath);
+
+            enemyScript.type = EnemyType.Basic;
+
+            float randomNumber = Random.value;
+            float resistanceVal = 0;
+            for(int i = 0; i < resistancePercentages.Length; ++i)
+            {
+                resistanceVal += resistancePercentages[i];
+                if (randomNumber < resistanceVal)
+                {
+                    enemyScript.resistType = (DamageType)i;
+                    break;
+                }
+            }
+            
 			GameManager.gm.enemies.Add(enemyScript);
 
 			yield return new WaitForSeconds(rate);

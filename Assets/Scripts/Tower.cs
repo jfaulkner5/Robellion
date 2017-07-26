@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public enum DamageType
+{
+    Melee,
+    Heat,
+    Electricity,
+    Acid
+}
+
 /// <summary>
 /// Manages tower data, tower damage, target, attacking.
 /// </summary>
 public class Tower : MonoBehaviour 
 {
     public TowerType type;
+    public DamageType damType;
 
     //Range In Game Tiles min 1 max 3
     [Range(1,3)] public int range;
@@ -90,9 +100,14 @@ public class Tower : MonoBehaviour
     public void AddEnemyToRange (Enemy enemyInRange)
     {
         enemiesWithinRange.Add(enemyInRange);
-        enemyInRange.OnEnemyDeath.AddListener(RemoveEnemyFromRange);
+        enemyInRange.OnEnemyDeath.AddListener(RemoveEnemyFromRange2);
     }
 
+    //jerryrigged bc tired
+    public void RemoveEnemyFromRange2(Enemy enemyOutOfRange, int unused)
+    {
+        enemiesWithinRange.Remove(enemyOutOfRange);
+    }
     public void RemoveEnemyFromRange (Enemy enemyOutOfRange)
     {
         enemiesWithinRange.Remove(enemyOutOfRange);
@@ -103,7 +118,7 @@ public class Tower : MonoBehaviour
         if(attack.canAttack())
         {
             GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
-            target.TakeDamage(1);	//Random.Range(attack.damageMin, attack.damageMax));
+            target.TakeDamage(1, damType);	//Random.Range(attack.damageMin, attack.damageMax));
         }
     }
 }
