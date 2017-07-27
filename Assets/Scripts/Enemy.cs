@@ -64,11 +64,11 @@ public class Enemy : MonoBehaviour
 
     //This function gets called when the enemy takes damage.
     //damageTaken, is the amount of damage that needs to be taken.
-    public void TakeDamage (int damageTaken, DamageType dam)
+    public void TakeDamage (int damageTaken, DamageType dmgType)
     {
         if(curHealth - damageTaken <= 0)
         {
-            Die(dam);
+            Die(dmgType);
         }
         else
         {
@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
 
     //This function gets called when the enemy's health is less than or equals to 0.
     //It destroys the enemy, as well as removing it from lists.
-    void Die (DamageType dam)
+    void Die (DamageType dmgType)
     {
         //Play and destroy the death particle effect.
         /*deathParticleEffect.transform.parent = null;
@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         /*
         - Play death audio.
         */
-        OnEnemyDeath.Invoke(this, (int)dam);
+        OnEnemyDeath.Invoke(this, (int)dmgType);
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
         GameManager.gm.enemies.Remove(this);

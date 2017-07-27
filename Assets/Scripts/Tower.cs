@@ -34,10 +34,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
-        
     }
-
- 
 
 	void Update () 
 	{
@@ -91,7 +88,8 @@ public class Tower : MonoBehaviour
             Attack(target);
             lr.enabled = true;
             lr.SetPosition(1, target.transform.position);
-        }else
+        }
+        else
         {
             lr.enabled = false;
         }
@@ -104,7 +102,8 @@ public class Tower : MonoBehaviour
     }
 
     //jerryrigged bc tired
-    public void RemoveEnemyFromRange2(Enemy enemyOutOfRange, int unused)
+    //wtf?
+    public void RemoveEnemyFromRange2 (Enemy enemyOutOfRange, int unused)
     {
         enemiesWithinRange.Remove(enemyOutOfRange);
     }

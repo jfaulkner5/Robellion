@@ -63,9 +63,17 @@ public class RadialMenu : MonoBehaviour
 		//Checks for a raycast hit on gameobjects with the layer 'TowerPlatform' or 'Tower'.
 		if(Physics.Raycast(ray, out hit, 100, 1 << 8 | 1 << 9))
 		{
-			//Is the mouse cursor currently not over a UI element?
-			if(!EventSystem.current.IsPointerOverGameObject())
-			{
+            //Is the mouse cursor or touch currently not over a UI element?
+            bool canRaycast = false;
+
+            if(Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                canRaycast = true;
+
+            if(!EventSystem.current.IsPointerOverGameObject())
+                canRaycast = true;
+
+            if(canRaycast)
+            {
 				if(hit.collider.gameObject.layer == 8)
 				{
 					if(!hit.collider.GetComponent<TowerPlatform>().hasTower)
@@ -103,7 +111,7 @@ public class RadialMenu : MonoBehaviour
 		FixRadialMenuPosition();
 	}
 
-	//Enables the existing tower platform menu.
+	//Enables the existing tower menu.
 	void SetRadialMenu (Vector2 posOnScreen, Tower tower)
 	{
 		existingTowerMenu.SetActive(true);

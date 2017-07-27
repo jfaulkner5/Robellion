@@ -31,13 +31,12 @@ public class EnemySpawner : MonoBehaviour
 	
 	public void SpawnEnemies (int wave)
 	{
-		int amount = 3 + (wave * 3);
 		float rate = Mathf.Clamp(1.0f - (0.01f * wave), 0.3f, 1.0f);
         List<GameObject> enemies = new List<GameObject>();
 
         float budgetForWave = budget.CalculateBudget(wave);
         
-        while (budgetForWave > 0)
+        while(budgetForWave > 0)
         {
             int index = Random.Range(0, enemyPrefab.Length-1);
             enemies.Add(enemyPrefab[index]);
@@ -50,6 +49,7 @@ public class EnemySpawner : MonoBehaviour
     public float[] CalculateDeathPercentages()
     {
         float[] temp = deathsInPrevWave;
+
         for (int index = 0; index < temp.Length; ++index)
         {
             temp[index] /= totalDeathsInPrevWave;
@@ -57,22 +57,24 @@ public class EnemySpawner : MonoBehaviour
             //reset deaths
             deathsInPrevWave[index] = 0;
         }
+
         totalDeathsInPrevWave = 0;
         return temp;
     }
 
     //event to add to death counts
-    public void OnEnemyDeath(Enemy e, int damtype)
+    public void OnEnemyDeath(Enemy e, int dmgType)
     {
         totalDeathsInPrevWave++;
-        deathsInPrevWave[damtype]++;
+        deathsInPrevWave[dmgType]++;
     }
 
 	IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, float rate)
 	{
 		for(int index = 0; index < enemies.Count; ++index)
 		{
-            float horizOffset = 0;// Random.Range(-0.2f, 0.2f);
+            float horizOffset = 0;
+
             if(Random.value > 0.5f)
             {
                 horizOffset = -0.2f;
@@ -81,22 +83,25 @@ public class EnemySpawner : MonoBehaviour
             {
                 horizOffset = 0.2f;
             }
-            GameObject enemy = Instantiate(enemies[index], transform.position + new Vector3(0, 0, horizOffset), Quaternion.identity, enemyParentObject);
 
+            //Instantiate the enemy.
+            GameObject enemy = Instantiate(enemies[index], transform.position + new Vector3(0, 0, horizOffset), Quaternion.identity, enemyParentObject);
 			Enemy enemyScript = enemy.GetComponent<Enemy>();
 
+            //Set values.
             enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
 			enemyScript.curConveyorBelt = spawningBelt;
+            enemyScript.type = EnemyType.Basic;
 
             enemyScript.OnEnemyDeath.AddListener(OnEnemyDeath);
 
-            enemyScript.type = EnemyType.Basic;
-
             float randomNumber = Random.value;
             float resistanceVal = 0;
+
             for(int i = 0; i < resistancePercentages.Length; ++i)
             {
                 resistanceVal += resistancePercentages[i];
+
                 if (randomNumber < resistanceVal)
                 {
                     enemyScript.resistType = (DamageType)i;

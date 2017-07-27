@@ -5,7 +5,7 @@ using UnityEngine;
 
 #if UNITY_EDITOR
 //cheatcode
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 #endif
 
 
@@ -57,18 +57,18 @@ public class CameraController : MonoBehaviour
         // cheat code
         if (Input.GetKey("1"))
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
             Debug.Log("scene loaded 1");
         }
         if (Input.GetKey("2"))
         {
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
             Debug.Log("scene loaded 2");
         }
             
         if (Input.GetKey("3"))
         {
-            SceneManager.LoadScene(3);
+            //SceneManager.LoadScene(3);
             Debug.Log("scene loaded 3");
         }
 
