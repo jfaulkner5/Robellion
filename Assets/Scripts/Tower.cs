@@ -31,6 +31,7 @@ public class Tower : MonoBehaviour
     public Enemy target = null;
 
 	public bool canAttack = true;
+	public bool rotateToTarget;
 
     public LineRenderer lr;
 
@@ -67,7 +68,7 @@ public class Tower : MonoBehaviour
             target = enemiesWithinRange[0];
         }
 
-        if (target != null)
+        if(target != null)
         {
             Attack(target);
 
@@ -75,6 +76,14 @@ public class Tower : MonoBehaviour
 			{
 	            lr.enabled = true;
 	            lr.SetPosition(1, target.transform.position);
+			}
+
+			if(rotateToTarget)
+			{
+				Vector3 lookPos = target.transform.position - transform.position;
+				lookPos.y = 0;
+
+				Quaternion rot = Quaternion.LookRotation(lookPos);
 			}
         }
         else

@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 114451671138098174}
   - component: {fileID: 114531580104084298}
   m_Layer: 0
-  m_Name: TeslaCoil
+  m_Name: Drill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 114382069778249878}
   - component: {fileID: 114390721986977076}
   - component: {fileID: 114703459745948900}
+  - component: {fileID: 114271803535368654}
   m_Layer: 0
   m_Name: RobotArm
   m_TagString: Untagged
@@ -491,7 +492,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla Coil
+  m_Text: Drill
+--- !u!114 &114271803535368654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703411873405762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114306303582225026
 MonoBehaviour:
   m_ObjectHideFlags: 1
