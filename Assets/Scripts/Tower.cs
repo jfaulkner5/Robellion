@@ -84,6 +84,7 @@ public class Tower : MonoBehaviour
 				lookPos.y = 0;
 
 				Quaternion rot = Quaternion.LookRotation(lookPos);
+				transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5.0f);
 			}
         }
         else
@@ -112,10 +113,10 @@ public class Tower : MonoBehaviour
 
     protected virtual void Attack (Enemy target)
     {
-        if(attack.canAttack())
+		if(attack.canAttack() && canAttack)
         {
             GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
-            target.TakeDamage(1, damType);	//Random.Range(attack.damageMin, attack.damageMax));
+			target.TakeDamage(attack.damageMin, damType);	//Random.Range(attack.damageMin, attack.damageMax));
         }
     }
 
