@@ -40,6 +40,7 @@ public class Tower : MonoBehaviour
 
     void Start()
     {
+        GlobalEvents.OnEnemyDeath.AddListener(RemoveEnemyFromRange);
 		if(lr)
        		lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
     }
@@ -84,21 +85,14 @@ public class Tower : MonoBehaviour
         }
 	}
 
-    public void AddEnemyToRange (Enemy enemyInRange)
+    public void AddEnemyToRange (EnemyData enemyInRange)
     {
-        enemiesWithinRange.Add(enemyInRange);
-        enemyInRange.OnEnemyDeath.AddListener(RemoveEnemyFromRange2);
+        enemiesWithinRange.Add(enemyInRange.enemyClassData);
     }
 
-    //jerryrigged bc tired
-    //wtf?
-    public void RemoveEnemyFromRange2 (Enemy enemyOutOfRange, int unused)
+    public void RemoveEnemyFromRange (EnemyData enemyOutOfRange)
     {
-        enemiesWithinRange.Remove(enemyOutOfRange);
-    }
-    public void RemoveEnemyFromRange (Enemy enemyOutOfRange)
-    {
-        enemiesWithinRange.Remove(enemyOutOfRange);
+        enemiesWithinRange.Remove(enemyOutOfRange.enemyClassData);
     }
 
     protected virtual void Attack (Enemy target)

@@ -679,12 +679,12 @@ Prefab:
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: totalDeathsInPrevWave
-      value: 11
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: deathsInPrevWave.Array.data[0]
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
@@ -728,17 +728,17 @@ Prefab:
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: deathsInPrevWave.Array.data[1]
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: deathsInPrevWave.Array.data[2]
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: deathsInPrevWave.Array.data[3]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
@@ -13111,9 +13111,12 @@ MonoBehaviour:
   enemySpawner: {fileID: 46493296}
   enemies: []
   enemiesLeft: 0
+  towers: []
+  towerPrefabs: []
   canBuildOrModify: 1
   basicTowerCost: 200
   timeBetweenWaves: 7
+  ui: {fileID: 0}
 --- !u!4 &1999527397
 Transform:
   m_ObjectHideFlags: 0

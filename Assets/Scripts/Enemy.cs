@@ -29,10 +29,6 @@ public class Enemy : MonoBehaviour
 	public GameObject model;
 	public MeshRenderer[] mr;
 
-    //events
-    [System.Serializable]
-    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy,int> { }
-    public UnityEventEnemyEvent OnEnemyDeath;
 
     //how much this takes off of the total budget for the wave
     public float budgetValue;
@@ -106,7 +102,11 @@ public class Enemy : MonoBehaviour
         /*
         - Play death audio.
         */
-        OnEnemyDeath.Invoke(this, (int)dmgType);
+        EnemyData death = new EnemyData();
+        death.enemyClassData = this;
+        death.finalBlowDamageType = dmgType;
+
+        GlobalEvents.OnEnemyDeath.Invoke(death);
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
 		GameManager.gm.enemies.Remove(this);

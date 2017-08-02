@@ -15,7 +15,7 @@ public class ConveyorBelt : MonoBehaviour
 	public bool isFinalConveyorBelt;		//Is this the final conveyor belt in the chain?
 
     [System.Serializable]
-    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<Enemy> { }
+    public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<EnemyData> { }
     public UnityEventEnemyEvent OnEnemyEnter;
     public UnityEventEnemyEvent OnEnemyLeave;
 
@@ -63,7 +63,9 @@ public class ConveyorBelt : MonoBehaviour
             Enemy enemy = col.GetComponent<Enemy>();
 
 			curEnemies.Add(enemy);
-            OnEnemyEnter.Invoke(enemy);
+            EnemyData data = new EnemyData();
+            data.enemyClassData = enemy;
+            OnEnemyEnter.Invoke(data);
 
 			enemy.curConveyorBelt = this;
 
@@ -81,7 +83,9 @@ public class ConveyorBelt : MonoBehaviour
         {
             Enemy enemy = col.GetComponent<Enemy>();
 
-            OnEnemyLeave.Invoke(enemy);
+            EnemyData data = new EnemyData();
+            data.enemyClassData = enemy;
+            OnEnemyLeave.Invoke(data);
 			curEnemies.Remove(enemy);
 
             //CHANGE TO SOME SORT OF ANIMATION

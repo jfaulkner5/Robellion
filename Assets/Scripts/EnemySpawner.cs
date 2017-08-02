@@ -10,9 +10,32 @@ public class BudgetCalculations
     public float exponent;
     public float waveValueAdditive;
 
+    [Header("For display purposes only:")]
+    public float calculatedBudget;
+
     public float CalculateBudget(int wave)
     {
-        return Mathf.Pow(((wave * waveValueMultiplier) + waveValueAdditive),exponent);
+        calculatedBudget = Mathf.Pow(((wave * waveValueMultiplier) + waveValueAdditive), exponent);
+        return calculatedBudget;
+    }
+}
+
+[System.Serializable]
+public class EnemyStatCalculations
+{
+    [Header("(((BV + W + (ET * ETM)) + BEA) ^ e) + AEA")]
+    public float baseValue;
+    public float beforeExponentAddition;
+    public float exponent;
+    public float afterExponentAddition;
+
+    [Header("enemy type: 0 for all enemys equal")]
+    public float enemyTypeMultiplier;
+    
+    //for enemy type value check enum 
+    public int Calculate(int wave, int enemyType)
+    {
+        return (int)(Mathf.Pow(((baseValue +(wave + (enemyType * enemyTypeMultiplier))) + beforeExponentAddition), exponent) + afterExponentAddition);
     }
 }
 
@@ -28,8 +51,16 @@ public class EnemySpawner : MonoBehaviour
     [Header("count equivalent to # of damage types")]
     public float[] deathsInPrevWave = {0, 0, 0, 0};
     public int totalDeathsInPrevWave;
-	
-	public void SpawnEnemies (int wave)
+
+    public EnemyStatCalculations HealthStatCalcs;
+    public EnemyStatCalculations DamageResistStatCalcs;
+
+    public void Awake()
+    {
+        GlobalEvents.OnEnemyDeath.AddListener(OnEnemyDeath);
+    }
+
+    public void SpawnEnemies (int wave)
 	{
 		float rate = Mathf.Clamp(1.0f - (0.01f * wave), 0.3f, 1.0f);
         List<GameObject> enemies = new List<GameObject>();
@@ -43,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
             budgetForWave -= enemyPrefab[index].GetComponent<Enemy>().budgetValue;
         }
         
-		StartCoroutine(SpawnEnemiesTimer(enemies, CalculateDeathPercentages(), rate));
+		StartCoroutine(SpawnEnemiesTimer(enemies, CalculateDeathPercentages(), wave, rate));
 	}
 
     public float[] CalculateDeathPercentages()
@@ -63,13 +94,13 @@ public class EnemySpawner : MonoBehaviour
     }
 
     //event to add to death counts
-    public void OnEnemyDeath(Enemy e, int dmgType)
+    public void OnEnemyDeath(EnemyData deadEnemy)
     {
         totalDeathsInPrevWave++;
-        deathsInPrevWave[dmgType]++;
+        deathsInPrevWave[(int)deadEnemy.finalBlowDamageType]++;
     }
 
-	IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, float rate)
+	IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, int waveNum,  float rate)
 	{
 		for(int index = 0; index < enemies.Count; ++index)
 		{
@@ -92,10 +123,11 @@ public class EnemySpawner : MonoBehaviour
             enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
 			enemyScript.curConveyorBelt = spawningBelt;
 
-            enemyScript.OnEnemyDeath.AddListener(OnEnemyDeath);
+            enemyScript.maxHealth = HealthStatCalcs.Calculate(waveNum, (int)enemyScript.type);
+            enemyScript.curHealth = enemyScript.maxHealth;
 
             float randomNumber = Random.value;
-            float resistanceVal = 0;
+            float resistanceVal = Mathf.Clamp(DamageResistStatCalcs.Calculate(waveNum, (int)enemyScript.type),0,100);
 
             for(int i = 0; i < resistancePercentages.Length; ++i)
             {
