@@ -110,7 +110,25 @@ public class Tower : MonoBehaviour
     {
 		if(attack.canAttack() && canAttack)
         {
-            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
+            switch (type)
+            {
+                case TowerType.AcidEtcher:
+                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackAcid();
+                    break;
+                case TowerType.Crusher:
+                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackCrusher();
+                    break;
+                case TowerType.Drill:
+                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackDrill();
+                    break;
+                case TowerType.Lazer:
+                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
+                    break;
+                case TowerType.RobotArm:
+                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackArm();
+                    break;
+            }
+            
 			target.TakeDamage(attack.damageMin, damType);	//Random.Range(attack.damageMin, attack.damageMax));
         }
     }
