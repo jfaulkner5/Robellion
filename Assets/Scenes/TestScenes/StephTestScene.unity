@@ -580,6 +580,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1050590882
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596352751795838, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1158530301
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +822,7 @@ MonoBehaviour:
   lazerAttack: {fileID: 8300000, guid: 150f95317f8d36a42823b1b4eb200ba7, type: 3}
   pickUp: {fileID: 8300000, guid: 96dbf052421ac824fa4dfe1aac169260, type: 3}
   towerBuild: {fileID: 8300000, guid: fdd60c99e99278349a31b6b1643550fe, type: 3}
+  numOfAudioClips: 9
 --- !u!4 &1773945656
 Transform:
   m_ObjectHideFlags: 0
