@@ -21,6 +21,9 @@ public class TowerPlatform : MonoBehaviour
 
                 Tower t = tower.GetComponent<Tower>();
                 ConveyorBelt curConveyor = firstConveyorInRange;
+				GameManager.gm.towers.Add(t);
+				t.towerPlatform = this;
+
                 for (int index = t.range; index < 3; ++index)
                 {
                     if (!curConveyor.isFinalConveyorBelt)
@@ -28,6 +31,7 @@ public class TowerPlatform : MonoBehaviour
                         curConveyor = curConveyor.nextConveyorBelt;
                     }
                 }
+
                 curConveyor.OnEnemyEnter.AddListener(t.AddEnemyToRange);
 
                 for (int index = 1; index < t.range; ++index)
@@ -37,11 +41,12 @@ public class TowerPlatform : MonoBehaviour
                         curConveyor = curConveyor.nextConveyorBelt;
                     }
                 }
+
                 curConveyor.OnEnemyLeave.AddListener(t.RemoveEnemyFromRange);
 
                 hasTower = true;
 
-				GameManager.gm.curScrap -= GameManager.gm.basicTowerCost;
+				GameManager.gm.RemoveScrap(GameManager.gm.basicTowerCost);
 			}
 		}
 	}

@@ -726,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyParentObject: {fileID: 1472427233}
   enemyPrefab:
-  - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+  - {fileID: 1619195172983140, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
   - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
   - {fileID: 1601336021243516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
   spawningBelt: {fileID: 506956397}
@@ -1195,6 +1195,7 @@ GameObject:
   - component: {fileID: 1120039977}
   - component: {fileID: 1120039976}
   - component: {fileID: 1120039975}
+  - component: {fileID: 1120039980}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1273,6 +1274,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1120039980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1120039974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b2cd7c2650e9a4dac4ed61610edb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1167510476
 Prefab:
   m_ObjectHideFlags: 0
@@ -1693,6 +1705,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1605843510 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114754596525485154, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c,
+    type: 2}
+  m_PrefabInternal: {fileID: 110233655}
+  m_Script: {fileID: 11500000, guid: 6bd2b728dd9585f41b09c409f6d27538, type: 3}
 --- !u!1 &1642473959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,9 +1748,11 @@ MonoBehaviour:
   enemySpawner: {fileID: 574892432}
   enemies: []
   enemiesLeft: 0
+  towers: []
   canBuildOrModify: 0
   basicTowerCost: 200
   timeBetweenWaves: 6
+  ui: {fileID: 1605843510}
 --- !u!4 &1642473961
 Transform:
   m_ObjectHideFlags: 0

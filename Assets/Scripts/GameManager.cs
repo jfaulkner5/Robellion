@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 	public List<Enemy> enemies = new List<Enemy>();
     public int enemiesLeft;
 
+	public List<Tower> towers = new List<Tower>();
+
 	//Bools
 	public bool canBuildOrModify;
 
@@ -27,6 +29,9 @@ public class GameManager : MonoBehaviour
 
 	//Times
 	public float timeBetweenWaves;
+
+	//UI
+	public GameUI ui;
 
     void Awake ()
     {
@@ -94,6 +99,18 @@ public class GameManager : MonoBehaviour
 		curGameState = GameState.WaveDone;
 		timer = timeBetweenWaves;
 		enemies.Clear();
+	}
+
+	//Adds scrap.
+	public void AddScrap (int amount)
+	{
+		curScrap += amount;
+	}
+
+	//Removes scrap.
+	public void RemoveScrap (int amount)
+	{
+		curScrap -= amount;
 	}
 }
 

@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
 		GameManager.gm.enemies.Remove(this);
-		GameManager.gm.curScrap += 20;
+		GameManager.gm.AddScrap(20);
 
 		//If the enemy is molten metal, then do what it does.
         if(type == EnemyType.MoltenMetal)
@@ -128,6 +128,7 @@ public class Enemy : MonoBehaviour
 	{
 		GameManager.gm.enemies.Remove(this);
 		GameManager.gm.health--;
+		CameraShake.cs.Shake(0.15f, 0.1f, 35.0f);
 		Destroy(gameObject);
 	}
 

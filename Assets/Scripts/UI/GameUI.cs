@@ -18,8 +18,8 @@ public class GameUI : MonoBehaviour
 
 	void Update ()
 	{
-		scrapText.text = GameManager.gm.curScrap.ToString();
 		curHealthText.text = GameManager.gm.health + " Lives";
+		scrapText.text = GameManager.gm.curScrap.ToString();
 		curWaveText.text = "Wave " + GameManager.gm.curWave;
 		healthBar.value = GameManager.gm.health;
 

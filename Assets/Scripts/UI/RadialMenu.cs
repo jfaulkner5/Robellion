@@ -104,9 +104,12 @@ public class RadialMenu : MonoBehaviour
 		StartCoroutine(RadialMenuOpenAnimation());
 
 		SetTowerPlatformMenuButtons(towerPlatform);
+		selectedTowerPlatform = towerPlatform;
 
 		//Set the radial menu position to the same as the touch position on screen.
 		transform.localPosition = new Vector3(posOnScreen.x - (Screen.width / 2), posOnScreen.y - (Screen.height / 2), 0);
+
+		//towerPlatform.transform.FindChild("Model").GetComponent<MeshRenderer>().material.color = Color.green;
 
 		FixRadialMenuPosition();
 	}
@@ -118,6 +121,7 @@ public class RadialMenu : MonoBehaviour
 		StartCoroutine(RadialMenuOpenAnimation());
 
 		SetExistingTowerMenuButtons(tower);
+		selectedTower = tower;
 
 		//Set the radial menu position to the same as the touch position on screen.
 		transform.localPosition = new Vector3(posOnScreen.x - (Screen.width / 2), posOnScreen.y - (Screen.height / 2), 0);
@@ -161,6 +165,14 @@ public class RadialMenu : MonoBehaviour
 	void DisableRadialMenu ()
 	{
 		StartCoroutine(RadialMenuCloseAnimation());
+
+		if(selectedTowerPlatform != null)
+		{
+			//selectedTowerPlatform.transform.FindChild("Model").GetComponent<MeshRenderer>().material.color = Color.white;
+		}
+
+		selectedTower = null;
+		selectedTowerPlatform = null;
 	}
 
 	//Sets the tower platform buttons to disable when pressed.
@@ -191,8 +203,8 @@ public class RadialMenu : MonoBehaviour
 			button.onClick.AddListener(DisableRadialMenu);
 		}
 
-		//existingTowerMenuButtons[0].onClick.AddListener();
-		//existingTowerMenuButtons[0].onClick.AddListener();
+		existingTowerMenuButtons[0].onClick.AddListener(() => tower.Upgrade());
+		existingTowerMenuButtons[1].onClick.AddListener(() => tower.Sell());
 	}
 
 	//Makes sure that the radial menu doesn't go off screen.

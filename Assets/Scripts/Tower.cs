@@ -29,7 +29,13 @@ public class Tower : MonoBehaviour
     
     public Enemy target = null;
 
+	public bool canAttack = true;
+
     public LineRenderer lr;
+
+	public TowerPlatform towerPlatform; //Tower platform that this tower is on.
+
+	public MeshRenderer[] mr;	//Array of all model mesh renderers.
 
     private void Start()
     {
@@ -58,30 +64,6 @@ public class Tower : MonoBehaviour
         {
             target = enemiesWithinRange[0];
         }
-
-        //////REALLY BAD THING FOR THE CLIENT MEETING
-        //////JUST TRYING TO MAKE THE TOWER WORK
-        //for (int x = 0; x < GameManager.gm.enemies.Count; x++)
-        //{
-        //    if (Vector3.Distance(transform.position, GameManager.gm.enemies[x].transform.position) <= range)
-        //    {
-        //        enemiesWithinRange.Add(GameManager.gm.enemies[x]);
-        //    }
-        //}
-
-        //for (int x = 0; x < enemiesWithinRange.Count; x++)
-        //{
-        //    if (enemiesWithinRange[x] == null)
-        //    {
-        //        enemiesWithinRange.Remove(enemiesWithinRange[x]);
-        //        continue;
-        //    }
-
-        //    if (Vector3.Distance(transform.position, enemiesWithinRange[x].transform.position) > range)
-        //    {
-        //        enemiesWithinRange.Remove(enemiesWithinRange[x]);
-        //    }
-        //}
 
         if (target != null)
         {
@@ -120,6 +102,42 @@ public class Tower : MonoBehaviour
             target.TakeDamage(1, damType);	//Random.Range(attack.damageMin, attack.damageMax));
         }
     }
+
+	public void Sell ()
+	{
+		GameManager.gm.towers.Remove(this);
+		GameManager.gm.AddScrap(50);
+		towerPlatform.hasTower = false;
+		Destroy(gameObject);
+	}
+
+	public void Upgrade ()
+	{
+		
+	}
+
+	public void EMPDisable (float disableTime)
+	{
+		canAttack = false;
+
+		for(int x = 0; x < mr.Length; ++x)
+		{
+			mr[x].material.color = Color.blue;
+		}
+
+		StartCoroutine(EMPDisableTimer(disableTime));
+	}
+
+	IEnumerator EMPDisableTimer (float disableTime)
+	{
+		yield return new WaitForSeconds(disableTime);
+		canAttack = true;
+
+		for(int x = 0; x < mr.Length; ++x)
+		{
+			mr[x].material.color = Color.white;
+		}
+	}
 }
 
 public enum TowerType { RobotArm, Crusher, Lazer, AcidEtcher }
