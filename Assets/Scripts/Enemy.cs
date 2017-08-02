@@ -87,14 +87,20 @@ public class Enemy : MonoBehaviour
     //damageTaken, is the amount of damage that needs to be taken.
     public void TakeDamage (int damageTaken, DamageType dmgType)
     {
-        if(curHealth - damageTaken <= 0)
+        float damTaken = damageTaken;
+        if(dmgType == resistType)
+        {
+            damTaken -= damageTaken / (float)resistValue;
+        }
+
+        if(curHealth - (int)damTaken <= 0)
         {
             Die(dmgType);
         }
         else
         {
             GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDamage();
-            curHealth -= damageTaken;
+            curHealth -= (int)damTaken;
             CheckDamageParticleEffects();
         }
 
@@ -157,13 +163,13 @@ public class Enemy : MonoBehaviour
 		GameManager.gm.AddScrap(20);
 
 		//If the enemy is molten metal, then do what it does.
-        if(type == EnemyType.MoltenMetal)
-        {
-            if(GetComponent<MoltenMetalRobot>().isHot)
-            {
-				GetComponent<MoltenMetalRobot>().DamageNearbyEnemies();
-            }
-        }
+    //    if(type == EnemyType.MoltenMetal)
+    //    {
+    //        if(GetComponent<MoltenMetalRobot>().isHot)
+    //        {
+				//GetComponent<MoltenMetalRobot>().DamageNearbyEnemies();
+    //        }
+    //    }
 
         Destroy(gameObject);
     }
