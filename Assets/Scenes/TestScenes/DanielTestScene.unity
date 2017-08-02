@@ -1702,10 +1702,10 @@ MonoBehaviour:
   towers: []
   towerPrefabs:
   - {fileID: 1289604252842244, guid: 74cde80bdd77cd74e8b03e1ef3b9e24c, type: 2}
-  - {fileID: 1202546996787490, guid: 018d12f27a2b9d047a3fb25023f0826a, type: 2}
+  - {fileID: 0}
   - {fileID: 1444622926472734, guid: 40e9558482787b540821883f26a4dac0, type: 2}
   - {fileID: 1142497269339264, guid: 0ba56b036ffc4f14791849903a797666, type: 2}
-  - {fileID: 1004320957483720, guid: c508c34d1e7ff474cb92c0b5054ae6e2, type: 2}
+  - {fileID: 0}
   canBuildOrModify: 0
   basicTowerCost: 200
   timeBetweenWaves: 6
