@@ -16,60 +16,101 @@ public class SoundManager : MonoBehaviour
     public AudioClip pickUp;
     public AudioClip towerBuild;
 
+    public int numOfAudioClips = 9;
+
+    private float[] timeOfLastPlay;
     // Use this for initialization
     void Start()
     {
         instance = this;
         sound = GetComponent<AudioSource>();
+
+        timeOfLastPlay = new float[numOfAudioClips];
     }
 
     // all tower build sound
     public void OnBuild()
     {
-        sound.PlayOneShot(towerBuild);
+        if ((timeOfLastPlay[8] + (towerBuild.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(towerBuild);
+            timeOfLastPlay[8] = Time.timeSinceLevelLoad;
+        }
     }
 
     // tower attack sounds
     public void OnAttackArm()
     {
-        sound.PlayOneShot(armAttack);
+        if ((timeOfLastPlay[1] + (armAttack.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(armAttack);
+            timeOfLastPlay[1] = Time.timeSinceLevelLoad;
+        }
     }
 
     public void OnAttackCrusher()
     {
-        sound.PlayOneShot(crusherAttack);
+        if ((timeOfLastPlay[4] + (crusherAttack.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(crusherAttack);
+            timeOfLastPlay[4] = Time.timeSinceLevelLoad;
+        }
     }
 
     public void OnAttackLazer()
     {
-        sound.PlayOneShot(lazerAttack);
+        if ((timeOfLastPlay[6] + (lazerAttack.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(lazerAttack);
+            timeOfLastPlay[6] = Time.timeSinceLevelLoad;
+        }
     }
 
     public void OnAttackDrill()
     {
-        sound.PlayOneShot(drillAttack);
+        if ((timeOfLastPlay[5] + (drillAttack.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(drillAttack);
+            timeOfLastPlay[5] = Time.timeSinceLevelLoad;
+        }
     }
 
     public void OnAttackAcid()
     {
-        sound.PlayOneShot(acidAttack);
+        if ((timeOfLastPlay[0] + (acidAttack.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(acidAttack);
+            timeOfLastPlay[0] = Time.timeSinceLevelLoad;
+        }
     }
 
     // bot damage sounds
     public void OnBotDamage()
     {
-        sound.PlayOneShot(botDamage);
+        if ((timeOfLastPlay[2] + (botDamage.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(botDamage);
+            timeOfLastPlay[2] = Time.timeSinceLevelLoad;
+        }
     }
 
     // all bot death sound
     public void OnBotDeath()
     {
-        sound.PlayOneShot(botDeath);
+        if ((timeOfLastPlay[3] + (botDeath.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(botDeath);
+            timeOfLastPlay[3] = Time.timeSinceLevelLoad;
+        }
     }
 
     // on scrap pick up
     public void ScrapPickUp()
     {
-        sound.PlayOneShot(pickUp);
+        if ((timeOfLastPlay[7] + (pickUp.length / 2)) <= Time.timeSinceLevelLoad)
+        {
+            sound.PlayOneShot(pickUp);
+            timeOfLastPlay[7] = Time.timeSinceLevelLoad;
+        }
     }
 }

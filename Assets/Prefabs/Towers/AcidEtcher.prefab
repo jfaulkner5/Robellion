@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  damType: 3
   range: 1
   attack:
     attackAnimation: {fileID: 0}
@@ -116,3 +117,8 @@ MonoBehaviour:
     timer: 1000
   enemiesWithinRange: []
   target: {fileID: 0}
+  canAttack: 1
+  rotateToTarget: 0
+  lr: {fileID: 0}
+  towerPlatform: {fileID: 0}
+  mr: []
