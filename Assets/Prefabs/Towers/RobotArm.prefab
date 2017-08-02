@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4068835704533672}
   - component: {fileID: 33391153297653750}
   - component: {fileID: 23087721335180676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4993771022128188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4144801121405232}
   - component: {fileID: 65594865636250190}
   - component: {fileID: 114588894647090220}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RobotArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4636531741800022}
   - component: {fileID: 33595507335955852}
   - component: {fileID: 23030634676792044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,6 +246,7 @@ MonoBehaviour:
   enemiesWithinRange: []
   target: {fileID: 0}
   canAttack: 1
+  rotateToTarget: 0
   lr: {fileID: 0}
   towerPlatform: {fileID: 0}
   mr: []
