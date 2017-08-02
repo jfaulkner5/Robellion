@@ -189,7 +189,7 @@ public class RadialMenu : MonoBehaviour
 		towerPlatformMenuButtons[1].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Crusher));
 		towerPlatformMenuButtons[2].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Lazer));
 		towerPlatformMenuButtons[3].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.AcidEtcher));
-		//towerPlatformMenuButtons[4].onClick.AddListener(towerPlatform.BuildTower(TowerType.TeslaCoil));
+		towerPlatformMenuButtons[4].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Drill));
 	}
 
 	//Sets the existing tower buttons to disable when pressed.

@@ -5,7 +5,6 @@ using UnityEngine;
 public class TowerPlatform : MonoBehaviour 
 {
 	public bool hasTower;
-	public GameObject towerPrefab;
 
     public ConveyorBelt firstConveyorInRange;
     public TowerPlatform oppositePlatform;
@@ -17,6 +16,8 @@ public class TowerPlatform : MonoBehaviour
 		{
 			if(GameManager.gm.curScrap >= GameManager.gm.basicTowerCost)
 			{
+				GameObject towerPrefab = GameManager.gm.towerPrefabs[(int)towerType];
+
 				GameObject tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
 
                 Tower t = tower.GetComponent<Tower>();

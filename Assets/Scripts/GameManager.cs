@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int enemiesLeft;
 
 	public List<Tower> towers = new List<Tower>();
+	public GameObject[] towerPrefabs;
 
 	//Bools
 	public bool canBuildOrModify;

@@ -38,9 +38,10 @@ public class Tower : MonoBehaviour
 
 	public MeshRenderer[] mr;	//Array of all model mesh renderers.
 
-    private void Start()
+    void Start()
     {
-        lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
+		if(lr)
+       		lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
     }
 
 	void Update () 
@@ -69,12 +70,17 @@ public class Tower : MonoBehaviour
         if (target != null)
         {
             Attack(target);
-            lr.enabled = true;
-            lr.SetPosition(1, target.transform.position);
+
+			if(lr)
+			{
+	            lr.enabled = true;
+	            lr.SetPosition(1, target.transform.position);
+			}
         }
         else
         {
-            lr.enabled = false;
+			if(lr)
+            	lr.enabled = false;
         }
 	}
 
@@ -141,7 +147,7 @@ public class Tower : MonoBehaviour
 	}
 }
 
-public enum TowerType { RobotArm, Crusher, Lazer, AcidEtcher, Drill }
+public enum TowerType { RobotArm = 0, Crusher = 1, Lazer = 2, AcidEtcher = 3, Drill = 4 }
 
 /// <summary>
 /// 

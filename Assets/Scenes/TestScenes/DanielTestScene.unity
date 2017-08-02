@@ -624,6 +624,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1511285284891602, guid: b941285d82c484e48b5a727acced131b, type: 2}
+      propertyPath: m_Name
+      value: Drill
+      objectReference: {fileID: 0}
+    - target: {fileID: 114226874067623258, guid: b941285d82c484e48b5a727acced131b,
+        type: 2}
+      propertyPath: m_Text
+      value: Drill
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b941285d82c484e48b5a727acced131b, type: 2}
   m_IsPrefabParent: 0
@@ -818,7 +827,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -992,7 +1001,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1118,8 +1127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasTower: 0
-  towerPrefab: {fileID: 1444622926472734, guid: 40e9558482787b540821883f26a4dac0,
-    type: 2}
   firstConveyorInRange: {fileID: 1167510477}
   oppositePlatform: {fileID: 0}
 --- !u!4 &1097051298 stripped
@@ -1298,7 +1305,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1360,7 +1367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1427,7 +1434,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1749,6 +1756,12 @@ MonoBehaviour:
   enemies: []
   enemiesLeft: 0
   towers: []
+  towerPrefabs:
+  - {fileID: 1314669613336886, guid: 060307cf97e1edb409d95c5834243e6d, type: 2}
+  - {fileID: 1202546996787490, guid: 018d12f27a2b9d047a3fb25023f0826a, type: 2}
+  - {fileID: 1444622926472734, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+  - {fileID: 1142497269339264, guid: 0ba56b036ffc4f14791849903a797666, type: 2}
+  - {fileID: 1004320957483720, guid: c508c34d1e7ff474cb92c0b5054ae6e2, type: 2}
   canBuildOrModify: 0
   basicTowerCost: 200
   timeBetweenWaves: 6
@@ -1931,7 +1944,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2113,7 +2126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2160,7 +2173,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalPosition.z
