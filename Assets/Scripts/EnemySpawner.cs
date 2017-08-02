@@ -3,39 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BudgetCalculations
-{
-    [Header("((X*wVM)+wVA)^e")]
-    public float waveValueMultiplier;
-    public float exponent;
-    public float waveValueAdditive;
-
-    [Header("For display purposes only:")]
-    public float calculatedBudget;
-
-    public float CalculateBudget(int wave)
-    {
-        calculatedBudget = Mathf.Pow(((wave * waveValueMultiplier) + waveValueAdditive), exponent);
-        return calculatedBudget;
-    }
-}
-
-[System.Serializable]
-public class EnemyStatCalculations
+public class Calculations
 {
     [Header("(((BV + W + (ET * ETM)) + BEA) ^ e) + AEA")]
-    public float baseValue;
+    public float baseValue = 1;
     public float beforeExponentAddition;
-    public float exponent;
+    public float exponent = 1;
     public float afterExponentAddition;
 
     [Header("enemy type: 0 for all enemys equal")]
-    public float enemyTypeMultiplier;
-    
+    public float enemyTypeMultiplier = 0;
+
+    [Header("For display purposes only:")]
+    public float calculatedValue;
+
     //for enemy type value check enum 
-    public int Calculate(int wave, int enemyType)
+    public float Calculate(int wave, int enemyType)
     {
-        return (int)(Mathf.Pow(((baseValue +(wave + (enemyType * enemyTypeMultiplier))) + beforeExponentAddition), exponent) + afterExponentAddition);
+        calculatedValue = Mathf.Pow(((baseValue + (wave + (enemyType * enemyTypeMultiplier))) + beforeExponentAddition), exponent) + afterExponentAddition;
+        return calculatedValue;
     }
 }
 
@@ -46,14 +32,14 @@ public class EnemySpawner : MonoBehaviour
 	public GameObject[] enemyPrefab;
 	public ConveyorBelt spawningBelt;
     public int[] bossWaves;
-    public BudgetCalculations budget;
+    public Calculations budget;
 
     [Header("count equivalent to # of damage types")]
-    public float[] deathsInPrevWave = {0, 0, 0, 0};
-    public int totalDeathsInPrevWave;
+    public float[] deathsInPrevWave = {0, 0, 0, 0, 0};
+    public int totalDeathsInPrevWave = 0;
 
-    public EnemyStatCalculations HealthStatCalcs;
-    public EnemyStatCalculations DamageResistStatCalcs;
+    public Calculations HealthStatCalcs;
+    public Calculations DamageResistStatCalcs;
 
     public void Awake()
     {
@@ -65,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
 		float rate = Mathf.Clamp(1.0f - (0.01f * wave), 0.3f, 1.0f);
         List<GameObject> enemies = new List<GameObject>();
 
-        float budgetForWave = budget.CalculateBudget(wave);
+        float budgetForWave = budget.Calculate(wave, 0);
         
         while(budgetForWave > 0)
         {
@@ -79,11 +65,11 @@ public class EnemySpawner : MonoBehaviour
 
     public float[] CalculateDeathPercentages()
     {
-        float[] temp = deathsInPrevWave;
+        float[] temp = new float[deathsInPrevWave.Length];
 
         for (int index = 0; index < temp.Length; ++index)
         {
-            temp[index] /= totalDeathsInPrevWave;
+            temp[index] = deathsInPrevWave[index] / totalDeathsInPrevWave;
 
             //reset deaths
             deathsInPrevWave[index] = 0;
@@ -123,11 +109,11 @@ public class EnemySpawner : MonoBehaviour
             enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
 			enemyScript.curConveyorBelt = spawningBelt;
 
-            enemyScript.maxHealth = HealthStatCalcs.Calculate(waveNum, (int)enemyScript.type);
+            enemyScript.maxHealth = (int)HealthStatCalcs.Calculate(waveNum, (int)enemyScript.type);
             enemyScript.curHealth = enemyScript.maxHealth;
 
             float randomNumber = Random.value;
-            float resistanceVal = Mathf.Clamp(DamageResistStatCalcs.Calculate(waveNum, (int)enemyScript.type),0,100);
+            float resistanceVal = 0; 
 
             for(int i = 0; i < resistancePercentages.Length; ++i)
             {
@@ -140,7 +126,9 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
             
-			GameManager.gm.enemies.Add(enemyScript);
+            enemyScript.resistValue = (int)Mathf.Clamp(DamageResistStatCalcs.Calculate(waveNum, (int)enemyScript.type), 0, 100);
+
+            GameManager.gm.enemies.Add(enemyScript);
 
 			yield return new WaitForSeconds(rate);
 		}
