@@ -679,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyParentObject: {fileID: 1472427233}
   enemyPrefab:
-  - {fileID: 1619195172983140, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+  - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
   - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
   - {fileID: 1601336021243516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
   spawningBelt: {fileID: 506956397}
@@ -688,12 +688,25 @@ MonoBehaviour:
     waveValueMultiplier: 10
     exponent: 1.5
     waveValueAdditive: 50
+    calculatedBudget: 0
   deathsInPrevWave:
   - 0
   - 0
   - 0
   - 0
   totalDeathsInPrevWave: 0
+  HealthStatCalcs:
+    baseValue: 0
+    beforeExponentAddition: 0
+    exponent: 0
+    afterExponentAddition: 0
+    enemyTypeMultiplier: 0
+  DamageResistStatCalcs:
+    baseValue: 0
+    beforeExponentAddition: 0
+    exponent: 0
+    afterExponentAddition: 0
+    enemyTypeMultiplier: 0
 --- !u!23 &574892433
 MeshRenderer:
   m_ObjectHideFlags: 0

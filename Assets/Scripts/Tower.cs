@@ -71,7 +71,8 @@ public class Tower : MonoBehaviour
 
         if(target != null)
         {
-            Attack(target);
+			if(type != TowerType.AcidEtcher)
+            	Attack(target);
 
 			if(lr)
 			{
