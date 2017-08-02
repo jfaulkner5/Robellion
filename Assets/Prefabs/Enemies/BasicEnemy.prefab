@@ -636,9 +636,5 @@ MonoBehaviour:
   - {fileID: 23082093152094094}
   - {fileID: 23968927156448260}
   - {fileID: 23379504423271866}
-  OnEnemyDeath:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Enemy+UnityEventEnemyEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  budgetValue: 100
+  budgetValue: 1
+  curEffects: []
