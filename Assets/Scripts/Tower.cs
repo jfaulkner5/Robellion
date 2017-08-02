@@ -8,7 +8,8 @@ public enum DamageType
     Melee,
     Heat,
     Electricity,
-    Acid
+    Acid,
+    Piercing
 }
 
 /// <summary>
@@ -122,7 +123,7 @@ public class Tower : MonoBehaviour
     }
 }
 
-public enum TowerType { RobotArm, Crusher, Lazer, AcidEtcher }
+public enum TowerType { RobotArm, Crusher, Lazer, AcidEtcher, Drill }
 
 /// <summary>
 /// 
