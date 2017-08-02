@@ -235,12 +235,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   damType: 0
-  range: 0
+  range: 1
   attack:
     attackAnimation: {fileID: 0}
-    timeBetweenAttacks: 0
-    damageMin: 0
-    damageMax: 0
+    timeBetweenAttacks: 5
+    damageMin: 10
+    damageMax: 10
     attackParticleEffect: {fileID: 0}
     timer: 1000
   enemiesWithinRange: []

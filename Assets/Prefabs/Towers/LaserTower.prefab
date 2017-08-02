@@ -235,11 +235,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  damType: 0
+  damType: 1
   range: 3
   attack:
     attackAnimation: {fileID: 0}
-    timeBetweenAttacks: 0.5
+    timeBetweenAttacks: 1
     damageMin: 1
     damageMax: 1
     attackParticleEffect: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 0
-  lr: {fileID: 120158353726190602}
+  lr: {fileID: 0}
   towerPlatform: {fileID: 0}
   mr: []
 --- !u!120 &120978845801145476
