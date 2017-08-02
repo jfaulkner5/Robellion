@@ -472,7 +472,7 @@ Prefab:
         type: 2}
       propertyPath: enemyPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc,
+      objectReference: {fileID: 1601336021243516, guid: 739bae737fbbd2448919d01ee84aab8f,
         type: 2}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
@@ -493,13 +493,19 @@ Prefab:
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: budget.waveValueAdditive
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: spawningBelt
       value: 
       objectReference: {fileID: 628871707}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: enemyPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 1601336021243516, guid: 739bae737fbbd2448919d01ee84aab8f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
   m_IsPrefabParent: 0

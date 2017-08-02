@@ -91,7 +91,6 @@ public class EnemySpawner : MonoBehaviour
             //Set values.
             enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
 			enemyScript.curConveyorBelt = spawningBelt;
-            enemyScript.type = EnemyType.Basic;
 
             enemyScript.OnEnemyDeath.AddListener(OnEnemyDeath);
 

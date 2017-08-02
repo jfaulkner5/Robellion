@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
 
 	//Components
 	public GameObject model;
+	public MeshRenderer[] mr;
 
     //events
     [System.Serializable]
@@ -82,12 +83,15 @@ public class Enemy : MonoBehaviour
 
 	IEnumerator DamageFlash ()
 	{
-		Material mat = model.GetComponent<MeshRenderer>().material;
-		Color startColour = mat.color;
+		Color startColour = mr[0].material.color;
 
-		mat.color = Color.red;
+		for(int x = 0; x < mr.Length; ++x)
+			mr[x].material.color = Color.red;
+		
 		yield return new WaitForSeconds(0.05f);
-		mat.color = startColour;
+
+		for(int x = 0; x < mr.Length; ++x)
+			mr[x].material.color = startColour;
 	}
 
     //This function gets called when the enemy's health is less than or equals to 0.
@@ -105,14 +109,15 @@ public class Enemy : MonoBehaviour
         OnEnemyDeath.Invoke(this, (int)dmgType);
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
-        GameManager.gm.enemies.Remove(this);
+		GameManager.gm.enemies.Remove(this);
 		GameManager.gm.curScrap += 20;
 
+		//If the enemy is molten metal, then do what it does.
         if(type == EnemyType.MoltenMetal)
         {
             if(GetComponent<MoltenMetalRobot>().isHot)
             {
-                //Damage nearby enemies.
+				GetComponent<MoltenMetalRobot>().DamageNearbyEnemies();
             }
         }
 
