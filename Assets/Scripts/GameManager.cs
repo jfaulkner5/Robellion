@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using NUnit.Framework.Constraints;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour 
 {
@@ -9,9 +12,11 @@ public class GameManager : MonoBehaviour
 	public int curScrap;
 
 	public int curWave;
+	public int totalWave; //total amount of waves before win check - leads to survival mode
     public float waveTime; 
     public float timer;
 	public int wavesToWin;
+	public bool isSurvival; // determines survive mode
 
     public static GameManager gm;
 	public EnemySpawner enemySpawner;
@@ -34,6 +39,12 @@ public class GameManager : MonoBehaviour
 	//UI
 	public GameUI ui;
 
+	public GameObject pauseMenu;
+	public GameObject winMenu;
+	public GameObject textHUD;
+
+
+
     void Awake ()
     {
         //check if instance already exists
@@ -55,6 +66,10 @@ public class GameManager : MonoBehaviour
 		curGameState = GameState.WaveDone;
 		timer = timeBetweenWaves;
 		canBuildOrModify = true;
+		isSurvival = false;
+		Time.timeScale = 1;
+
+
 	}
 
     void Update ()
@@ -82,7 +97,59 @@ public class GameManager : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
-    }
+
+		//WIN if check 
+		if(enemiesLeft == 0 && curWave == totalWave && isSurvival == false)
+		{
+			//confirms that it isn't between waves and survival mode isn't on
+			if(curGameState == GameState.WaveDone)
+			{
+				return;
+			}
+			else
+			{
+				Time.timeScale = 0;	
+				winMenu.SetActive (true);
+				textHUD.SetActive (false);
+			}
+		}
+
+		//Pause menu key - checks if paused or unpaused
+		if (Input.GetKeyDown ("escape"))
+		{
+			if (pauseMenu.activeSelf)
+			{
+				//Unpauses the game
+				Debug.Log ("Pause menu has being toggled OFF");
+				Time.timeScale = 1;
+				pauseMenu.SetActive(false);
+				textHUD.SetActive (true);
+
+			}
+			else
+			{
+				//Pauses the game
+				Debug.Log ("Pause menu has being toggled ON");
+				Time.timeScale = 0;
+				textHUD.SetActive (false);
+				pauseMenu.SetActive(true);
+			}
+		}
+
+		#if UNITY_EDITOR
+		if (Input.GetKey ("[1]"))
+		{
+			Time.timeScale = 1; 
+			Debug.Log("timescale 1*");
+		}
+
+		if (Input.GetKey ("[2]"))
+		{
+			Time.timeScale = 5;
+			Debug.Log("timescale 5*");
+		}	
+		#endif
+	}
 
 	void NextWave ()
 	{
@@ -112,6 +179,26 @@ public class GameManager : MonoBehaviour
 	public void RemoveScrap (int amount)
 	{
 		curScrap -= amount;
+	}
+
+	//Pause menu buttons
+	public void QuitLevel()
+	{
+		Time.timeScale = 1;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+	}
+	public void ButtonSurvival()
+	{
+		winMenu.SetActive (false);
+		Time.timeScale = 1;
+		textHUD.SetActive (true);
+		isSurvival = true; //informs win check that survival mode is active
+	}
+	public void ResumeLevel()
+	{
+		textHUD.SetActive (true);
+		Time.timeScale = 1;
+		pauseMenu.SetActive(false);
 	}
 }
 
