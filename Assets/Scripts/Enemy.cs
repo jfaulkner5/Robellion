@@ -37,6 +37,9 @@ public class Enemy : MonoBehaviour
     //how much this takes off of the total budget for the wave
     public float budgetValue;
 
+	//Effects
+	public List<EnemyEffect> curEffects = new List<EnemyEffect>();
+
     void Start ()
 	{
 		positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
@@ -61,6 +64,27 @@ public class Enemy : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
         }
+
+		if(curEffects.Count > 0)
+		{
+			for(int x = 0; x < curEffects.Count; ++x)
+			{
+				curEffects[x].damageTimer += Time.deltaTime;
+				curEffects[x].timer += Time.deltaTime;
+
+				if(curEffects[x].damageTimer >= curEffects[x].rate)
+				{
+					TakeDamage(curEffects[x].damage, DamageType.Acid);
+					curEffects[x].damageTimer = 0.0f;
+				}
+
+				if(curEffects[x].timer >= curEffects[x].duration)
+				{
+					curEffects.Remove(curEffects[x]);
+					break;
+				}
+			}
+		}
     }
 
     //This function gets called when the enemy takes damage.
@@ -78,7 +102,14 @@ public class Enemy : MonoBehaviour
             CheckDamageParticleEffects();
         }
 
-		StartCoroutine(DamageFlash());
+		if(dmgType == DamageType.Acid)
+		{
+			StartCoroutine(PoisonFlash());
+		}
+		else
+		{
+			StartCoroutine(DamageFlash());
+		}
     }
 
 	IEnumerator DamageFlash ()
@@ -88,6 +119,19 @@ public class Enemy : MonoBehaviour
 		for(int x = 0; x < mr.Length; ++x)
 			mr[x].material.color = Color.red;
 		
+		yield return new WaitForSeconds(0.05f);
+
+		for(int x = 0; x < mr.Length; ++x)
+			mr[x].material.color = startColour;
+	}
+
+	IEnumerator PoisonFlash ()
+	{
+		Color startColour = mr[0].material.color;
+
+		for(int x = 0; x < mr.Length; ++x)
+			mr[x].material.color = Color.green;
+
 		yield return new WaitForSeconds(0.05f);
 
 		for(int x = 0; x < mr.Length; ++x)
@@ -148,6 +192,11 @@ public class Enemy : MonoBehaviour
             //smokeParticleEffect.Play();
         }
     }
+
+	public void ApplyAcidEffect (float duration, int damage, float rate)
+	{
+		curEffects.Add(new EnemyEffect(duration, damage, rate, EnemyEffectType.Acid));
+	}
 }
 
 public enum EnemyType { Basic, TowerAttraction, EMP, Quick, MoltenMetal }

@@ -251,7 +251,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -275,17 +275,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_Name
-      value: TowerPedestal (8)
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
         type: 2}
       propertyPath: firstConveyorInRange
       value: 
       objectReference: {fileID: 1196676767}
+    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
+      propertyPath: m_Name
+      value: TowerPedestal (8)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -422,7 +422,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -448,15 +448,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_Name
-      value: TowerPedestal (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
         type: 2}
       propertyPath: firstConveyorInRange
       value: 
       objectReference: {fileID: 506956397}
+    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
+      propertyPath: m_Name
+      value: TowerPedestal (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -647,62 +647,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2091774514}
   m_Script: {fileID: 11500000, guid: 3fbc596e21c96574887f793d56786d35, type: 3}
---- !u!1001 &569667570
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1393213757}
-    m_Modifications:
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-      propertyPath: m_Name
-      value: TowerPedestal (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
-        type: 2}
-      propertyPath: firstConveyorInRange
-      value: 
-      objectReference: {fileID: 1196676767}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &569667571 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628,
-    type: 2}
-  m_PrefabInternal: {fileID: 569667570}
 --- !u!1 &574892431
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (5)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1029,7 +973,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (6)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1072,7 +1016,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1096,7 +1040,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_Name
@@ -1127,6 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasTower: 0
+  facingDirection: {x: 0, y: 0, z: 0}
   firstConveyorInRange: {fileID: 1167510477}
   oppositePlatform: {fileID: 0}
 --- !u!4 &1097051298 stripped
@@ -1147,7 +1092,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1171,7 +1116,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_Name
@@ -1333,7 +1278,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (1)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
@@ -1395,7 +1340,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (2)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 114874403314217872, guid: 71b4f5902d2487a4587a67e05b1386bd,
         type: 2}
@@ -1462,7 +1407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (3)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1527,7 +1472,6 @@ Transform:
   m_Children:
   - {fileID: 193358883}
   - {fileID: 1759048353}
-  - {fileID: 569667571}
   - {fileID: 1968641089}
   - {fileID: 59512376}
   - {fileID: 1115782289}
@@ -1757,7 +1701,7 @@ MonoBehaviour:
   enemiesLeft: 0
   towers: []
   towerPrefabs:
-  - {fileID: 1314669613336886, guid: 060307cf97e1edb409d95c5834243e6d, type: 2}
+  - {fileID: 1289604252842244, guid: 74cde80bdd77cd74e8b03e1ef3b9e24c, type: 2}
   - {fileID: 1202546996787490, guid: 018d12f27a2b9d047a3fb25023f0826a, type: 2}
   - {fileID: 1444622926472734, guid: 40e9558482787b540821883f26a4dac0, type: 2}
   - {fileID: 1142497269339264, guid: 0ba56b036ffc4f14791849903a797666, type: 2}
@@ -1792,7 +1736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1884,7 +1828,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1908,7 +1852,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_Name
@@ -1972,7 +1916,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (7)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2010,7 +1954,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2034,7 +1978,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_Name
@@ -2066,7 +2010,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2090,7 +2034,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1836248562657662, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
       propertyPath: m_Name
@@ -2157,6 +2101,10 @@ Prefab:
       propertyPath: nextConveyorBelt
       value: 
       objectReference: {fileID: 1167510477}
+    - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
+      propertyPath: m_Name
+      value: ConveyorBelt
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
   m_IsPrefabParent: 0
@@ -2201,7 +2149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1881217810432056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_Name
-      value: ConveryorBelt (4)
+      value: ConveyorBelt
       objectReference: {fileID: 0}
     - target: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
