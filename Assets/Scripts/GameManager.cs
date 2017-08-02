@@ -43,6 +43,13 @@ public class GameManager : MonoBehaviour
 	public GameObject winMenu;
 	public GameObject textHUD;
 
+    //Star System
+    public float starScore; //stores the final score for lvl
+    public float starTotal; //total stars per level
+
+    public Text starText; //textbox to show score
+    
+
 
 
     void Awake ()
@@ -111,6 +118,14 @@ public class GameManager : MonoBehaviour
 				Time.timeScale = 0;	
 				winMenu.SetActive (true);
 				textHUD.SetActive (false);
+
+                //score calculator
+                float starScore = health / starTotal;
+                Debug.Log("health: " + health);
+                Debug.Log("starScore: " + starScore);
+                Debug.Log("total stars: " + starTotal);                ;
+                starText.text = "you have scored " + starScore + " out of a possible " + starTotal + " total stars";
+
 			}
 		}
 
