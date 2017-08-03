@@ -24,6 +24,14 @@ public class Calculations
         return calculatedValue;
     }
 }
+[System.Serializable]
+public class WaveData
+{
+    public int waveNumber;
+    public int numEnemiesPerConveyor;
+    public List<GameObject> enemies = new List<GameObject>();
+    public List<float> resistPercentages = new List<float>();
+}
 
 public class EnemySpawner : MonoBehaviour 
 {
@@ -41,14 +49,17 @@ public class EnemySpawner : MonoBehaviour
     public Calculations HealthStatCalcs;
     public Calculations DamageResistStatCalcs;
 
+    public WaveData currentWave;
+
     public void Awake()
     {
         GlobalEvents.OnEnemyDeath.AddListener(OnEnemyDeath);
+        GlobalEvents.OnPulse.AddListener(SpawnEnemiesOnPulse);
     }
 
     public void SpawnEnemies (int wave)
 	{
-		float rate = Mathf.Clamp(1.0f - (0.01f * wave), 0.3f, 1.0f);
+		float rate = Mathf.Clamp(1.0f + (0.1f * wave), 1f, 4f);
         List<GameObject> enemies = new List<GameObject>();
 
         float budgetForWave = budget.Calculate(wave, 0);
@@ -59,17 +70,21 @@ public class EnemySpawner : MonoBehaviour
             enemies.Add(enemyPrefab[index]);
             budgetForWave -= enemyPrefab[index].GetComponent<Enemy>().budgetValue;
         }
-        
-		StartCoroutine(SpawnEnemiesTimer(enemies, CalculateDeathPercentages(), wave, rate));
+
+        currentWave.waveNumber = wave;
+        currentWave.enemies = enemies;
+        currentWave.resistPercentages = CalculateDeathPercentages();
+        currentWave.numEnemiesPerConveyor = (int)rate;
+		//StartCoroutine(SpawnEnemiesTimer(enemies, CalculateDeathPercentages(), wave, rate));
 	}
 
-    public float[] CalculateDeathPercentages()
+    public List<float> CalculateDeathPercentages()
     {
-        float[] temp = new float[deathsInPrevWave.Length];
+        List<float> temp = new List<float>();
 
-        for (int index = 0; index < temp.Length; ++index)
+        for (int index = 0; index < deathsInPrevWave.Length; ++index)
         {
-            temp[index] = deathsInPrevWave[index] / totalDeathsInPrevWave;
+            temp.Add(deathsInPrevWave[index] / totalDeathsInPrevWave);
 
             //reset deaths
             deathsInPrevWave[index] = 0;
@@ -84,6 +99,69 @@ public class EnemySpawner : MonoBehaviour
     {
         totalDeathsInPrevWave++;
         deathsInPrevWave[(int)deadEnemy.finalBlowDamageType]++;
+    }
+
+    public void SpawnEnemiesOnPulse (PulseData pd)
+    {
+        if(currentWave.enemies.Count > 0)
+        {
+            GameManager.gm.enemies.Add(CreateEnemy());
+        }
+    }
+  
+    public Enemy CreateEnemy()
+    {
+        float horizOffset = 0;
+
+        if (Random.value > 0.5f)
+        {
+            horizOffset = -0.2f;
+        }
+        else
+        {
+            horizOffset = 0.2f;
+        }
+
+        float vertOffset = 0;
+
+        if (Random.value > 0.5f)
+        {
+            vertOffset = -0.2f;
+        }
+        else
+        {
+            vertOffset = 0.2f;
+        }
+
+        //Instantiate the enemy.
+        GameObject enemy = Instantiate(currentWave.enemies[0], transform.position + new Vector3(vertOffset, 0, horizOffset), Quaternion.identity, enemyParentObject);
+        currentWave.enemies.RemoveAt(0);
+        Enemy enemyScript = enemy.GetComponent<Enemy>();
+
+        //Set values.
+        enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
+        enemyScript.curConveyorBelt = spawningBelt;
+
+        enemyScript.maxHealth = (int)HealthStatCalcs.Calculate(currentWave.waveNumber, (int)enemyScript.type);
+        enemyScript.curHealth = enemyScript.maxHealth;
+
+        float randomNumber = Random.value;
+        float resistanceVal = 0;
+
+        for (int i = 0; i < currentWave.resistPercentages.Count; ++i)
+        {
+            resistanceVal += currentWave.resistPercentages[i];
+
+            if (randomNumber < resistanceVal)
+            {
+                enemyScript.resistType = (DamageType)i;
+                break;
+            }
+        }
+
+        enemyScript.resistValue = (int)Mathf.Clamp(DamageResistStatCalcs.Calculate(currentWave.waveNumber, (int)enemyScript.type), 0, 100);
+
+        return enemyScript;
     }
 
 	IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, int waveNum,  float rate)
