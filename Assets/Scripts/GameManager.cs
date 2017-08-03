@@ -4,6 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class PulseHandler
+{
+    public float timeBetweenPulses = 0.666666f;
+    private float prevPulse = 0;
+
+    public void Update()
+    {
+        if(prevPulse + timeBetweenPulses < Time.timeSinceLevelLoad)
+        {
+            PulseData pd = new PulseData();
+            GlobalEvents.OnPulse.Invoke(pd);
+        }
+    }
+}
+
 public class GameManager : MonoBehaviour 
 {
 	public GameState curGameState;
@@ -47,8 +63,9 @@ public class GameManager : MonoBehaviour
     public float starTotal; //total stars per level
 
     public Text starText; //textbox to show score
-    
 
+    //Pulse
+    public PulseHandler pulse;
 
 
     void Awake ()
@@ -80,6 +97,8 @@ public class GameManager : MonoBehaviour
 
     void Update ()
     {
+        pulse.Update();
+
 		if(curGameState == GameState.WaveActive)
 		{
 			waveTime += Time.deltaTime;

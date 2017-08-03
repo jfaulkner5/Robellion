@@ -8690,6 +8690,8 @@ MonoBehaviour:
   starScore: 0
   starTotal: 5
   starText: {fileID: 678519105}
+  pulse:
+    timeBetweenPulses: 0.666666
 --- !u!4 &1224538435
 Transform:
   m_ObjectHideFlags: 0
