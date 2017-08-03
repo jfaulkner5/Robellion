@@ -24,7 +24,7 @@ public class ConveyorBelt : MonoBehaviour
 
     //Returns the position that the enemy needs to move to on the next conveyor belt.
     //Position also has the enemy's horizontal offset based on the conveyor belt orientation.
-    public Vector3 GetNextConveyorBeltPosition (float enemyHorizontalOffset)
+    public Vector3 GetNextConveyorBeltPosition (Vector3 relativeToConveyor, Enemy enemy)
     {
         Vector3 pos = nextConveyorBelt.transform.position;  //Set a base position for the next pos without the added offset.
 
@@ -34,11 +34,11 @@ public class ConveyorBelt : MonoBehaviour
             //Is the current conveyor belt moving along the X axis and the next one moving along the Z axis?
             if (axisOrientation == AxisOrientation.X && nextConveyorBelt.axisOrientation == AxisOrientation.Z)
             {
-				pos = new Vector3(pos.x - enemyHorizontalOffset, pos.y, pos.z + enemyHorizontalOffset);
+				pos += new Vector3(-relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
             }
             else
             {
-				pos = new Vector3(pos.x - enemyHorizontalOffset, pos.y, pos.z + enemyHorizontalOffset);
+				pos += new Vector3(-relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
             }
         }
         else
@@ -46,11 +46,11 @@ public class ConveyorBelt : MonoBehaviour
             //Is the current conveyor belt moving along the X axis?
             if (axisOrientation == AxisOrientation.X)
             {
-                pos = new Vector3(pos.x, pos.y, pos.z + enemyHorizontalOffset);
+                pos += relativeToConveyor;
             }
             else
             {
-                pos = new Vector3(pos.x - enemyHorizontalOffset, pos.y, pos.z);
+                pos += relativeToConveyor;
             }
         }
 

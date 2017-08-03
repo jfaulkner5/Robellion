@@ -24,43 +24,20 @@ public class Enemy : MonoBehaviour
     public ConveyorBelt curConveyorBelt;
     private Vector3 positionToMoveTo;               //The position in the middle of the next conveyor belt.
     public float horizontalOffsetOnConveyorBelt;    //The horizontal offset of the enemy on the conveyor belt.
+    public Vector3 relativeToConveyorBelt;          //Position that the enemy is relative to the conveyor belt.
 
 	//Components
-	public GameObject model;
-	public MeshRenderer[] mr;
-
+	public MeshRenderer[] mr;                       //Mesh Renderer components of all models attached to the enemy.
 
     //how much this takes off of the total budget for the wave
     public float budgetValue;
 
 	//Effects
 	public List<EnemyEffect> curEffects = new List<EnemyEffect>();
-
-    void Start ()
-	{
-		positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
-	}
+    private bool flashingColour = false;
 
     void Update ()
     {
-        //If the enemy is at the positionToMoveTo, then get the next position. Otherwise, move the enemy to that position.
-        /*if(Vector3.Distance(transform.position, positionToMoveTo) < 0.01f)
-        {
-			if(!curConveyorBelt.nextConveyorBelt)
-			{
-				GetToEndOfPath();
-			}
-			else
-			{
-            	positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
-				transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
-			}
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
-        }*/
-
 		if(curEffects.Count > 0)
 		{
 			for(int x = 0; x < curEffects.Count; ++x)
@@ -104,19 +81,25 @@ public class Enemy : MonoBehaviour
             CheckDamageParticleEffects();
         }
 
-		if(dmgType == DamageType.Acid)
-		{
-			StartCoroutine(PoisonFlash());
-		}
-		else
-		{
-			StartCoroutine(DamageFlash());
-		}
+        if(!flashingColour)
+        {
+            if (dmgType == DamageType.Acid)
+            {
+                StartCoroutine(PoisonFlash());
+            }
+            else
+            {
+                StartCoroutine(DamageFlash());
+            }
+        }
     }
 
+    //Flash the enemy red.
 	IEnumerator DamageFlash ()
 	{
 		Color startColour = mr[0].material.color;
+
+        flashingColour = true;
 
 		for(int x = 0; x < mr.Length; ++x)
 			mr[x].material.color = Color.red;
@@ -125,11 +108,16 @@ public class Enemy : MonoBehaviour
 
 		for(int x = 0; x < mr.Length; ++x)
 			mr[x].material.color = startColour;
+
+        flashingColour = false;
 	}
 
+    //Flash the enemy green.
 	IEnumerator PoisonFlash ()
 	{
 		Color startColour = mr[0].material.color;
+
+        flashingColour = true;
 
 		for(int x = 0; x < mr.Length; ++x)
 			mr[x].material.color = Color.green;
@@ -138,23 +126,26 @@ public class Enemy : MonoBehaviour
 
 		for(int x = 0; x < mr.Length; ++x)
 			mr[x].material.color = startColour;
+
+        flashingColour = false;
 	}
 
     public void MoveOnPulse (ConveyorBelt nextConveyorBelt)
     {
-        positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
+        positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(relativeToConveyorBelt, this);
         StartCoroutine(MoveToNextConveyorBelt());
+        Debug.Log(transform.position + ", " + positionToMoveTo);
     }
 
     IEnumerator MoveToNextConveyorBelt ()
     {
         while(Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, 5.0f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, Time.deltaTime);
             yield return null;
         }
 
-        transform.position = positionToMoveTo;
+        //transform.position = positionToMoveTo;
     }
 
     //This function gets called when the enemy's health is less than or equals to 0.

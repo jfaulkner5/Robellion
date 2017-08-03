@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class PulseHandler
 {
-    public float timeBetweenPulses = 0.666666f;
+    public float timeBetweenPulses = 1.5f;
     private float prevPulse = 0;
 
     public void Update()
@@ -16,6 +16,7 @@ public class PulseHandler
         {
             PulseData pd = new PulseData();
             GlobalEvents.OnPulse.Invoke(pd);
+            prevPulse = Time.timeSinceLevelLoad;
         }
     }
 }

@@ -111,35 +111,21 @@ public class EnemySpawner : MonoBehaviour
   
     public Enemy CreateEnemy()
     {
-        float horizOffset = 0;
+        Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
-        if (Random.value > 0.5f)
-        {
-            horizOffset = -0.2f;
-        }
-        else
-        {
-            horizOffset = 0.2f;
-        }
+        if (offset.x > 0.0f) { offset.x = 0.2f; }
+        else { offset.x = -0.2f; }
 
-        float vertOffset = 0;
-
-        if (Random.value > 0.5f)
-        {
-            vertOffset = -0.2f;
-        }
-        else
-        {
-            vertOffset = 0.2f;
-        }
+        if (offset.z > 0.0f) { offset.z = 0.2f; }
+        else { offset.z = -0.2f; }
 
         //Instantiate the enemy.
-        GameObject enemy = Instantiate(currentWave.enemies[0], transform.position + new Vector3(vertOffset, 0, horizOffset), Quaternion.identity, enemyParentObject);
+        GameObject enemy = Instantiate(currentWave.enemies[0], transform.position + offset, Quaternion.identity, enemyParentObject);
         currentWave.enemies.RemoveAt(0);
         Enemy enemyScript = enemy.GetComponent<Enemy>();
 
         //Set values.
-        enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
+        enemyScript.relativeToConveyorBelt = offset;
         enemyScript.curConveyorBelt = spawningBelt;
 
         enemyScript.maxHealth = (int)HealthStatCalcs.Calculate(currentWave.waveNumber, (int)enemyScript.type);
@@ -168,23 +154,20 @@ public class EnemySpawner : MonoBehaviour
 	{
 		for(int index = 0; index < enemies.Count; ++index)
 		{
-            float horizOffset = 0;
+            Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
-            if(Random.value > 0.5f)
-            {
-                horizOffset = -0.2f;
-            }
-            else
-            {
-                horizOffset = 0.2f;
-            }
+            if(offset.x > 0.0f) { offset.x = 0.2f; }
+            else { offset.x = -0.2f; }
+
+            if(offset.z > 0.0f) { offset.z = 0.2f; }
+            else { offset.z = -0.2f; }
 
             //Instantiate the enemy.
-            GameObject enemy = Instantiate(enemies[index], transform.position + new Vector3(0, 0, horizOffset), Quaternion.identity, enemyParentObject);
+            GameObject enemy = Instantiate(enemies[index], transform.position + offset, Quaternion.identity, enemyParentObject);
 			Enemy enemyScript = enemy.GetComponent<Enemy>();
 
             //Set values.
-            enemyScript.horizontalOffsetOnConveyorBelt = horizOffset;
+            enemyScript.relativeToConveyorBelt = offset;
 			enemyScript.curConveyorBelt = spawningBelt;
 
             enemyScript.maxHealth = (int)HealthStatCalcs.Calculate(waveNum, (int)enemyScript.type);
