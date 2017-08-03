@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
     public float waveTime; 
     public float timer;
 	public int wavesToWin;
-	public bool isSurvival; // determines survive mode
 
     public static GameManager gm;
 	public EnemySpawner enemySpawner;
@@ -55,15 +54,7 @@ public class GameManager : MonoBehaviour
 	//UI
 	public GameUI ui;
 
-	public GameObject pauseMenu;
-	public GameObject winMenu;
-	public GameObject textHUD;
-
-    //Star System
-    public float starScore; //stores the final score for lvl
-    public float starTotal; //total stars per level
-
-    public Text starText; //textbox to show score
+    
 
     //Pulse
     public PulseHandler pulse;
@@ -90,7 +81,7 @@ public class GameManager : MonoBehaviour
 		curGameState = GameState.WaveDone;
 		timer = timeBetweenWaves;
 		canBuildOrModify = true;
-		isSurvival = false;
+		ui.isSurvival = false;
 		Time.timeScale = 1;
 
 
@@ -134,39 +125,7 @@ public class GameManager : MonoBehaviour
 			}
 			else
 			{
-				Time.timeScale = 0;	
-				winMenu.SetActive (true);
-				textHUD.SetActive (false);
-
-                //score calculator
-                float starScore = health / starTotal;
-                Debug.Log("health: " + health);
-                Debug.Log("starScore: " + starScore);
-                Debug.Log("total stars: " + starTotal);                ;
-                starText.text = "you have scored " + starScore + " out of a possible " + starTotal + " total stars";
-
-			}
-		}
-
-		//Pause menu key - checks if paused or unpaused
-		if (Input.GetKeyDown ("escape"))
-		{
-			if (pauseMenu.activeSelf)
-			{
-				//Unpauses the game
-				Debug.Log ("Pause menu has being toggled OFF");
-				Time.timeScale = 1;
-				pauseMenu.SetActive(false);
-				textHUD.SetActive (true);
-
-			}
-			else
-			{
-				//Pauses the game
-				Debug.Log ("Pause menu has being toggled ON");
-				Time.timeScale = 0;
-				textHUD.SetActive (false);
-				pauseMenu.SetActive(true);
+                ui.WinMenu(health);	
 			}
 		}
 
@@ -213,26 +172,6 @@ public class GameManager : MonoBehaviour
 	public void RemoveScrap (int amount)
 	{
 		curScrap -= amount;
-	}
-
-	//Pause menu buttons
-	public void QuitLevel()
-	{
-		Time.timeScale = 1;
-		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-	}
-	public void ButtonSurvival()
-	{
-		winMenu.SetActive (false);
-		Time.timeScale = 1;
-		textHUD.SetActive (true);
-		isSurvival = true; //informs win check that survival mode is active
-	}
-	public void ResumeLevel()
-	{
-		textHUD.SetActive (true);
-		Time.timeScale = 1;
-		pauseMenu.SetActive(false);
 	}
 }
 
