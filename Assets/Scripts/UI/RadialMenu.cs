@@ -182,15 +182,19 @@ public class RadialMenu : MonoBehaviour
 		foreach(Button button in towerPlatformMenuButtons)
 		{
 			button.onClick.RemoveAllListeners();
-			button.onClick.AddListener(DisableRadialMenu);
 		}
 
-		towerPlatformMenuButtons[0].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.RobotArm));
+        towerPlatformMenuButtons[0].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.RobotArm));
 		towerPlatformMenuButtons[1].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Crusher));
 		towerPlatformMenuButtons[2].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Lazer));
 		towerPlatformMenuButtons[3].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.AcidEtcher));
 		towerPlatformMenuButtons[4].onClick.AddListener(() => towerPlatform.BuildTower(TowerType.Drill));
-	}
+
+        foreach (Button button in towerPlatformMenuButtons)
+        {
+            button.onClick.AddListener(DisableRadialMenu);
+        }
+    }
 
 	//Sets the existing tower buttons to disable when pressed.
 	//Sets the upgrade button to upgrade the tower when pressed.
@@ -200,12 +204,16 @@ public class RadialMenu : MonoBehaviour
 		foreach(Button button in existingTowerMenuButtons)
 		{
 			button.onClick.RemoveAllListeners();
-			button.onClick.AddListener(DisableRadialMenu);
 		}
 
 		existingTowerMenuButtons[0].onClick.AddListener(() => tower.Upgrade());
 		existingTowerMenuButtons[1].onClick.AddListener(() => tower.Sell());
-	}
+
+        foreach (Button button in existingTowerMenuButtons)
+        {
+            button.onClick.AddListener(DisableRadialMenu);
+        }
+    }
 
 	//Makes sure that the radial menu doesn't go off screen.
 	void FixRadialMenuPosition ()

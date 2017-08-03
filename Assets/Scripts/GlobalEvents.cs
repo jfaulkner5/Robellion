@@ -21,4 +21,5 @@ public static class GlobalEvents {
     public static UnityEventScrapPickup OnScrapPickup = new UnityEventScrapPickup();
 
     public static UnityEventEnemyDeathEvent OnEnemyDeath = new UnityEventEnemyDeathEvent();
+    
 }

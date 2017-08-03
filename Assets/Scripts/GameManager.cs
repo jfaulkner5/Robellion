@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using NUnit.Framework.Constraints;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour 
