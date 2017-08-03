@@ -19,6 +19,8 @@ public class ConveyorBelt : MonoBehaviour
     public UnityEventEnemyEvent OnEnemyEnter;
     public UnityEventEnemyEvent OnEnemyLeave;
 
+    void OnEnable () { GlobalEvents.OnPulse.AddListener(OnPulse); } 
+    void OnDisable () { GlobalEvents.OnPulse.RemoveListener(OnPulse); }
 
     //Returns the position that the enemy needs to move to on the next conveyor belt.
     //Position also has the enemy's horizontal offset based on the conveyor belt orientation.
@@ -54,6 +56,22 @@ public class ConveyorBelt : MonoBehaviour
 
         return pos;
     }
+
+    //Called every pulse.
+    void OnPulse (PulseData pd)
+    {
+        if(curEnemies.Count > 0)
+           MoveEnemiesForward();
+    }
+
+    //Moves the enemies forward 1 conveyor belt. Called every pulse.
+    void MoveEnemiesForward ()
+    {
+        for(int x = 0; x < curEnemies.Count; ++x)
+        {
+            curEnemies[x].MoveOnPulse(nextConveyorBelt);
+        }
+    } 
 
     void OnTriggerEnter (Collider col)
     {

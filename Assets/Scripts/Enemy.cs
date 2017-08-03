@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     void Update ()
     {
         //If the enemy is at the positionToMoveTo, then get the next position. Otherwise, move the enemy to that position.
-        if(Vector3.Distance(transform.position, positionToMoveTo) < 0.01f)
+        /*if(Vector3.Distance(transform.position, positionToMoveTo) < 0.01f)
         {
 			if(!curConveyorBelt.nextConveyorBelt)
 			{
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, curConveyorBelt.speed * Time.deltaTime);
-        }
+        }*/
 
 		if(curEffects.Count > 0)
 		{
@@ -139,6 +139,23 @@ public class Enemy : MonoBehaviour
 		for(int x = 0; x < mr.Length; ++x)
 			mr[x].material.color = startColour;
 	}
+
+    public void MoveOnPulse (ConveyorBelt nextConveyorBelt)
+    {
+        positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(horizontalOffsetOnConveyorBelt);
+        StartCoroutine(MoveToNextConveyorBelt());
+    }
+
+    IEnumerator MoveToNextConveyorBelt ()
+    {
+        while(Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, 5.0f * Time.deltaTime);
+            yield return null;
+        }
+
+        transform.position = positionToMoveTo;
+    }
 
     //This function gets called when the enemy's health is less than or equals to 0.
     //It destroys the enemy, as well as removing it from lists.

@@ -225,6 +225,7 @@ MonoBehaviour:
   lazerAttack: {fileID: 8300000, guid: 150f95317f8d36a42823b1b4eb200ba7, type: 3}
   pickUp: {fileID: 8300000, guid: 96dbf052421ac824fa4dfe1aac169260, type: 3}
   towerBuild: {fileID: 8300000, guid: fdd60c99e99278349a31b6b1643550fe, type: 3}
+  numOfAudioClips: 9
 --- !u!4 &9175744
 Transform:
   m_ObjectHideFlags: 0
@@ -679,16 +680,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyParentObject: {fileID: 1472427233}
   enemyPrefab:
-  - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-  - {fileID: 1918211682277368, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-  - {fileID: 1601336021243516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+  - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+  - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+  - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
   spawningBelt: {fileID: 506956397}
   bossWaves: 
   budget:
-    waveValueMultiplier: 10
+    baseValue: 1
+    beforeExponentAddition: 0
     exponent: 1.5
-    waveValueAdditive: 50
-    calculatedBudget: 0
+    afterExponentAddition: 0
+    enemyTypeMultiplier: 0
+    calculatedValue: 0
   deathsInPrevWave:
   - 0
   - 0
@@ -701,12 +704,14 @@ MonoBehaviour:
     exponent: 0
     afterExponentAddition: 0
     enemyTypeMultiplier: 0
+    calculatedValue: 0
   DamageResistStatCalcs:
     baseValue: 0
     beforeExponentAddition: 0
     exponent: 0
     afterExponentAddition: 0
     enemyTypeMultiplier: 0
+    calculatedValue: 0
 --- !u!23 &574892433
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1706,23 +1711,31 @@ MonoBehaviour:
   health: 10
   curScrap: 500
   curWave: 0
+  totalWave: 0
   waveTime: 0
   timer: 0
   wavesToWin: 10
+  isSurvival: 0
   enemySpawner: {fileID: 574892432}
   enemies: []
   enemiesLeft: 0
   towers: []
   towerPrefabs:
   - {fileID: 1289604252842244, guid: 74cde80bdd77cd74e8b03e1ef3b9e24c, type: 2}
-  - {fileID: 1994009868903188, guid: 02d182d5eb8499948bc6f73809b19835, type: 2}
-  - {fileID: 1444622926472734, guid: 40e9558482787b540821883f26a4dac0, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1142497269339264, guid: 0ba56b036ffc4f14791849903a797666, type: 2}
   - {fileID: 1084575509632190, guid: c508c34d1e7ff474cb92c0b5054ae6e2, type: 2}
   canBuildOrModify: 0
   basicTowerCost: 200
   timeBetweenWaves: 6
   ui: {fileID: 1605843510}
+  pauseMenu: {fileID: 0}
+  winMenu: {fileID: 0}
+  textHUD: {fileID: 0}
+  starScore: 0
+  starTotal: 0
+  starText: {fileID: 0}
 --- !u!4 &1642473961
 Transform:
   m_ObjectHideFlags: 0
