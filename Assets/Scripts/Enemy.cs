@@ -195,7 +195,7 @@ public class Enemy : MonoBehaviour
 	{
 		GameManager.gm.enemies.Remove(this);
 		GameManager.gm.health--;
-		CameraShake.cs.Shake(0.15f, 0.1f, 35.0f);
+		CameraShake.cs.Shake(0.15f, 0.5f, 35.0f);
 		Destroy(gameObject);
 	}
 
