@@ -33,4 +33,5 @@ public static class GlobalEvents {
     public static UnityEventEnemyDeathEvent OnEnemyDeath = new UnityEventEnemyDeathEvent();
 
     public static UnityEventPulseEvent OnPulse = new UnityEventPulseEvent();
+    public static UnityEventPulseEvent OnAlternatePulse = new UnityEventPulseEvent();
 }

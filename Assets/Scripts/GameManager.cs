@@ -10,12 +10,23 @@ public class PulseHandler
     public float timeBetweenPulses = 1.5f;
     private float prevPulse = 0;
 
+    //true = reg pulse
+    private bool regOrAltPulse = true;
+
     public void Update()
     {
         if(prevPulse + timeBetweenPulses < Time.timeSinceLevelLoad)
         {
             PulseData pd = new PulseData();
-            GlobalEvents.OnPulse.Invoke(pd);
+            if(regOrAltPulse)
+            {
+                GlobalEvents.OnPulse.Invoke(pd);
+            }
+            else
+            {
+                GlobalEvents.OnAlternatePulse.Invoke(pd);
+            }
+            regOrAltPulse = !regOrAltPulse;
             prevPulse = Time.timeSinceLevelLoad;
         }
     }
@@ -116,7 +127,7 @@ public class GameManager : MonoBehaviour
         }
 
 		//WIN if check 
-		if(enemiesLeft == 0 && curWave == totalWave && isSurvival == false)
+		if(enemiesLeft == 0 && curWave == totalWave /* && isSurvival == false */)
 		{
 			//confirms that it isn't between waves and survival mode isn't on
 			if(curGameState == GameState.WaveDone)
