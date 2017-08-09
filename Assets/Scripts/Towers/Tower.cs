@@ -179,7 +179,7 @@ public class Tower : MonoBehaviour
 	public void Sell ()
 	{
 		GameManager.gm.towers.Remove(this);
-		GameManager.gm.AddScrap(50);
+		GameManager.gm.AddScrap(ScrapValues.GetTowerSellPrice(type));
 		towerPlatform.hasTower = false;
 		Destroy(gameObject);
 	}
