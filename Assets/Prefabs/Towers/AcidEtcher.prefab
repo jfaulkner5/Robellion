@@ -20,8 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4168342159984960}
   - component: {fileID: 65698214310792386}
-  - component: {fileID: 114956528548047612}
-  - component: {fileID: 114115002835035128}
+  - component: {fileID: 114308346140645306}
   m_Layer: 9
   m_Name: AcidEtcher
   m_TagString: Untagged
@@ -155,7 +154,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0.4, z: 0}
---- !u!114 &114115002835035128
+--- !u!114 &114308346140645306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -163,33 +162,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1142497269339264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa41f459f4d0c24b9be7a8b65db8c93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 114956528548047612}
-  attackRate: 1
-  acidEffect: {fileID: 198357098130846058}
---- !u!114 &114956528548047612
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1142497269339264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4ee825ac2a23c47b27299fea1b6a1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3583ada8b73ef5f4fbad401f8dcb921a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
   damType: 3
   range: 1
-  attack:
-    attackAnimation: {fileID: 0}
-    timeBetweenAttacks: 0
-    damageMin: 0
-    damageMax: 0
-    attackParticleEffect: {fileID: 0}
-    timer: 1000
+  damage: 1
+  pulsesBetweenAttacks: 2
   enemiesWithinRange: []
   target: {fileID: 0}
   canAttack: 1
@@ -198,6 +178,7 @@ MonoBehaviour:
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23065132377029020}
+  acidEffect: {fileID: 198357098130846058}
 --- !u!198 &198357098130846058
 ParticleSystem:
   m_ObjectHideFlags: 1

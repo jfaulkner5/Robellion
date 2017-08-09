@@ -23,7 +23,10 @@ public class Tower : MonoBehaviour
     //Range In Game Tiles min 1 max 3
     [Range(1,3)] public int range;
 
-    public AttackData attack;
+    //public AttackData attack;
+    public int damage;
+    public int pulsesBetweenAttacks;
+    private int pulseTimer;
 
     //Enemies Within Range must be sorted by closest to the exit
     public List<Enemy> enemiesWithinRange = new List<Enemy>();
@@ -37,7 +40,19 @@ public class Tower : MonoBehaviour
 
 	public TowerPlatform towerPlatform; //Tower platform that this tower is on.
 
-	public MeshRenderer[] mr;	//Array of all model mesh renderers.
+	public MeshRenderer[] mr;   //Array of all model mesh renderers.
+
+    void OnEnable()
+    {
+        GlobalEvents.OnPulse.AddListener(OnPulse);
+        GlobalEvents.OnAlternatePulse.AddListener(OnAlternatePulse);
+    }
+
+    void OnDisable()
+    {
+        GlobalEvents.OnPulse.RemoveListener(OnPulse);
+        GlobalEvents.OnAlternatePulse.RemoveListener(OnAlternatePulse);
+    }
 
     void Start()
     {
@@ -48,52 +63,76 @@ public class Tower : MonoBehaviour
 
 	void Update () 
 	{
-        attack.timer += Time.deltaTime;
+			
+	}
 
-        if(!enemiesWithinRange.Contains(target))
+    public virtual void OnPulse(PulseData pd)
+    {
+        if (lr)
+            lr.enabled = false;
+    }
+
+    public virtual void OnAlternatePulse(PulseData pd)
+    {
+        pulseTimer++;
+        if (CanAttack())
+        {
+            GetTarget();
+            if (target != null)
+            {
+                if (lr)
+                {
+                    lr.enabled = true;
+                    lr.SetPosition(1, target.transform.position);
+                }
+
+                if (rotateToTarget)
+                    RotateToTarget();
+
+                Attack();
+            }
+        }
+        else
+        {
+            Reloading();
+        }
+    }
+
+    protected virtual void Reloading()
+    {
+
+    }
+
+    private void RotateToTarget()
+    {
+        Vector3 lookPos = target.transform.position - transform.position;
+        lookPos.y = 0;
+
+        Quaternion rot = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5.0f);
+    }
+
+    private void GetTarget()
+    {
+        if (!enemiesWithinRange.Contains(target))
         {
             target = null;
         }
 
-        for(int index = 0; index < enemiesWithinRange.Count; ++index)
+        for (int index = 0; index < enemiesWithinRange.Count; ++index)
         {
-            if(enemiesWithinRange[index].type == EnemyType.TowerAttraction)
+            if (enemiesWithinRange[index].type == EnemyType.TowerAttraction)
             {
                 target = enemiesWithinRange[index];
             }
         }
 
-        if(target == null && enemiesWithinRange.Count > 0)
+        if (target == null && enemiesWithinRange.Count > 0)
         {
             target = enemiesWithinRange[0];
         }
+    }
 
-        if(target != null)
-        {
-			if(type != TowerType.AcidEtcher)
-            	Attack(target);
-
-			if(lr)
-			{
-	            lr.enabled = true;
-	            lr.SetPosition(1, target.transform.position);
-			}
-
-			if(rotateToTarget)
-			{
-				Vector3 lookPos = target.transform.position - transform.position;
-				lookPos.y = 0;
-
-				Quaternion rot = Quaternion.LookRotation(lookPos);
-				transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5.0f);
-			}
-        }
-        else
-        {
-			if(lr)
-            	lr.enabled = false;
-        }
-	}
 
     public void AddEnemyToRange (EnemyData enemyInRange)
     {
@@ -105,31 +144,36 @@ public class Tower : MonoBehaviour
         enemiesWithinRange.Remove(enemyOutOfRange.enemyClassData);
     }
 
-    protected virtual void Attack (Enemy target)
+    protected virtual bool CanAttack()
     {
-		if(attack.canAttack() && canAttack)
+        return pulseTimer >= pulsesBetweenAttacks;
+    }
+
+    protected void Attack ()
+    {
+		if(canAttack && CanAttack())
         {
-            switch (type)
-            {
-                case TowerType.AcidEtcher:
-                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackAcid();
-                    break;
-                case TowerType.Crusher:
-                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackCrusher();
-                    break;
-                case TowerType.Drill:
-                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackDrill();
-                    break;
-                case TowerType.Lazer:
-                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
-                    break;
-                case TowerType.RobotArm:
-                    GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackArm();
-                    break;
-            }
-            
-			target.TakeDamage(attack.damageMin, damType);	//Random.Range(attack.damageMin, attack.damageMax));
+            PlayAttackSound();
+            AttackAnimation();
+
+            AttackDamage();
+            pulseTimer = 0;
         }
+    }
+
+    protected virtual void AttackAnimation()
+    {
+
+    }
+
+    protected virtual void AttackDamage()
+    {
+        target.TakeDamage(damage, damType);
+    }
+
+    protected virtual void PlayAttackSound()
+    {
+
     }
 
 	public void Sell ()
@@ -171,40 +215,40 @@ public class Tower : MonoBehaviour
 
 public enum TowerType { RobotArm = 0, Crusher = 1, Lazer = 2, AcidEtcher = 3, Drill = 4 }
 
-/// <summary>
-/// 
-/// </summary>
-[System.Serializable]
-public class AttackData
-{
-    public AnimationClip attackAnimation;
-    public float timeBetweenAttacks;
+///// <summary>
+///// 
+///// </summary>
+//[System.Serializable]
+//public class AttackData
+//{
+//    public AnimationClip attackAnimation;
+//    public float timeBetweenAttacks;
 
-    public int damageMin;
-    public int damageMax;
+//    public int damageMin;
+//    public int damageMax;
 
-    //Particle Effects
-    public ParticleSystem attackParticleEffect;
+//    //Particle Effects
+//    public ParticleSystem attackParticleEffect;
 
-    public float timer = 1000;
+//    public float timer = 1000;
 
-    public bool canAttack()
-    {
-        float totalTime = timeBetweenAttacks;
+//    public bool canAttack()
+//    {
+//        float totalTime = timeBetweenAttacks;
 
-        if(attackAnimation != null)
-        {
-            totalTime += attackAnimation.length;
-        }
+//        if(attackAnimation != null)
+//        {
+//            totalTime += attackAnimation.length;
+//        }
 
-        if(timer > totalTime)
-        {
-            timer = 0;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-}
+//        if(timer > totalTime)
+//        {
+//            timer = 0;
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+//}

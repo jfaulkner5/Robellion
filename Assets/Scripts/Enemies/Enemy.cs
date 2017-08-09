@@ -168,6 +168,8 @@ public class Enemy : MonoBehaviour
         GlobalEvents.OnEnemyDeath.Invoke(death);
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
+        curConveyorBelt.curEnemies.Remove(this);
+
 		GameManager.gm.enemies.Remove(this);
 		GameManager.gm.AddScrap(20);
 
