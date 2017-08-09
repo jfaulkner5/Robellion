@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142497269339264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.919, y: 0.79999995, z: -5.040849}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4126468988249406}
@@ -174,7 +174,6 @@ MonoBehaviour:
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 0
-  lr: {fileID: 0}
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23065132377029020}

@@ -35,10 +35,11 @@ public class Tower : MonoBehaviour
 
 	public bool canAttack = true;
 	public bool rotateToTarget;
+    protected Vector3 lookTarget;
+    protected Vector3 baseLookTarget;
 
-    public LineRenderer lr;
 
-	public TowerPlatform towerPlatform; //Tower platform that this tower is on.
+    public TowerPlatform towerPlatform; //Tower platform that this tower is on.
 
 	public MeshRenderer[] mr;   //Array of all model mesh renderers.
 
@@ -57,19 +58,23 @@ public class Tower : MonoBehaviour
     void Start()
     {
         GlobalEvents.OnEnemyDeath.AddListener(RemoveEnemyFromRange);
-		if(lr)
-       		lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
     }
 
-	void Update () 
+    public void setLookTargets(Vector3 look)
+    {
+        baseLookTarget = look;
+        lookTarget = look;
+    }
+
+    void Update () 
 	{
-			
+        if(rotateToTarget && lookTarget != Vector3.zero)
+            RotateToTarget(lookTarget);
 	}
 
     public virtual void OnPulse(PulseData pd)
     {
-        if (lr)
-            lr.enabled = false;
+        lookTarget = baseLookTarget;
     }
 
     public virtual void OnAlternatePulse(PulseData pd)
@@ -80,14 +85,8 @@ public class Tower : MonoBehaviour
             GetTarget();
             if (target != null)
             {
-                if (lr)
-                {
-                    lr.enabled = true;
-                    lr.SetPosition(1, target.transform.position);
-                }
-
                 if (rotateToTarget)
-                    RotateToTarget();
+                    lookTarget = target.transform.position;
 
                 Attack();
             }
@@ -100,17 +99,18 @@ public class Tower : MonoBehaviour
 
     protected virtual void Reloading()
     {
-
+        
     }
 
-    private void RotateToTarget()
+    protected void RotateToTarget(Vector3 t)
     {
-        Vector3 lookPos = target.transform.position - transform.position;
+        Vector3 lookPos = t - transform.position;
         lookPos.y = 0;
 
         Quaternion rot = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5.0f);
     }
+
 
     private void GetTarget()
     {

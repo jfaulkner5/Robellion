@@ -123,7 +123,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemy = Instantiate(currentWave.enemies[0], transform.position + offset, Quaternion.identity, enemyParentObject);
         currentWave.enemies.RemoveAt(0);
         Enemy enemyScript = enemy.GetComponent<Enemy>();
-
+        enemyScript.horizontalOffsetOnConveyorBelt = offset.z;
         //Set values.
         enemyScript.relativeToConveyorBelt = offset;
         enemyScript.curConveyorBelt = spawningBelt;

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4177666352000928}
   - component: {fileID: 120978845801145476}
   m_Layer: 9
-  m_Name: GameObject
+  m_Name: LineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342998910757672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.065187454, y: 1.662796, z: -8.06535}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4670058200091486}
@@ -243,11 +243,12 @@ MonoBehaviour:
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 0
-  lr: {fileID: 0}
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23297201707705956}
   - {fileID: 23984621953662778}
+  maxAttackNumber: 3
+  lr: {fileID: 120978845801145476}
 --- !u!120 &120978845801145476
 LineRenderer:
   m_ObjectHideFlags: 1

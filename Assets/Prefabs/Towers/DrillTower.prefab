@@ -94,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084575509632190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.573, y: 0.578, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4219959628526364}
@@ -165,14 +165,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   damType: 4
-  range: 1
+  range: 2
   damage: 1
   pulsesBetweenAttacks: 0
   enemiesWithinRange: []
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 1
-  lr: {fileID: 0}
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23945292693174338}
