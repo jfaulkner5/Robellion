@@ -139,13 +139,14 @@ public class Enemy : MonoBehaviour
 
     IEnumerator MoveToNextConveyorBelt ()
     {
-        while(Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, Time.deltaTime);
-            yield return null;
-        }
+        //while(Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
+        //{
+        //    transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, Time.deltaTime);
+        //    yield return null;
+        //}
 
-        //transform.position = positionToMoveTo;
+        transform.position = positionToMoveTo;
+        yield return null;
     }
 
     //This function gets called when the enemy's health is less than or equals to 0.

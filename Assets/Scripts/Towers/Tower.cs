@@ -48,7 +48,6 @@ public class Tower : MonoBehaviour
 
 	void Update () 
 	{
-        //enemiesWithinRange.RemoveAll(null);
         attack.timer += Time.deltaTime;
 
         if(!enemiesWithinRange.Contains(target))

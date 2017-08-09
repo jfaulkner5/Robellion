@@ -250,7 +250,9 @@ MonoBehaviour:
   rotateToTarget: 0
   lr: {fileID: 0}
   towerPlatform: {fileID: 0}
-  mr: []
+  mr:
+  - {fileID: 23297201707705956}
+  - {fileID: 23984621953662778}
 --- !u!120 &120978845801145476
 LineRenderer:
   m_ObjectHideFlags: 1

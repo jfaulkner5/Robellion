@@ -1767,11 +1767,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628,
     type: 2}
   m_PrefabInternal: {fileID: 302189977}
---- !u!1 &303899572 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1358914650771560, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c,
+--- !u!114 &303899573 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114754596525485154, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c,
     type: 2}
   m_PrefabInternal: {fileID: 618823228}
+  m_Script: {fileID: 11500000, guid: 6bd2b728dd9585f41b09c409f6d27538, type: 3}
 --- !u!1001 &305449216
 Prefab:
   m_ObjectHideFlags: 0
@@ -4626,16 +4627,21 @@ Prefab:
     - target: {fileID: 224857264925267648, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224857264925267648, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1358914650771560, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224857264925267648, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97aacdf7ce1245e4b8b3dca5fbabf92c, type: 2}
@@ -5213,11 +5219,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4636838220495742, guid: e7e427405a2d8444b9895846d8db2628,
     type: 2}
   m_PrefabInternal: {fileID: 663852709}
---- !u!1 &669389991 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1207611987509156, guid: 9089c458030908d40bb90917647aa257,
-    type: 2}
-  m_PrefabInternal: {fileID: 923429872}
 --- !u!224 &669389992 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224642988125991204, guid: 9089c458030908d40bb90917647aa257,
@@ -8669,7 +8670,6 @@ MonoBehaviour:
   waveTime: 0
   timer: 0
   wavesToWin: 0
-  isSurvival: 0
   enemySpawner: {fileID: 2037756953}
   enemies: []
   enemiesLeft: 0
@@ -8683,15 +8683,9 @@ MonoBehaviour:
   canBuildOrModify: 1
   basicTowerCost: 200
   timeBetweenWaves: 7
-  ui: {fileID: 0}
-  pauseMenu: {fileID: 1269601272}
-  winMenu: {fileID: 669389991}
-  textHUD: {fileID: 303899572}
-  starScore: 0
-  starTotal: 5
-  starText: {fileID: 678519105}
+  ui: {fileID: 303899573}
   pulse:
-    timeBetweenPulses: 0.666666
+    timeBetweenPulses: 1.5
 --- !u!4 &1224538435
 Transform:
   m_ObjectHideFlags: 0
@@ -9183,11 +9177,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224213118344481428, guid: b941285d82c484e48b5a727acced131b,
     type: 2}
   m_PrefabInternal: {fileID: 1260547128}
---- !u!1 &1269601272 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1120084240781440, guid: e8b133b6517401d43960c950c4475cf5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1784335092}
 --- !u!224 &1269601275 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224065811751971848, guid: e8b133b6517401d43960c950c4475cf5,

@@ -60,7 +60,8 @@ public class ConveyorBelt : MonoBehaviour
     //Called every pulse.
     void OnPulse (PulseData pd)
     {
-        if(curEnemies.Count > 0)
+        //the if statement is unnecesary?? bc the for loop would do this??
+        //if(curEnemies.Count > 0)
            MoveEnemiesForward();
     }
 
