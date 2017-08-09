@@ -9,19 +9,26 @@ public class LazerTower : Tower {
     public LineRenderer lr;
     private List<LineRenderer> lrs = new List<LineRenderer>();
 
-    public override void OnPulse(PulseData pd)
+    private void Awake()
     {
+        lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
         lr.enabled = false;
+    }
+
+    public override void OnAlternatePulse(PulseData pd)
+    {
+        base.OnAlternatePulse(pd);
+        StartCoroutine(DestroyLines());
+    }
+
+    IEnumerator DestroyLines()
+    {
+        yield return new WaitForSeconds(0.3f);
         for (int index = 0; index < lrs.Count; ++index)
         {
             Destroy(lrs[index].gameObject);
         }
         lrs.Clear();
-    }
-
-    private void Awake()
-    {
-        lr.SetPosition(0, transform.position + new Vector3(0, 0.5f, 0));
     }
 
     protected override void AttackDamage()
