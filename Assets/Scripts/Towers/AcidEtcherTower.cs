@@ -6,6 +6,12 @@ public class AcidEtcherTower : Tower {
 
     public ParticleSystem acidEffect;
 
+    private void Awake()
+    {
+        if (acidEffect.isPlaying)
+            acidEffect.Stop();
+    }
+
     public override void OnPulse(PulseData pd)
     {
         base.OnPulse(pd);

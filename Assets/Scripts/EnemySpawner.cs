@@ -105,7 +105,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if(currentWave.enemies.Count > 0)
         {
-            GameManager.gm.enemies.Add(CreateEnemy());
+            CreateEnemy();
         }
     }
   
@@ -150,49 +150,49 @@ public class EnemySpawner : MonoBehaviour
         return enemyScript;
     }
 
-	IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, int waveNum,  float rate)
-	{
-		for(int index = 0; index < enemies.Count; ++index)
-		{
-            Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
+	//IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, int waveNum,  float rate)
+	//{
+	//	for(int index = 0; index < enemies.Count; ++index)
+	//	{
+ //           Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
-            if(offset.x > 0.0f) { offset.x = 0.2f; }
-            else { offset.x = -0.2f; }
+ //           if(offset.x > 0.0f) { offset.x = 0.2f; }
+ //           else { offset.x = -0.2f; }
 
-            if(offset.z > 0.0f) { offset.z = 0.2f; }
-            else { offset.z = -0.2f; }
+ //           if(offset.z > 0.0f) { offset.z = 0.2f; }
+ //           else { offset.z = -0.2f; }
 
-            //Instantiate the enemy.
-            GameObject enemy = Instantiate(enemies[index], transform.position + offset, Quaternion.identity, enemyParentObject);
-			Enemy enemyScript = enemy.GetComponent<Enemy>();
+ //           //Instantiate the enemy.
+ //           GameObject enemy = Instantiate(enemies[index], transform.position + offset, Quaternion.identity, enemyParentObject);
+	//		Enemy enemyScript = enemy.GetComponent<Enemy>();
 
-            //Set values.
-            enemyScript.relativeToConveyorBelt = offset;
-			enemyScript.curConveyorBelt = spawningBelt;
+ //           //Set values.
+ //           enemyScript.relativeToConveyorBelt = offset;
+	//		enemyScript.curConveyorBelt = spawningBelt;
 
-            enemyScript.maxHealth = (int)HealthStatCalcs.Calculate(waveNum, (int)enemyScript.type);
-            enemyScript.curHealth = enemyScript.maxHealth;
+ //           enemyScript.maxHealth = (int)HealthStatCalcs.Calculate(waveNum, (int)enemyScript.type);
+ //           enemyScript.curHealth = enemyScript.maxHealth;
 
-            float randomNumber = Random.value;
-            float resistanceVal = 0; 
+ //           float randomNumber = Random.value;
+ //           float resistanceVal = 0; 
 
-            for(int i = 0; i < resistancePercentages.Length; ++i)
-            {
-                resistanceVal += resistancePercentages[i];
+ //           for(int i = 0; i < resistancePercentages.Length; ++i)
+ //           {
+ //               resistanceVal += resistancePercentages[i];
 
-                if (randomNumber < resistanceVal)
-                {
-                    enemyScript.resistType = (DamageType)i;
-                    break;
-                }
-            }
+ //               if (randomNumber < resistanceVal)
+ //               {
+ //                   enemyScript.resistType = (DamageType)i;
+ //                   break;
+ //               }
+ //           }
             
-            enemyScript.resistValue = (int)Mathf.Clamp(DamageResistStatCalcs.Calculate(waveNum, (int)enemyScript.type), 0, 100);
+ //           enemyScript.resistValue = (int)Mathf.Clamp(DamageResistStatCalcs.Calculate(waveNum, (int)enemyScript.type), 0, 100);
 
-            GameManager.gm.enemies.Add(enemyScript);
+ //           GameManager.gm.enemies.Add(enemyScript);
 
-			yield return new WaitForSeconds(rate);
-		}
-	}
+	//		yield return new WaitForSeconds(rate);
+	//	}
+	//}
 }
 

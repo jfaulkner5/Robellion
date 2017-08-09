@@ -40,20 +40,20 @@ public class Enemy : MonoBehaviour
     {
 		if(curEffects.Count > 0)
 		{
-			for(int x = 0; x < curEffects.Count; ++x)
+			for(int index = 0; index < curEffects.Count; ++index)
 			{
-				curEffects[x].damageTimer += Time.deltaTime;
-				curEffects[x].timer += Time.deltaTime;
+				curEffects[index].damageTimer += Time.deltaTime;
+				curEffects[index].timer += Time.deltaTime;
 
-				if(curEffects[x].damageTimer >= curEffects[x].rate)
+				if(curEffects[index].damageTimer >= curEffects[index].rate)
 				{
-					TakeDamage(curEffects[x].damage, DamageType.Acid);
-					curEffects[x].damageTimer = 0.0f;
+					TakeDamage(curEffects[index].damage, DamageType.Acid);
+					curEffects[index].damageTimer = 0.0f;
 				}
 
-				if(curEffects[x].timer >= curEffects[x].duration)
+				if(curEffects[index].timer >= curEffects[index].duration)
 				{
-					curEffects.Remove(curEffects[x]);
+					curEffects.Remove(curEffects[index]);
 					break;
 				}
 			}
@@ -85,50 +85,67 @@ public class Enemy : MonoBehaviour
         {
             if (dmgType == DamageType.Acid)
             {
-                StartCoroutine(PoisonFlash());
+                StartCoroutine(Flash(Color.green));
             }
             else
             {
-                StartCoroutine(DamageFlash());
+                StartCoroutine(Flash(Color.red));
             }
         }
     }
 
-    //Flash the enemy red.
-	IEnumerator DamageFlash ()
-	{
-		Color startColour = mr[0].material.color;
+    IEnumerator Flash(Color col)
+    {
+        Color startColour = mr[0].material.color;
 
         flashingColour = true;
 
-		for(int x = 0; x < mr.Length; ++x)
-			mr[x].material.color = Color.red;
+        for (int x = 0; x < mr.Length; ++x)
+            mr[x].material.color = col;
+
+        yield return new WaitForSeconds(0.05f);
+
+        for (int x = 0; x < mr.Length; ++x)
+            mr[x].material.color = startColour;
+
+        flashingColour = false;
+    }
+
+ //   //Flash the enemy red.
+ //   IEnumerator DamageFlash ()
+	//{
+	//	Color startColour = mr[0].material.color;
+
+ //       flashingColour = true;
+
+	//	for(int x = 0; x < mr.Length; ++x)
+	//		mr[x].material.color = Color.red;
 		
-		yield return new WaitForSeconds(0.05f);
+	//	yield return new WaitForSeconds(0.05f);
 
-		for(int x = 0; x < mr.Length; ++x)
-			mr[x].material.color = startColour;
+	//	for(int x = 0; x < mr.Length; ++x)
+	//		mr[x].material.color = startColour;
 
-        flashingColour = false;
-	}
+ //       flashingColour = false;
+	//}
 
-    //Flash the enemy green.
-	IEnumerator PoisonFlash ()
-	{
-		Color startColour = mr[0].material.color;
+ //   //Flash the enemy green.
+	//IEnumerator PoisonFlash ()
+	//{
+	//	Color startColour = mr[0].material.color;
 
-        flashingColour = true;
+ //       flashingColour = true;
 
-		for(int x = 0; x < mr.Length; ++x)
-			mr[x].material.color = Color.green;
+	//	for(int x = 0; x < mr.Length; ++x)
+	//		mr[x].material.color = Color.green;
 
-		yield return new WaitForSeconds(0.05f);
+	//	yield return new WaitForSeconds(0.05f);
 
-		for(int x = 0; x < mr.Length; ++x)
-			mr[x].material.color = startColour;
+	//	for(int x = 0; x < mr.Length; ++x)
+	//		mr[x].material.color = startColour;
 
-        flashingColour = false;
-	}
+ //       flashingColour = false;
+	//}
 
     public void MoveOnPulse (ConveyorBelt nextConveyorBelt)
     {
@@ -169,8 +186,7 @@ public class Enemy : MonoBehaviour
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
         curConveyorBelt.curEnemies.Remove(this);
-
-		GameManager.gm.enemies.Remove(this);
+        
 		GameManager.gm.AddScrap(20);
 
 		//If the enemy is molten metal, then do what it does.
@@ -187,7 +203,6 @@ public class Enemy : MonoBehaviour
 
 	public void GetToEndOfPath ()
 	{
-		GameManager.gm.enemies.Remove(this);
 		GameManager.gm.health--;
 		CameraShake.cs.Shake(0.15f, 0.5f, 35.0f);
 		Destroy(gameObject);

@@ -45,7 +45,7 @@ public class MoltenMetalRobot : MonoBehaviour
 	{
 		float damage = (hotTime - lifeDuration);
 
-		List<Enemy> enemies = GameManager.gm.enemies;
+        List<Enemy> enemies = enemy.curConveyorBelt.curEnemies;
 
 		for(int x = 0; x < enemies.Count; ++x)
 		{

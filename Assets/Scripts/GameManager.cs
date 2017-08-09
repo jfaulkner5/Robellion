@@ -47,10 +47,12 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
 	public EnemySpawner enemySpawner;
 
-	public List<Enemy> enemies = new List<Enemy>();
-    public int enemiesLeft;
+    public Transform enemyParentObject;
 
-	public List<Tower> towers = new List<Tower>();
+    //public List<Enemy> enemies = new List<Enemy>();
+    //public int enemiesLeft;
+
+    public List<Tower> towers = new List<Tower>();
 	public GameObject[] towerPrefabs;
 
 	//Bools
@@ -106,7 +108,7 @@ public class GameManager : MonoBehaviour
 		{
 			waveTime += Time.deltaTime;
 
-			if(waveTime > 5.0f && enemies.Count == 0)
+			if(waveTime > 5.0f && enemyParentObject.childCount == 0)
 			{
 				WaveComplete();
 			}
@@ -127,7 +129,7 @@ public class GameManager : MonoBehaviour
         }
 
 		//WIN if check 
-		if(enemiesLeft == 0 && curWave == totalWave /* && isSurvival == false */)
+		if(enemyParentObject.childCount == 0 && curWave == totalWave /* && isSurvival == false */)
 		{
 			//confirms that it isn't between waves and survival mode isn't on
 			if(curGameState == GameState.WaveDone)
@@ -170,7 +172,6 @@ public class GameManager : MonoBehaviour
 		canBuildOrModify = true;
 		curGameState = GameState.WaveDone;
 		timer = timeBetweenWaves;
-		enemies.Clear();
 	}
 
 	//Adds scrap.

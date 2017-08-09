@@ -11644,8 +11644,7 @@ MonoBehaviour:
   timer: 0
   wavesToWin: 0
   enemySpawner: {fileID: 1856545390}
-  enemies: []
-  enemiesLeft: 0
+  enemyParentObject: {fileID: 712485736}
   towers: []
   towerPrefabs:
   - {fileID: 1289604252842244, guid: 74cde80bdd77cd74e8b03e1ef3b9e24c, type: 2}
