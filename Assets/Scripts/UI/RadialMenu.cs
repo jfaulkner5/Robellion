@@ -30,6 +30,13 @@ public class RadialMenu : MonoBehaviour
 		//Disable the radial menu objects.
 		towerPlatformMenu.SetActive(false);
 		existingTowerMenu.SetActive(false);
+
+		//Setting tower button prices.
+		towerPlatformMenuButtons[0].transform.Find("Text").GetComponent<Text>().text = "Robot Arm\n<size=12>" + ScrapValues.robotArm + " Scrap</size>";
+		towerPlatformMenuButtons[1].transform.Find("Text").GetComponent<Text>().text = "Crusher\n<size=12>" + ScrapValues.crusher + " Scrap</size>";
+		towerPlatformMenuButtons[2].transform.Find("Text").GetComponent<Text>().text = "Laser Tower\n<size=12>" + ScrapValues.lazerTower + " Scrap</size>";
+		towerPlatformMenuButtons[3].transform.Find("Text").GetComponent<Text>().text = "Acid Etcher\n<size=12>" + ScrapValues.acidEtcher + " Scrap</size>";
+		towerPlatformMenuButtons[4].transform.Find("Text").GetComponent<Text>().text = "Drill\n<size=12>" + ScrapValues.drillTower + " Scrap</size>";
 	}
 
 	void Update ()
@@ -208,6 +215,8 @@ public class RadialMenu : MonoBehaviour
 
 		existingTowerMenuButtons[0].onClick.AddListener(() => tower.Upgrade());
 		existingTowerMenuButtons[1].onClick.AddListener(() => tower.Sell());
+
+		existingTowerMenuButtons[1].transform.Find("Text").GetComponent<Text>().text = "Upgrade\n<size=12>" + ScrapValues.GetTowerSellPrice(tower.type) + " Scrap</size>";
 
         foreach (Button button in existingTowerMenuButtons)
         {
