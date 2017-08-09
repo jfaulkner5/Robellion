@@ -29,19 +29,14 @@ public class ScrapValues : MonoBehaviour
 		{
 			case TowerType.RobotArm:
 				return robotArm;
-				break;
 			case TowerType.Crusher:
 				return crusher;
-				break;
 			case TowerType.Lazer:
 				return lazerTower;
-				break;
 			case TowerType.AcidEtcher:
 				return acidEtcher;
-				break;
 			case TowerType.Drill:
 				return drillTower;
-				break;
 		}
 
 		return 0;
@@ -54,19 +49,14 @@ public class ScrapValues : MonoBehaviour
 		{
 			case TowerType.RobotArm:
 				return (int)((float)robotArm * towerSellPercentage);
-				break;
 			case TowerType.Crusher:
 				return (int)((float)crusher * towerSellPercentage);
-				break;
 			case TowerType.Lazer:
 				return (int)((float)lazerTower * towerSellPercentage);
-				break;
 			case TowerType.AcidEtcher:
 				return (int)((float)acidEtcher * towerSellPercentage);
-				break;
 			case TowerType.Drill:
 				return (int)((float)drillTower * towerSellPercentage);
-				break;
 		}
 
 		return 0;
@@ -79,19 +69,14 @@ public class ScrapValues : MonoBehaviour
 		{
 			case EnemyType.Basic:
 				return basicRobotDrop;
-				break;
 			case EnemyType.TowerAttraction:
 				return towerAttractionRobotDrop;
-				break;
 			case EnemyType.EMP:
 				return EMPRobotDrop;
-				break;
 			case EnemyType.Quick:
 				return quickRobotDrop;
-				break;
 			case EnemyType.MoltenMetal:
 				return moltenMetalRobotDrop;
-				break;
 		}
 
 		return 0;

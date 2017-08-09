@@ -63,7 +63,7 @@ public class TowerPlatform : MonoBehaviour
 		//DEBUG TESTING
 		if(!hasTower)
 		{
-			if(GameManager.gm.curScrap >= GameManager.gm.basicTowerCost)
+			if(GameManager.gm.curScrap >= ScrapValues.GetTowerBuildPrice(towerType))
 			{
 				GameObject towerPrefab = GameManager.gm.towerPrefabs[(int)towerType];
 
@@ -99,7 +99,7 @@ public class TowerPlatform : MonoBehaviour
 
                 hasTower = true;
 
-				GameManager.gm.RemoveScrap(GameManager.gm.basicTowerCost);
+				GameManager.gm.RemoveScrap(ScrapValues.GetTowerBuildPrice(towerType));
 			}
 		}
 	}
