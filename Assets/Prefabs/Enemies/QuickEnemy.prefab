@@ -11,23 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1548140588717410}
   m_IsPrefabParent: 1
---- !u!1 &1105895623226324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4214154143569356}
-  - component: {fileID: 33465744904011618}
-  - component: {fileID: 23054219223510662}
-  m_Layer: 0
-  m_Name: QuickRobot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1146485297655910
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +40,23 @@ GameObject:
   - component: {fileID: 199220365549870900}
   m_Layer: 0
   m_Name: SparkEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1477087872958942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4214357652592794}
+  - component: {fileID: 33523761756681758}
+  - component: {fileID: 23331570106995722}
+  m_Layer: 0
+  m_Name: QuickRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,19 +97,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4214154143569356
+--- !u!4 &4214357652592794
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1105895623226324}
-  m_LocalRotation: {x: -0.49991274, y: 0.50008726, z: 0.49991274, w: 0.50008726}
+  m_GameObject: {fileID: 1477087872958942}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 4496616644564524}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.98, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!4 &4300190262445062
 Transform:
   m_ObjectHideFlags: 1
@@ -130,10 +130,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548140588717410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.669691, y: 0.71154785, z: -0.93713737}
+  m_LocalPosition: {x: 7.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4214154143569356}
+  - {fileID: 4214357652592794}
   - {fileID: 4300190262445062}
   - {fileID: 4799527611531002}
   - {fileID: 4541702631939724}
@@ -166,12 +166,12 @@ Transform:
   m_Father: {fileID: 4496616644564524}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!23 &23054219223510662
+--- !u!23 &23331570106995722
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1105895623226324}
+  m_GameObject: {fileID: 1477087872958942}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -179,7 +179,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c5b7b50f7903b524c9c2112d2bae9d9e, type: 2}
+  - {fileID: 2100000, guid: d8c84ff0dbe388041a126e4a14cafaa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,13 +198,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33465744904011618
+--- !u!33 &33523761756681758
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1105895623226324}
-  m_Mesh: {fileID: 4300000, guid: 7cb4a2e1d0ade9d439f1f2d114f6d27b, type: 3}
+  m_GameObject: {fileID: 1477087872958942}
+  m_Mesh: {fileID: 4300000, guid: 27d36523fd9764a46ae0b5a877e346ea, type: 3}
 --- !u!54 &54871945273054362
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -255,7 +255,7 @@ MonoBehaviour:
   horizontalOffsetOnConveyorBelt: 0
   relativeToConveyorBelt: {x: 0, y: 0, z: 0}
   mr:
-  - {fileID: 23054219223510662}
+  - {fileID: 0}
   budgetValue: 3
   curEffects: []
 --- !u!198 &198287935909948544

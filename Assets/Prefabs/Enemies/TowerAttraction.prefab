@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1378247251591134}
   m_IsPrefabParent: 1
+--- !u!1 &1112139557438456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4349630747583310}
+  - component: {fileID: 33392497403009576}
+  - component: {fileID: 23438533815688086}
+  m_Layer: 0
+  m_Name: AttractionRobot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1378247251591134
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,23 +81,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1659327871348610
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4481634539572040}
-  - component: {fileID: 33351163241603820}
-  - component: {fileID: 23521084772596834}
-  m_Layer: 0
-  m_Name: AttractionRobot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1788552660147720
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,19 +128,19 @@ Transform:
   m_Father: {fileID: 4948698039421734}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!4 &4481634539572040
+--- !u!4 &4349630747583310
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659327871348610}
-  m_LocalRotation: {x: -0.49991274, y: 0.50008726, z: 0.49991274, w: 0.50008726}
+  m_GameObject: {fileID: 1112139557438456}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 4948698039421734}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.98, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!4 &4645191067210816
 Transform:
   m_ObjectHideFlags: 1
@@ -187,10 +187,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378247251591134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4683442, y: -0.2361989, z: -7.0886946}
+  m_LocalPosition: {x: 6.559, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4481634539572040}
+  - {fileID: 4349630747583310}
   - {fileID: 4645191067210816}
   - {fileID: 4938620372647302}
   - {fileID: 4141880121410206}
@@ -211,7 +211,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c5b7b50f7903b524c9c2112d2bae9d9e, type: 2}
+  - {fileID: 2100000, guid: b546482148101e446bcf19ad8a7cb7c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,12 +230,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23521084772596834
+--- !u!23 &23438533815688086
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659327871348610}
+  m_GameObject: {fileID: 1112139557438456}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -243,7 +243,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c5b7b50f7903b524c9c2112d2bae9d9e, type: 2}
+  - {fileID: 2100000, guid: b810c666ba58a9c4c835a6035a09e264, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -262,13 +262,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33351163241603820
+--- !u!33 &33392497403009576
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659327871348610}
-  m_Mesh: {fileID: 4300000, guid: 94a5db1a229d0864892a0c1f4d58eb72, type: 3}
+  m_GameObject: {fileID: 1112139557438456}
+  m_Mesh: {fileID: 4300000, guid: a1b3321a07c9bb34ab2fe02ed90de393, type: 3}
 --- !u!33 &33664184855826484
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -362,8 +362,8 @@ MonoBehaviour:
   horizontalOffsetOnConveyorBelt: 0
   relativeToConveyorBelt: {x: 0, y: 0, z: 0}
   mr:
-  - {fileID: 23521084772596834}
-  - {fileID: 23369624999842208}
+  - {fileID: 0}
+  - {fileID: 0}
   budgetValue: 5
   curEffects: []
 --- !u!198 &198104105842779864
