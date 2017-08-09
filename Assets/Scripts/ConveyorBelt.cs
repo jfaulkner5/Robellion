@@ -34,11 +34,11 @@ public class ConveyorBelt : MonoBehaviour
             //Is the current conveyor belt moving along the X axis and the next one moving along the Z axis?
             if (axisOrientation == AxisOrientation.X && nextConveyorBelt.axisOrientation == AxisOrientation.Z)
             {
-				pos += new Vector3(-relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
+				pos += new Vector3(relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
             }
             else
             {
-				pos += new Vector3(-relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
+				pos += new Vector3(relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
             }
         }
         else
