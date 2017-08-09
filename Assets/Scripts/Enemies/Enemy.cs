@@ -65,6 +65,10 @@ public class Enemy : MonoBehaviour
 				}
 			}
 		}
+
+		//Move to position.
+		if(positionToMoveTo != Vector3.zero)
+			transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, 3.0f * Time.deltaTime);
     }
 
     //This function gets called when the enemy takes damage.
@@ -157,21 +161,17 @@ public class Enemy : MonoBehaviour
     public void MoveOnPulse (ConveyorBelt nextConveyorBelt)
     {
         positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(relativeToConveyorBelt, this);
-        StartCoroutine(MoveToNextConveyorBelt());
-        Debug.Log(transform.position + ", " + positionToMoveTo);
-    }
+		SetRotation();
+	}
 
-    IEnumerator MoveToNextConveyorBelt ()
-    {
-        //while(Vector3.Distance(transform.position, positionToMoveTo) < 0.05f)
-        //{
-        //    transform.position = Vector3.MoveTowards(transform.position, positionToMoveTo, Time.deltaTime);
-        //    yield return null;
-        //}
+	//Makes it so that the enemy is facing in the direction of the conveyor belt movement.
+	void SetRotation ()
+	{
+		Vector3 dir = (positionToMoveTo - transform.position).normalized;
+		float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
 
-        transform.position = positionToMoveTo;
-        yield return null;
-    }
+		transform.eulerAngles = new Vector3(0, angle, 0);
+	}
 
     //This function gets called when the enemy's health is less than or equals to 0.
     //It destroys the enemy, as well as removing it from lists.

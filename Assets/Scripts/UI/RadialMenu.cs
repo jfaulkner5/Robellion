@@ -216,7 +216,7 @@ public class RadialMenu : MonoBehaviour
 		existingTowerMenuButtons[0].onClick.AddListener(() => tower.Upgrade());
 		existingTowerMenuButtons[1].onClick.AddListener(() => tower.Sell());
 
-		existingTowerMenuButtons[1].transform.Find("Text").GetComponent<Text>().text = "Upgrade\n<size=12>" + ScrapValues.GetTowerSellPrice(tower.type) + " Scrap</size>";
+		existingTowerMenuButtons[1].transform.Find("Text").GetComponent<Text>().text = "Sell\n<size=12>" + ScrapValues.GetTowerSellPrice(tower.type) + " Scrap</size>";
 
         foreach (Button button in existingTowerMenuButtons)
         {

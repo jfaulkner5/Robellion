@@ -15,14 +15,20 @@ public class AcidEtcherTower : Tower {
     public override void OnPulse(PulseData pd)
     {
         base.OnPulse(pd);
-        if (acidEffect.isPlaying)
-            acidEffect.Stop();
     }
+
+	IEnumerator AcidBurst ()
+	{
+		acidEffect.Play();
+
+		yield return new WaitForSeconds(0.2f);
+
+		acidEffect.Stop();
+	}
 
     protected override void AttackAnimation()
     {
-        if (!acidEffect.isPlaying)
-            acidEffect.Play();
+		StartCoroutine(AcidBurst());
     }
 
     protected override void AttackDamage()
