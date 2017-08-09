@@ -13,6 +13,7 @@ public class ConveyorBelt : MonoBehaviour
     public List<Enemy> curEnemies = new List<Enemy>();
     public ConveyorBelt nextConveyorBelt;   //The conveyor belt that this one pushes objects onto.
 	public bool isFinalConveyorBelt;		//Is this the final conveyor belt in the chain?
+	private bool switcherBeltLeft;			//Does the switcher belt go left or right?
 
     [System.Serializable]
     public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<EnemyData> { }
@@ -26,35 +27,56 @@ public class ConveyorBelt : MonoBehaviour
     //Position also has the enemy's horizontal offset based on the conveyor belt orientation.
     public Vector3 GetNextConveyorBeltPosition (Vector3 relativeToConveyor, Enemy enemy)
     {
-        Vector3 pos = nextConveyorBelt.transform.position;  //Set a base position for the next pos without the added offset.
+		if(type == ConveyorBeltType.Straight && nextConveyorBelt != null)
+		{
+			Vector3 pos = nextConveyorBelt.transform.position;  //Set a base position for the next pos without the added offset.
 
-        //Is the next conveyor belt moving along a different axis direction than the current one?
-        if (axisOrientation != nextConveyorBelt.axisOrientation)
-        {
-            //Is the current conveyor belt moving along the X axis and the next one moving along the Z axis?
-            if (axisOrientation == AxisOrientation.X && nextConveyorBelt.axisOrientation == AxisOrientation.Z)
-            {
-				pos += new Vector3(relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
-            }
-            else
-            {
-				pos += new Vector3(relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
-            }
-        }
-        else
-        {
-            //Is the current conveyor belt moving along the X axis?
-            if (axisOrientation == AxisOrientation.X)
-            {
-                pos += relativeToConveyor;
-            }
-            else
-            {
-                pos += relativeToConveyor;
-            }
-        }
+	        //Is the next conveyor belt moving along a different axis direction than the current one?
+	        if (axisOrientation != nextConveyorBelt.axisOrientation)
+	        {
+	            //Is the current conveyor belt moving along the X axis and the next one moving along the Z axis?
+	            if (axisOrientation == AxisOrientation.X && nextConveyorBelt.axisOrientation == AxisOrientation.Z)
+	            {
+					pos += new Vector3(relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
+	            }
+	            else
+	            {
+					pos += new Vector3(relativeToConveyor.x, relativeToConveyor.y, relativeToConveyor.z);
+	            }
+	        }
+	        else
+	        {
+	            //Is the current conveyor belt moving along the X axis?
+	            if (axisOrientation == AxisOrientation.X)
+	            {
+	                pos += relativeToConveyor;
+	            }
+	            else
+	            {
+	                pos += relativeToConveyor;
+	            }
+	        }
 
-        return pos;
+			return pos;
+		}
+		else if(type == ConveyorBeltType.Switcher)
+		{
+			Vector3 pos = transform.position;
+
+			if(axisOrientation == AxisOrientation.X)
+			{
+				pos += switcherBeltLeft?(Vector3.left):(Vector3.right);
+			}
+			else
+			{
+				pos += switcherBeltLeft?(Vector3.forward):(Vector3.back);
+			}
+
+			switcherBeltLeft = !switcherBeltLeft;
+			return pos;
+		}
+
+		return Vector3.zero;
     }
 
     //Called every pulse.

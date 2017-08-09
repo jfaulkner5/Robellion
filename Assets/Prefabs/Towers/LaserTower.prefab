@@ -236,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   damType: 1
-  range: 3
+  range: 2
   damage: 3
   pulsesBetweenAttacks: 0
   enemiesWithinRange: []

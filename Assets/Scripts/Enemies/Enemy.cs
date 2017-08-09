@@ -160,8 +160,15 @@ public class Enemy : MonoBehaviour
 
     public void MoveOnPulse (ConveyorBelt nextConveyorBelt)
     {
-        positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(relativeToConveyorBelt, this);
-		SetRotation();
+		if(!curConveyorBelt.isFinalConveyorBelt)
+		{
+	        positionToMoveTo = curConveyorBelt.GetNextConveyorBeltPosition(relativeToConveyorBelt, this);
+			SetRotation();
+		}
+		else
+		{
+			GetToEndOfPath();
+		}
 	}
 
 	//Makes it so that the enemy is facing in the direction of the conveyor belt movement.
@@ -211,6 +218,7 @@ public class Enemy : MonoBehaviour
 	public void GetToEndOfPath ()
 	{
 		GameManager.gm.health--;
+		curConveyorBelt.curEnemies.Remove(this);
 		CameraShake.cs.Shake(0.15f, 0.5f, 35.0f);
 		Destroy(gameObject);
 	}
