@@ -170,7 +170,7 @@ public class Enemy : MonoBehaviour
 		Vector3 dir = (positionToMoveTo - transform.position).normalized;
 		float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
 
-		transform.eulerAngles = new Vector3(0, angle, 0);
+		transform.eulerAngles = new Vector3(0, angle - 90, 0);
 	}
 
     //This function gets called when the enemy's health is less than or equals to 0.
