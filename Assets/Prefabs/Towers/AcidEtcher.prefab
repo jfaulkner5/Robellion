@@ -28,6 +28,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1441326634608294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4038161793291788}
+  - component: {fileID: 33209641167957218}
+  - component: {fileID: 23924298822383736}
+  m_Layer: 0
+  m_Name: AcidTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1639651366219656
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,31 +62,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1980674102029992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4126468988249406}
-  - component: {fileID: 33533311800168738}
-  - component: {fileID: 23065132377029020}
-  m_Layer: 9
-  m_Name: Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4126468988249406
+--- !u!4 &4038161793291788
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1980674102029992}
+  m_GameObject: {fileID: 1441326634608294}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 4168342159984960}
@@ -82,10 +82,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142497269339264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4126468988249406}
+  - {fileID: 4038161793291788}
   - {fileID: 4404185953095426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -103,12 +103,12 @@ Transform:
   m_Father: {fileID: 4168342159984960}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23065132377029020
+--- !u!23 &23924298822383736
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1980674102029992}
+  m_GameObject: {fileID: 1441326634608294}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -116,7 +116,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7bdaddbe638b2ca4b8d912ea200a3558, type: 2}
+  - {fileID: 2100000, guid: 90f06715b13b94a4f89ece71af635f72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,13 +135,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33533311800168738
+--- !u!33 &33209641167957218
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1980674102029992}
-  m_Mesh: {fileID: 4300000, guid: a6ec71b17088fba4fb1f3adbdd473f38, type: 3}
+  m_GameObject: {fileID: 1441326634608294}
+  m_Mesh: {fileID: 4300000, guid: 59d844b1fd4be334aa02032678b9ef21, type: 3}
 --- !u!65 &65698214310792386
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -176,7 +176,7 @@ MonoBehaviour:
   rotateToTarget: 0
   towerPlatform: {fileID: 0}
   mr:
-  - {fileID: 23065132377029020}
+  - {fileID: 0}
   acidEffect: {fileID: 198357098130846058}
 --- !u!198 &198357098130846058
 ParticleSystem:
