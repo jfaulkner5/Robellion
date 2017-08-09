@@ -237,7 +237,7 @@ MonoBehaviour:
   type: 2
   damType: 1
   range: 3
-  damage: 1
+  damage: 3
   pulsesBetweenAttacks: 0
   enemiesWithinRange: []
   target: {fileID: 0}

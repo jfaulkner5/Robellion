@@ -713,8 +713,8 @@ MonoBehaviour:
   type: 0
   resistType: 0
   resistValue: 0
-  curHealth: 5
-  maxHealth: 5
+  curHealth: 10
+  maxHealth: 10
   sparkParticleEffect: {fileID: 198371811773806086}
   smokeParticleEffect: {fileID: 198618254856377950}
   deathParticleEffect: {fileID: 198079067132269350}
