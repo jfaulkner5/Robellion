@@ -36,6 +36,13 @@ public class Enemy : MonoBehaviour
 	public List<EnemyEffect> curEffects = new List<EnemyEffect>();
     private bool flashingColour = false;
 
+    private void Awake()
+    {
+        sparkParticleEffect.Stop();
+        smokeParticleEffect.Stop();
+        deathParticleEffect.Stop();
+    }
+
     void Update ()
     {
 		if(curEffects.Count > 0)
@@ -171,9 +178,9 @@ public class Enemy : MonoBehaviour
     void Die (DamageType dmgType)
     {
         //Play and destroy the death particle effect.
-        /*deathParticleEffect.transform.parent = null;
+        deathParticleEffect.transform.parent = null;
         deathParticleEffect.Play();
-        Destroy(deathParticleEffect.gameObject, deathParticleEffect.main.duration);*/
+        Destroy(deathParticleEffect.gameObject, deathParticleEffect.main.duration);
 
         /*
         - Play death audio.
@@ -213,15 +220,15 @@ public class Enemy : MonoBehaviour
     void CheckDamageParticleEffects ()
     {
         //if the enemy's health is below 50%, then start to emit the spark particle effect.
-        if (curHealth / maxHealth <= 0.5f)
+        if (curHealth / (float)maxHealth <= 0.5f)
         {
-            //sparkParticleEffect.Play();
+            sparkParticleEffect.Play();
         }
 
         //If the enemy's health is below 20%, then start to emit the smoke particle effect.
-        if (curHealth / maxHealth <= 0.2f)
+        if (curHealth / (float)maxHealth <= 0.2f)
         {
-            //smokeParticleEffect.Play();
+            smokeParticleEffect.Play();
         }
     }
 
