@@ -124,42 +124,6 @@ public class Enemy : MonoBehaviour
         flashingColour = false;
     }
 
- //   //Flash the enemy red.
- //   IEnumerator DamageFlash ()
-	//{
-	//	Color startColour = mr[0].material.color;
-
- //       flashingColour = true;
-
-	//	for(int x = 0; x < mr.Length; ++x)
-	//		mr[x].material.color = Color.red;
-		
-	//	yield return new WaitForSeconds(0.05f);
-
-	//	for(int x = 0; x < mr.Length; ++x)
-	//		mr[x].material.color = startColour;
-
- //       flashingColour = false;
-	//}
-
- //   //Flash the enemy green.
-	//IEnumerator PoisonFlash ()
-	//{
-	//	Color startColour = mr[0].material.color;
-
- //       flashingColour = true;
-
-	//	for(int x = 0; x < mr.Length; ++x)
-	//		mr[x].material.color = Color.green;
-
-	//	yield return new WaitForSeconds(0.05f);
-
-	//	for(int x = 0; x < mr.Length; ++x)
-	//		mr[x].material.color = startColour;
-
- //       flashingColour = false;
-	//}
-
     public void MoveOnPulse (ConveyorBelt nextConveyorBelt)
     {
 		if(!curConveyorBelt.isFinalConveyorBelt)
@@ -204,7 +168,7 @@ public class Enemy : MonoBehaviour
         curConveyorBelt.curEnemies.Remove(this);
         
 		GameManager.gm.AddScrap(ScrapValues.GetEnemyDropAmount(type));
-        GameManager.gm.ui.CreateScrapIcon(type);
+        GameManager.gm.ui.CreateScrapIcon(type, Camera.main.WorldToScreenPoint(transform.position));
 
 		//If the enemy is molten metal, then do what it does.
     //    if(type == EnemyType.MoltenMetal)

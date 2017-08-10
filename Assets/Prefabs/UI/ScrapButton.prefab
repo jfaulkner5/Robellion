@@ -68,8 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8febc59a7fc642842bd151cbbd69fae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 500
-  target: {fileID: 0}
+  toContainerSpeed: 150
+  toTargetSpeed: 800
+  containerPos: {x: 0, y: 0, z: 0}
+  endTarget: {fileID: 0}
   enemyType: 0
 --- !u!114 &114565783798451460
 MonoBehaviour:

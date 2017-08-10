@@ -56,16 +56,15 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    public void CreateScrapIcon (EnemyType enemyType)
+    public void CreateScrapIcon (EnemyType enemyType, Vector3 enemyPos)
     {
-        Vector3 pos = new Vector3(Random.Range(-scrapIconParent.sizeDelta.x / 2, scrapIconParent.sizeDelta.x * 2), Random.Range(-scrapIconParent.sizeDelta.y / 2, scrapIconParent.sizeDelta.y * 2), 0);
-        GameObject scrap = Instantiate(scrapIconPrefab, Vector3.zero, Quaternion.identity);
-        scrap.transform.parent = scrapIconParent.transform;
-        scrap.transform.localPosition = pos;
+        Vector3 pos = new Vector3(Random.Range(-scrapIconParent.rect.width / 2, scrapIconParent.rect.width / 2), Random.Range(-scrapIconParent.rect.height / 2, scrapIconParent.rect.height / 2), 0); 
+        GameObject scrap = Instantiate(scrapIconPrefab, enemyPos, Quaternion.identity, scrapIconParent.transform);
 
         ScrapButton scrapScript = scrap.GetComponent<ScrapButton>();
         scrapScript.enemyType = enemyType;
-        scrapScript.target = scrapIconTarget;
+        scrapScript.endTarget = scrapIconTarget;
+        scrapScript.MoveToContainer(pos);
     }
 
     public void PauseMenu()

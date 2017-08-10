@@ -73,12 +73,10 @@ public class RadialMenu : MonoBehaviour
             //Is the mouse cursor or touch currently not over a UI element?
             bool canRaycast = false;
 
-            if(Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            if(!IsPointerOverUIObject())
                 canRaycast = true;
 
-            if(!EventSystem.current.IsPointerOverGameObject())
-                canRaycast = true;
-
+            //If so, then raycast from the touch/click. If it's a tower platform or tower, set the radial menu.
             if(canRaycast)
             {
 				if(hit.collider.gameObject.layer == 8)
@@ -232,4 +230,20 @@ public class RadialMenu : MonoBehaviour
 
 		transform.localPosition = new Vector3(clampX, clampY, 0);
 	}
+
+    bool IsPointerOverUIObject ()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+
+        #if UNITY_EDITOR
+            eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+        #elif UNITY_ANDROID
+            eventDataCurrentPosition.position = Input.GetTouch(0).position;
+        #endif
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
 }
