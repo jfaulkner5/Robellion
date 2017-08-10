@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     public Vector3 relativeToConveyorBelt;          //Position that the enemy is relative to the conveyor belt.
 
 	//Components
-	public MeshRenderer[] mr;                       //Mesh Renderer components of all models attached to the enemy.
+	private MeshRenderer[] mr;                      //Mesh Renderer components of all models attached to the enemy.
 
     //how much this takes off of the total budget for the wave
     public float budgetValue;
@@ -41,6 +41,8 @@ public class Enemy : MonoBehaviour
         sparkParticleEffect.Stop();
         smokeParticleEffect.Stop();
         deathParticleEffect.Stop();
+
+        mr = GetComponentsInChildren<MeshRenderer>();
     }
 
     void Update ()
@@ -202,6 +204,7 @@ public class Enemy : MonoBehaviour
         curConveyorBelt.curEnemies.Remove(this);
         
 		GameManager.gm.AddScrap(ScrapValues.GetEnemyDropAmount(type));
+        GameManager.gm.ui.CreateScrapIcon(type);
 
 		//If the enemy is molten metal, then do what it does.
     //    if(type == EnemyType.MoltenMetal)

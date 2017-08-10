@@ -11,6 +11,10 @@ public class GameUI : MonoBehaviour
 	public Text timeText;
 	public Slider healthBar;
 
+    public GameObject scrapIconPrefab;
+    public RectTransform scrapIconParent;
+    public GameObject scrapIconTarget;
+
     //Star System
     public float starScore; //stores the final score for lvl
     public float starTotal; //total stars per level
@@ -50,6 +54,18 @@ public class GameUI : MonoBehaviour
         {
             PauseMenu();
         }
+    }
+
+    public void CreateScrapIcon (EnemyType enemyType)
+    {
+        Vector3 pos = new Vector3(Random.Range(-scrapIconParent.sizeDelta.x / 2, scrapIconParent.sizeDelta.x * 2), Random.Range(-scrapIconParent.sizeDelta.y / 2, scrapIconParent.sizeDelta.y * 2), 0);
+        GameObject scrap = Instantiate(scrapIconPrefab, Vector3.zero, Quaternion.identity);
+        scrap.transform.parent = scrapIconParent.transform;
+        scrap.transform.localPosition = pos;
+
+        ScrapButton scrapScript = scrap.GetComponent<ScrapButton>();
+        scrapScript.enemyType = enemyType;
+        scrapScript.target = scrapIconTarget;
     }
 
     public void PauseMenu()
@@ -93,6 +109,7 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
+
     public void ButtonSurvival()
     {
         winMenu.SetActive(false);
@@ -100,6 +117,7 @@ public class GameUI : MonoBehaviour
         textHUD.SetActive(true);
         isSurvival = true; //informs win check that survival mode is active
     }
+
     public void ResumeLevel()
     {
         textHUD.SetActive(true);
