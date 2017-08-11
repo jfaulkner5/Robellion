@@ -66,17 +66,18 @@ public class ScrapButton : MonoBehaviour
 
     IEnumerator ScrapShake ()
     {
-        Vector3 moveTo = (Random.insideUnitCircle * 3);
-        moveTo += transform.position;
+		Vector3 defaultPos = transform.position;
+		Vector3 moveTo = (Random.insideUnitCircle * 10);
+		moveTo += defaultPos;
 
         while(lifeTimer < 5.0f)
         {
             transform.position = Vector3.MoveTowards(transform.position, moveTo, (50 * lifeTimer) * Time.deltaTime);
-            Debug.Log(moveTo + ", " + transform.position);
+
             if (Vector3.Distance(transform.position, moveTo) < 5.0f)
             {
-                moveTo = (Random.insideUnitCircle * 3);
-                moveTo += transform.position;
+                moveTo = (Random.insideUnitCircle * 10);
+				moveTo += defaultPos;
             }
 
             yield return null;

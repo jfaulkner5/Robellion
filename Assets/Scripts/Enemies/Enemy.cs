@@ -167,7 +167,7 @@ public class Enemy : MonoBehaviour
 
         curConveyorBelt.curEnemies.Remove(this);
         
-		GameManager.gm.AddScrap(ScrapValues.GetEnemyDropAmount(type));
+		//GameManager.gm.AddScrap(ScrapValues.GetEnemyDropAmount(type));
         GameManager.gm.ui.CreateScrapIcon(type, Camera.main.WorldToScreenPoint(transform.position));
 
 		//If the enemy is molten metal, then do what it does.
