@@ -15,6 +15,8 @@ public class ConveyorBelt : MonoBehaviour
 	public bool isFinalConveyorBelt;		//Is this the final conveyor belt in the chain?
 	private bool switcherBeltLeft;			//Does the switcher belt go left or right?
 
+    public Animator animate;
+
     [System.Serializable]
     public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<EnemyData> { }
     public UnityEventEnemyEvent OnEnemyEnter;
@@ -79,12 +81,22 @@ public class ConveyorBelt : MonoBehaviour
 		return Vector3.zero;
     }
 
+    IEnumerator Move()
+    {
+        animate.Play("Belt");
+
+        yield return new WaitForSeconds(0.5f);
+
+        animate.Play("Idle");
+    }
+
     //Called every pulse.
     void OnPulse (PulseData pd)
     {
         //the if statement is unnecesary?? bc the for loop would do this??
         //if(curEnemies.Count > 0)
            MoveEnemiesForward();
+        StartCoroutine(Move());
     }
 
     //Moves the enemies forward 1 conveyor belt. Called every pulse.
