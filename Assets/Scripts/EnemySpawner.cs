@@ -5,11 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class Calculations
 {
-    [Header("(((BV + W + (ET * ETM)) + BEA) ^ e) + AEA")]
+    [Header("(((BV + W) * e) + AEA+ (ET * ETM))")]
     public float baseValue = 1;
-    public float beforeExponentAddition;
-    public float exponent = 1;
-    public float afterExponentAddition;
+    public float multiplier = 1;
+    public float afterMultiplicationAddition;
 
     [Header("enemy type: 0 for all enemys equal")]
     public float enemyTypeMultiplier = 0;
@@ -18,12 +17,13 @@ public class Calculations
     public float calculatedValue;
 
     //for enemy type value check enum 
-    public float Calculate(int wave, int enemyType)
+    public virtual float Calculate(int wave, int enemyType)
     {
-        calculatedValue = Mathf.Pow(((baseValue + (wave + (enemyType * enemyTypeMultiplier))) + beforeExponentAddition), exponent) + afterExponentAddition;
+        calculatedValue = (((baseValue + wave)) * multiplier) + afterMultiplicationAddition + (enemyType * enemyTypeMultiplier);
         return calculatedValue;
     }
 }
+
 [System.Serializable]
 public class WaveData
 {

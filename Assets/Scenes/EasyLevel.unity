@@ -677,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curGameState: 0
   health: 25
-  curScrap: 5000
+  curScrap: 600
   curWave: 0
   totalWave: 5
   waveTime: 0
@@ -14129,6 +14129,69 @@ Prefab:
       value: 
       objectReference: {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb,
         type: 2}
+    - target: {fileID: 4904704922093374, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904704922093374, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: HealthStatCalcs.enemyTypeMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: HealthStatCalcs.afterExponentAddition
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: HealthStatCalcs.exponent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: HealthStatCalcs.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: HealthStatCalcs.multiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: HealthStatCalcs.afterMultiplicationAddition
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: DamageResistStatCalcs.multiplier
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: DamageResistStatCalcs.baseValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: budget.multiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: budget.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: budget.afterMultiplicationAddition
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
   m_IsPrefabParent: 0
