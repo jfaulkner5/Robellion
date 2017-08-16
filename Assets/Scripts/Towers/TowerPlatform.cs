@@ -65,7 +65,11 @@ public class TowerPlatform : MonoBehaviour
 		//DEBUG TESTING
 		if(!hasTower)
 		{
-			if(GameManager.gm.curScrap >= ScrapValues.GetTowerBuildPrice(towerType))
+            if (towerType == TowerType.Crusher)
+                if (!(oppositePlatform != null && !oppositePlatform.hasTower))
+                    return;
+
+			if (GameManager.gm.curScrap >= ScrapValues.GetTowerBuildPrice(towerType))
 			{
 				GameObject towerPrefab = GameManager.gm.towerPrefabs[(int)towerType];
 
@@ -78,8 +82,10 @@ public class TowerPlatform : MonoBehaviour
                 ConveyorBelt curConveyor = firstConveyorInRange;
 				GameManager.gm.towers.Add(t);
 				t.towerPlatform = this;
-
-                for (int index = t.range; index < 3; ++index)
+                int thing = 3;
+                if (innerCorner)
+                    thing = 2;
+                for (int index = t.range; index < thing; ++index)
                 {
                     if (!curConveyor.isFinalConveyorBelt)
                     {

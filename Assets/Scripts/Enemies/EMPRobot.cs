@@ -7,31 +7,59 @@ public class EMPRobot : MonoBehaviour
 	public Enemy enemy;		//Parent enemy script.
 
 	public float towerDisableTime;
-	private float aliveTime;
+	private int aliveTime;
 	private float EMPBlastTime;
 	private bool doneEMPBlast = false;
 
-	void Start ()
+    public ParticleSystem empBlast;
+
+    private void Awake()
+    {
+        empBlast.Stop();
+        GlobalEvents.OnPulse.AddListener(OnPulse);
+    }
+
+    void Start ()
 	{
-		EMPBlastTime = Random.Range(1.0f, 15.0f);
+		EMPBlastTime = Random.Range(5, 16);
 	}
 
-	void Update ()
-	{
-		aliveTime += Time.deltaTime;
+	//void Update ()
+	//{
+	//	//aliveTime += Time.deltaTime;
 
-		if(aliveTime >= EMPBlastTime && !doneEMPBlast)
-		{
-			doneEMPBlast = true;
-			EMPBlast();
-		}
-	}
+	//	if(aliveTime >= EMPBlastTime && !doneEMPBlast)
+	//	{
+	//		doneEMPBlast = true;
+	//		EMPBlast();
+	//	}
+	//}
+
+    public void OnPulse(PulseData pd)
+    {
+        aliveTime++;
+
+        if (aliveTime >= EMPBlastTime && !doneEMPBlast)
+        {
+            doneEMPBlast = true;
+            EMPBlast();
+        }
+    }
 
 	void EMPBlast ()
 	{
+        StartCoroutine(EmpBlastParticleEffect());
 		for(int x = 0; x < GameManager.gm.towers.Count; ++x)
 		{
-			GameManager.gm.towers[x].EMPDisable(towerDisableTime);
+            if(GameManager.gm.towers[x].type != TowerType.Crusher && GameManager.gm.towers[x].type != TowerType.RobotArm)
+			    GameManager.gm.towers[x].EMPDisable(towerDisableTime);
 		}
 	}
+
+    IEnumerator EmpBlastParticleEffect()
+    {
+        empBlast.Play();
+        yield return new WaitForSeconds(empBlast.main.duration);
+        empBlast.Stop();
+    }
 }
