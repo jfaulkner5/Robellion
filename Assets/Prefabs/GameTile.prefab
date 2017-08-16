@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33181925525618024}
   - component: {fileID: 65184032131598966}
   - component: {fileID: 23533790876317128}
+  - component: {fileID: 114006018376672350}
   m_Layer: 0
   m_Name: GameTile
   m_TagString: Untagged
@@ -93,3 +94,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114006018376672350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487843502607940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a83fcc48310344f9c615f2ef18a4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameTileMaterial: {fileID: 2100000, guid: 6b4a9a29b5ac2dc40b5838d294d4bfb2, type: 2}
+  AltGameTileMaterial: {fileID: 2100000, guid: 6b4a9a29b5ac2dc40b5838d294d4bfb2, type: 2}
+  meshRenderer: {fileID: 23533790876317128}
