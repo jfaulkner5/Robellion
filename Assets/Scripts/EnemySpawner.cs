@@ -117,19 +117,34 @@ public class EnemySpawner : MonoBehaviour
         {
             StartCoroutine(Play());
             oneExtraOpen = true;
-            CreateEnemy();
+            List<Vector3> offsets = new List<Vector3>();
+            offsets.Add(new Vector3(-0.2f, 0, -0.2f));
+            offsets.Add(new Vector3(-0.2f, 0, 0.2f));
+            offsets.Add(new Vector3(0.2f, 0, -0.2f));
+            offsets.Add(new Vector3(0.2f, 0, 0.2f));
+
+            for (int i = 0; i<Random.Range(0,4); ++i)
+            {
+                if (currentWave.enemies.Count > 0)
+                {
+                    int num = Random.Range(0, offsets.Count);
+                    CreateEnemy(offsets[num]);
+                    offsets.RemoveAt(num);
+                }
+            }
+            
         }
     }
   
-    public Enemy CreateEnemy()
+    public Enemy CreateEnemy(Vector3 offset)
     {
-        Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
+        //Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
-        if (offset.x > 0.0f) { offset.x = 0.2f; }
-        else { offset.x = -0.2f; }
+        //if (offset.x > 0.0f) { offset.x = 0.2f; }
+        //else { offset.x = -0.2f; }
 
-        if (offset.z > 0.0f) { offset.z = 0.2f; }
-        else { offset.z = -0.2f; }
+        //if (offset.z > 0.0f) { offset.z = 0.2f; }
+        //else { offset.z = -0.2f; }
 
         //Instantiate the enemy.
         GameObject enemy = Instantiate(currentWave.enemies[0], transform.position + offset, Quaternion.identity, enemyParentObject);
