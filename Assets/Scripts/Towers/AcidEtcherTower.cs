@@ -33,11 +33,11 @@ public class AcidEtcherTower : Tower {
 
     protected override void AttackDamage()
     {
-        for (int x = 0; x < enemiesWithinRange.Count; ++x)
+        for (int index = enemiesWithinRange.Count - 1; index >= 0; --index)
         {
-            if (enemiesWithinRange[x].curEffects.Count == 0)
+            if (enemiesWithinRange[index].curEffects.Count == 0)
             {
-                enemiesWithinRange[x].ApplyAcidEffect(3.0f, damage, 1.0f);
+                enemiesWithinRange[index].ApplyAcidEffect(3.0f, damage, 1.0f);
             }
         }
     }

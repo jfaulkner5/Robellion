@@ -19,7 +19,7 @@ public class RobotArmTower : Tower {
             horizontalOffset = 0.2f;
         }
 
-        for (int index = 0; index < enemiesWithinRange.Count; ++index)
+        for (int index = enemiesWithinRange.Count - 1; index >= 0; --index)
         {
             if(enemiesWithinRange[index].horizontalOffsetOnConveyorBelt == horizontalOffset)
             {

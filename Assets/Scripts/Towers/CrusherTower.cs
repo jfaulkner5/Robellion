@@ -8,7 +8,7 @@ public class CrusherTower : Tower {
 
     protected override void AttackDamage()
     {
-        for(int index = 0; index < enemiesWithinRange.Count; ++ index)
+        for(int index = enemiesWithinRange.Count-1; index >= 0; --index)
         {
             enemiesWithinRange[index].TakeDamage(damage, damType);
         }
