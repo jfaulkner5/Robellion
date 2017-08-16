@@ -104,10 +104,19 @@ public class EnemySpawner : MonoBehaviour
         deathsInPrevWave[(int)deadEnemy.finalBlowDamageType]++;
     }
 
+    private bool oneExtraOpen = false;
     public void SpawnEnemiesOnPulse (PulseData pd)
     {
-        if(currentWave.enemies.Count > 0)
+        if (currentWave.enemies.Count == 0 && oneExtraOpen)
         {
+            StartCoroutine(Play());
+            oneExtraOpen = false;
+        }
+
+        if (currentWave.enemies.Count > 0)
+        {
+            StartCoroutine(Play());
+            oneExtraOpen = true;
             CreateEnemy();
         }
     }
@@ -153,15 +162,15 @@ public class EnemySpawner : MonoBehaviour
         return enemyScript;
     }
 
-    void OnEnable()
-    {
-        GlobalEvents.OnPulse.AddListener(OnPulse);
-    }
+    //void OnEnable()
+    //{
+    //    GlobalEvents.OnPulse.AddListener(OnPulse);
+    //}
 
-    void OnDisable()
-    {
-        GlobalEvents.OnPulse.RemoveListener(OnPulse);
-    }
+    //void OnDisable()
+    //{
+    //    GlobalEvents.OnPulse.RemoveListener(OnPulse);
+    //}
 
     IEnumerator Play()
     {
@@ -174,10 +183,12 @@ public class EnemySpawner : MonoBehaviour
         animateRight.Play("Idle");
     }
 
-    public virtual void OnPulse(PulseData pd)
-    {
-        StartCoroutine(Play());
-    }
+    
+    //public virtual void OnPulse(PulseData pd)
+    //{
+        
+
+    //}
 
     //IEnumerator SpawnEnemiesTimer (List<GameObject> enemies, float[] resistancePercentages, int waveNum,  float rate)
     //{
