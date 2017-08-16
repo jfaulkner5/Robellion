@@ -15,7 +15,7 @@ public class ScrapValues : MonoBehaviour
 	[Range(0.0f, 1.0f)]
 	public static float towerSellPercentage = 0.75f;
 
-    //Tower sell.
+    //Tower upgrade.
     public static float towerUpgradePercentage = 1.5f;
 
     //Enemy drops.
