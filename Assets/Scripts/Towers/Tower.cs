@@ -107,7 +107,7 @@ public class Tower : MonoBehaviour
     {
         Vector3 lookPos = t - pieceToRotate.position;
         lookPos.y = 0;
-
+        
         Quaternion rot = Quaternion.LookRotation(lookPos);
         pieceToRotate.rotation = Quaternion.Slerp(pieceToRotate.rotation, rot, Time.deltaTime * 5.0f);
     }
@@ -185,7 +185,7 @@ public class Tower : MonoBehaviour
 		Destroy(gameObject);
 	}
 
-	public void Upgrade ()
+	public virtual void Upgrade ()
 	{
 		
 	}

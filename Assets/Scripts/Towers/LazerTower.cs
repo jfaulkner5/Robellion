@@ -7,7 +7,6 @@ public class LazerTower : Tower {
     public int maxAttackNumber;
 
     public LineRenderer lr;
-    private List<LineRenderer> lrs = new List<LineRenderer>();
 
     private void Awake()
     {
@@ -18,47 +17,60 @@ public class LazerTower : Tower {
     public override void OnAlternatePulse(PulseData pd)
     {
         base.OnAlternatePulse(pd);
-        StartCoroutine(DestroyLines());
     }
 
-    IEnumerator DestroyLines()
-    {
-        yield return new WaitForSeconds(0.3f);
-        for (int index = 0; index < lrs.Count; ++index)
-        {
-            Destroy(lrs[index].gameObject);
-        }
-        lrs.Clear();
-    }
 
     protected override void AttackDamage()
     {
         List<Enemy> targets = new List<Enemy>();
-
-        if(enemiesWithinRange.Count > maxAttackNumber)
+        if (target.type == EnemyType.TowerAttraction)
         {
-            while(targets.Count < maxAttackNumber)
-            {
-                Enemy temp = enemiesWithinRange[Random.Range(0, enemiesWithinRange.Count)];
-                if (!targets.Contains(temp))
-                {
-                    targets.Add(temp);
-                }
-            }
+            targets.Add(target);
         }
         else
         {
-            targets = enemiesWithinRange;
+            if (enemiesWithinRange.Count > maxAttackNumber)
+            {
+                while (targets.Count < maxAttackNumber)
+                {
+                    Enemy temp = enemiesWithinRange[Random.Range(0, enemiesWithinRange.Count)];
+                    if (!targets.Contains(temp))
+                    {
+                        targets.Add(temp);
+                    }
+                }
+            }
+            else
+            {
+                targets = enemiesWithinRange;
+            }
         }
 
-        for (int index = 0; index < targets.Count; ++index)
-        {
-            //line stuff here?
-            lrs.Add(Instantiate(lr));
-            lrs[index].enabled = true;
-            lrs[index].SetPosition(1, targets[index].transform.position + new Vector3(0, 0.1f, 0));
 
-            targets[index].TakeDamage(damage, damType);
+        StartCoroutine(Attack(maxAttackNumber, targets));
+       
+    }
+
+    IEnumerator Attack(int numberOfAttacks, List<Enemy> targets)
+    {
+        while (targets.Count > 0 && numberOfAttacks > 0)
+        {
+            for (int index = 0; index < targets.Count; ++index)
+            {
+                if (numberOfAttacks > 0)
+                {
+                    PlayAttackSound();
+                    LineRenderer lrs = Instantiate(lr);
+                    lrs.enabled = true;
+                    lrs.SetPosition(1, targets[index].transform.position + new Vector3(0, 0.1f, 0));
+                    Destroy(lrs.gameObject, 0.3f);
+
+                    targets[index].TakeDamage(damage, damType);
+
+                    numberOfAttacks--;
+                    yield return new WaitForSeconds(0.3f);
+                }
+            }
         }
     }
 
