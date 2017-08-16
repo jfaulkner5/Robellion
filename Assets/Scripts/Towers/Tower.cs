@@ -35,6 +35,7 @@ public class Tower : MonoBehaviour
 
 	public bool canAttack = true;
 	public bool rotateToTarget;
+    public Transform pieceToRotate;
     protected Vector3 lookTarget;
     protected Vector3 baseLookTarget;
 
@@ -104,11 +105,11 @@ public class Tower : MonoBehaviour
 
     protected void RotateToTarget(Vector3 t)
     {
-        Vector3 lookPos = t - transform.position;
+        Vector3 lookPos = t - pieceToRotate.position;
         lookPos.y = 0;
 
         Quaternion rot = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5.0f);
+        pieceToRotate.rotation = Quaternion.Slerp(pieceToRotate.rotation, rot, Time.deltaTime * 5.0f);
     }
 
 

@@ -97,6 +97,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1869546450896688
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4059931224828326}
+  m_Layer: 0
+  m_Name: Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1979881089584840
 GameObject:
   m_ObjectHideFlags: 1
@@ -114,18 +129,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4059931224828326
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869546450896688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4066127449666300}
+  - {fileID: 4100336934240504}
+  - {fileID: 4175696277570350}
+  m_Father: {fileID: 4938365262028600}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4066127449666300
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1979881089584840}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.195, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.47499967, z: 0}
+  m_LocalScale: {x: 16.666664, y: 16.666672, z: 50.000023}
   m_Children: []
-  m_Father: {fileID: 4219959628526364}
-  m_RootOrder: 1
+  m_Father: {fileID: 4059931224828326}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4100336934240504
 Transform:
@@ -134,11 +165,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1320853503801380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.100000024, y: 0.7, z: 0.225}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.2}
+  m_LocalPosition: {x: -0.16666669, y: 3, z: 0.37499994}
+  m_LocalScale: {x: 0.08333333, y: 0.25, z: 0.3333333}
   m_Children: []
-  m_Father: {fileID: 4219959628526364}
-  m_RootOrder: 2
+  m_Father: {fileID: 4059931224828326}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4175696277570350
 Transform:
@@ -147,11 +178,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216309322171664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.7, z: 0.09}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.65}
+  m_LocalPosition: {x: -0.16666669, y: 3, z: 0.14999999}
+  m_LocalScale: {x: 0.033333328, y: 0.099999994, z: 1.0833331}
   m_Children: []
-  m_Father: {fileID: 4219959628526364}
-  m_RootOrder: 3
+  m_Father: {fileID: 4059931224828326}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4219959628526364
 Transform:
@@ -164,9 +195,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4938365262028600}
-  - {fileID: 4066127449666300}
-  - {fileID: 4100336934240504}
-  - {fileID: 4175696277570350}
   m_Father: {fileID: 4842383972890502}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,7 +205,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084575509632190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4219959628526364}
@@ -193,7 +221,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 0.6, y: 0.2, z: 0.6}
-  m_Children: []
+  m_Children:
+  - {fileID: 4059931224828326}
   m_Father: {fileID: 4219959628526364}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -421,6 +450,7 @@ MonoBehaviour:
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 1
+  pieceToRotate: {fileID: 4059931224828326}
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23252938787565144}

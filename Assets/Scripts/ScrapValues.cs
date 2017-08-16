@@ -6,9 +6,9 @@ public class ScrapValues : MonoBehaviour
 {
 	//Tower prices.
 	public static int robotArm = 150;
-	public static int crusher = 200;
+	public static int crusher = 500;
 	public static int lazerTower = 250;
-	public static int acidEtcher = 250;
+	public static int acidEtcher = 300;
 	public static int drillTower = 300;
 
 	//Tower sell.
