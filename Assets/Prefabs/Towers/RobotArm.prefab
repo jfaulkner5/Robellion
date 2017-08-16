@@ -284,11 +284,13 @@ MonoBehaviour:
   damType: 0
   range: 1
   damage: 18
+  amountOfDamagePerUpgrade: 7
   pulsesBetweenAttacks: 2
   enemiesWithinRange: []
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 0
+  pieceToRotate: {fileID: 0}
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23250277642335380}

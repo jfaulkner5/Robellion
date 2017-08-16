@@ -25,6 +25,7 @@ public class Tower : MonoBehaviour
 
     //public AttackData attack;
     public int damage;
+    public int amountOfDamagePerUpgrade;
     public int pulsesBetweenAttacks;
     private int pulseTimer;
 
@@ -187,8 +188,12 @@ public class Tower : MonoBehaviour
 
 	public virtual void Upgrade ()
 	{
-		
-	}
+        if (GameManager.gm.curScrap >= ScrapValues.GetTowerUpgradePrice(type))
+        {
+            damage += amountOfDamagePerUpgrade;
+            GameManager.gm.RemoveScrap(ScrapValues.GetTowerUpgradePrice(type));
+        }
+    }
 
 	public void EMPDisable (float disableTime)
 	{

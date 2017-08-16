@@ -63,14 +63,23 @@ public class LazerTower : Tower {
                     LineRenderer lrs = Instantiate(lr);
                     lrs.enabled = true;
                     lrs.SetPosition(1, targets[index].transform.position + new Vector3(0, 0.1f, 0));
-                    Destroy(lrs.gameObject, 0.3f);
+                    Destroy(lrs.gameObject, 0.1f);
 
                     targets[index].TakeDamage(damage, damType);
 
                     numberOfAttacks--;
-                    yield return new WaitForSeconds(0.3f);
+                    yield return new WaitForSeconds(0.25f);
                 }
             }
+        }
+    }
+
+    public override void Upgrade()
+    {
+        if (GameManager.gm.curScrap >= ScrapValues.GetTowerUpgradePrice(type))
+        {
+            maxAttackNumber++;
+            base.Upgrade();
         }
     }
 

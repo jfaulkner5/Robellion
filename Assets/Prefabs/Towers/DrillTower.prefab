@@ -445,6 +445,7 @@ MonoBehaviour:
   damType: 4
   range: 2
   damage: 15
+  amountOfDamagePerUpgrade: 5
   pulsesBetweenAttacks: 0
   enemiesWithinRange: []
   target: {fileID: 0}

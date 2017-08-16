@@ -15,8 +15,11 @@ public class ScrapValues : MonoBehaviour
 	[Range(0.0f, 1.0f)]
 	public static float towerSellPercentage = 0.75f;
 
-	//Enemy drops.
-	public static int basicRobotDrop = 50;
+    //Tower sell.
+    public static float towerUpgradePercentage = 1.5f;
+
+    //Enemy drops.
+    public static int basicRobotDrop = 50;
 	public static int towerAttractionRobotDrop = 35;
 	public static int EMPRobotDrop = 65;
 	public static int quickRobotDrop = 75;
@@ -62,8 +65,28 @@ public class ScrapValues : MonoBehaviour
 		return 0;
 	}
 
-	//Returns the requested enemy's drop amount.
-	public static int GetEnemyDropAmount (EnemyType enemyType)
+    //Returns the requested tower's sell price.
+    public static int GetTowerUpgradePrice(TowerType towerType)
+    {
+        switch (towerType)
+        {
+            case TowerType.RobotArm:
+                return (int)((float)robotArm * towerUpgradePercentage);
+            case TowerType.Crusher:
+                return (int)((float)crusher * towerUpgradePercentage);
+            case TowerType.Lazer:
+                return (int)((float)lazerTower * towerUpgradePercentage);
+            case TowerType.AcidEtcher:
+                return (int)((float)acidEtcher * towerUpgradePercentage);
+            case TowerType.Drill:
+                return (int)((float)drillTower * towerUpgradePercentage);
+        }
+
+        return 0;
+    }
+
+    //Returns the requested enemy's drop amount.
+    public static int GetEnemyDropAmount (EnemyType enemyType)
 	{
 		switch(enemyType)
 		{

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4592047546449622}
   - component: {fileID: 33070730770141632}
   - component: {fileID: 23070840615305420}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LazerTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4596352751795838}
   - component: {fileID: 65227295629707888}
   - component: {fileID: 114827301617958826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4339434819802898}
   - component: {fileID: 33809077451198706}
   - component: {fileID: 23514173279209046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LazerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,16 +238,18 @@ MonoBehaviour:
   damType: 1
   range: 2
   damage: 5
+  amountOfDamagePerUpgrade: 0
   pulsesBetweenAttacks: 0
   enemiesWithinRange: []
   target: {fileID: 0}
   canAttack: 1
   rotateToTarget: 1
+  pieceToRotate: {fileID: 4596352751795838}
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23514173279209046}
   - {fileID: 23070840615305420}
-  maxAttackNumber: 3
+  maxAttackNumber: 2
   lr: {fileID: 120978845801145476}
 --- !u!120 &120978845801145476
 LineRenderer:
