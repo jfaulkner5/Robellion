@@ -355,8 +355,8 @@ MonoBehaviour:
   bossWaves: 
   budget:
     baseValue: 0
-    multiplier: 5
-    afterMultiplicationAddition: 10
+    multiplier: 8
+    afterMultiplicationAddition: 0
     enemyTypeMultiplier: 0
     calculatedValue: 0
   deathsInPrevWave:

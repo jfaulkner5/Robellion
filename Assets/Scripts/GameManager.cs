@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
 		{
 			waveTime += Time.deltaTime;
 
-			if(waveTime > 5.0f && enemyParentObject.childCount == 0)
+			if(waveTime > 10.0f && enemyParentObject.childCount == 0)
 			{
 				WaveComplete();
 			}

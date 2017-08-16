@@ -4686,7 +4686,7 @@ Prefab:
         type: 2}
       propertyPath: enemyParentObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1564570131}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: enemyPrefab.Array.data[1]
@@ -4744,6 +4744,16 @@ Prefab:
     - target: {fileID: 4904704922093374, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: budget.multiplier
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
+        type: 2}
+      propertyPath: budget.baseValue
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff, type: 2}
@@ -8268,6 +8278,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4540654058520056, guid: 71b4f5902d2487a4587a67e05b1386bd,
     type: 2}
   m_PrefabInternal: {fileID: 1152998194}
+--- !u!4 &1564570131 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4582632307453300, guid: 986ad64756ad60c419f7b1fa01079466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1076376490}
 --- !u!1001 &1564937581
 Prefab:
   m_ObjectHideFlags: 0

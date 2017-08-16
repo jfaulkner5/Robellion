@@ -254,7 +254,7 @@ MonoBehaviour:
   curConveyorBelt: {fileID: 0}
   horizontalOffsetOnConveyorBelt: 0
   relativeToConveyorBelt: {x: 0, y: 0, z: 0}
-  budgetValue: 3
+  budgetValue: 7
   curEffects: []
 --- !u!198 &198287935909948544
 ParticleSystem:

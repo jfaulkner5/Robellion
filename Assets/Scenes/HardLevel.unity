@@ -11028,12 +11028,12 @@ Prefab:
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: budget.multiplier
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
       propertyPath: budget.baseValue
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114107413760546212, guid: 413f8d9bd9087e9498f8eaf3b7ccc5ff,
         type: 2}
