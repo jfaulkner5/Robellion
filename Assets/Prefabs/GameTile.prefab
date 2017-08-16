@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1b8725f61966d0043aad659750c74b3a, type: 2}
+  - {fileID: 2100000, guid: 97b3bb719fa3f924a95cad564356e571, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a83fcc48310344f9c615f2ef18a4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameTileMaterial: {fileID: 2100000, guid: 1b8725f61966d0043aad659750c74b3a, type: 2}
-  AltGameTileMaterial: {fileID: 2100000, guid: 158e2dc4b79c4954db8c8c2288b106a9, type: 2}
+  GameTileMaterial: {fileID: 2100000, guid: 158e2dc4b79c4954db8c8c2288b106a9, type: 2}
+  AltGameTileMaterial: {fileID: 2100000, guid: 97b3bb719fa3f924a95cad564356e571, type: 2}
   meshRenderer: {fileID: 23264040256554116}

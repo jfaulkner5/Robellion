@@ -257,8 +257,8 @@ Camera:
   m_GameObject: {fileID: 4963401}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.37197232, g: 0.43841422, b: 0.63235295, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2126,7 +2126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 181.50003, y: -101.099976}
+  m_AnchoredPosition: {x: 181.5, y: -101.099976}
   m_SizeDelta: {x: 299, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264879283
@@ -4674,7 +4674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 185.19992, y: -166.00002}
+  m_AnchoredPosition: {x: 185.19995, y: -166}
   m_SizeDelta: {x: 175, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474415869
@@ -8579,7 +8579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 57, y: -166.00002}
+  m_AnchoredPosition: {x: 57, y: -166}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960734791

@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836248562657662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4525345425069206}
@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f1ec1368f93036d409e30e9a34d52f14, type: 2}
+  - {fileID: 2100000, guid: 10471ed0e9511ea4f8697c1140718b31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasTower: 0
-  facingDirection: {x: 0, y: 0, z: 0}
+  facingDirection: {x: 0, y: 0, z: -1}
   firstConveyorInRange: {fileID: 0}
   oppositePlatform: {fileID: 0}
+  innerCorner: 0
