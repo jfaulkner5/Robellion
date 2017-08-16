@@ -213,4 +213,4 @@ public class Enemy : MonoBehaviour
 	}
 }
 
-public enum EnemyType { Basic, TowerAttraction, EMP, Quick, MoltenMetal }
+public enum EnemyType { Basic, EMP, Quick, MoltenMetal, TowerAttraction }

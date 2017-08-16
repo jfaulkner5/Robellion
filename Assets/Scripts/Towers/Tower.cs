@@ -170,7 +170,8 @@ public class Tower : MonoBehaviour
 
     protected virtual void AttackDamage()
     {
-        target.TakeDamage(damage, damType);
+        if(target != null)
+            target.TakeDamage(damage, damType);
     }
 
     protected virtual void PlayAttackSound()

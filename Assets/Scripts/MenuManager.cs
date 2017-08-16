@@ -21,6 +21,11 @@ public class MenuManager : MonoBehaviour {
 
     }
 
+    public void LevelStart(int level)
+    {
+        SceneManager.LoadScene(level);
+
+    }
 
     // Used to toggle menu panels
     public void MenuToggle()

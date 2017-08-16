@@ -23,7 +23,8 @@ public class RobotArmTower : Tower {
         {
             if(enemiesWithinRange[index].horizontalOffsetOnConveyorBelt == horizontalOffset)
             {
-                enemiesWithinRange[index].TakeDamage(damage, damType);
+                if(enemiesWithinRange[index] != null)
+                    enemiesWithinRange[index].TakeDamage(damage, damType);
             }
         }
     }

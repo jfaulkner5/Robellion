@@ -57,7 +57,7 @@ public class LazerTower : Tower {
         {
             for (int index = 0; index < targets.Count; ++index)
             {
-                if (numberOfAttacks > 0)
+                if (numberOfAttacks > 0 && targets[index] != null)
                 {
                     PlayAttackSound();
                     LineRenderer lrs = Instantiate(lr);
@@ -69,6 +69,10 @@ public class LazerTower : Tower {
 
                     numberOfAttacks--;
                     yield return new WaitForSeconds(0.25f);
+                }
+                else
+                {
+                    targets.RemoveAt(index);
                 }
             }
         }

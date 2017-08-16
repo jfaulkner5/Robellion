@@ -8416,12 +8416,12 @@ Prefab:
     - target: {fileID: 224012494119299072, guid: 7800f1c65ab3be7438332a6c2d0e5185,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224012494119299072, guid: 7800f1c65ab3be7438332a6c2d0e5185,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7800f1c65ab3be7438332a6c2d0e5185, type: 2}

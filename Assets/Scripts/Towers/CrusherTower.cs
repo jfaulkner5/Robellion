@@ -10,7 +10,8 @@ public class CrusherTower : Tower {
     {
         for(int index = enemiesWithinRange.Count-1; index >= 0; --index)
         {
-            enemiesWithinRange[index].TakeDamage(damage, damType);
+            if(enemiesWithinRange[index] != null)
+                enemiesWithinRange[index].TakeDamage(damage, damType);
         }
     }
 

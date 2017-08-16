@@ -37,7 +37,8 @@ public class AcidEtcherTower : Tower {
         {
             if (enemiesWithinRange[index].curEffects.Count == 0)
             {
-                enemiesWithinRange[index].ApplyAcidEffect(3.0f, damage, 1.0f);
+                if(enemiesWithinRange[index] != null)
+                    enemiesWithinRange[index].ApplyAcidEffect(3.0f, damage, 1.0f);
             }
         }
     }
