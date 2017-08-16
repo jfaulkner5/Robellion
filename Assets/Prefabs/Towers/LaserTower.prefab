@@ -237,7 +237,7 @@ MonoBehaviour:
   type: 2
   damType: 1
   range: 2
-  damage: 3
+  damage: 5
   pulsesBetweenAttacks: 0
   enemiesWithinRange: []
   target: {fileID: 0}
@@ -245,8 +245,8 @@ MonoBehaviour:
   rotateToTarget: 0
   towerPlatform: {fileID: 0}
   mr:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 23514173279209046}
+  - {fileID: 23070840615305420}
   maxAttackNumber: 3
   lr: {fileID: 120978845801145476}
 --- !u!120 &120978845801145476

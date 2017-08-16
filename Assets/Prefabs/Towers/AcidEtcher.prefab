@@ -168,7 +168,7 @@ MonoBehaviour:
   type: 3
   damType: 3
   range: 1
-  damage: 2
+  damage: 10
   pulsesBetweenAttacks: 2
   enemiesWithinRange: []
   target: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   rotateToTarget: 0
   towerPlatform: {fileID: 0}
   mr:
-  - {fileID: 0}
+  - {fileID: 23924298822383736}
   acidEffect: {fileID: 198357098130846058}
 --- !u!198 &198357098130846058
 ParticleSystem:

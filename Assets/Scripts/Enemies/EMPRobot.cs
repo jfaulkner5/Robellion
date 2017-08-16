@@ -7,20 +7,22 @@ public class EMPRobot : MonoBehaviour
 	public Enemy enemy;		//Parent enemy script.
 
 	public float towerDisableTime;
-	public float aliveTime;
-	public float EMPBlastTime;
+	private float aliveTime;
+	private float EMPBlastTime;
+	private bool doneEMPBlast = false;
 
 	void Start ()
 	{
-		EMPBlastTime = Random.Range(0.0f, 6.0f);
+		EMPBlastTime = Random.Range(1.0f, 15.0f);
 	}
 
 	void Update ()
 	{
 		aliveTime += Time.deltaTime;
 
-		if(EMPBlastTime >= aliveTime)
+		if(aliveTime >= EMPBlastTime && !doneEMPBlast)
 		{
+			doneEMPBlast = true;
 			EMPBlast();
 		}
 	}

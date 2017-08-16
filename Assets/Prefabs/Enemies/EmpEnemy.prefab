@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114595717359178874}
   - component: {fileID: 65218456347826374}
   - component: {fileID: 54806546216394144}
+  - component: {fileID: 114412367573794422}
   m_Layer: 0
   m_Name: EmpEnemy
   m_TagString: Enemy
@@ -401,6 +402,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.4, z: 0.25}
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &114412367573794422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279139459047964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c108051e28f16c4b92671099b5073a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 114595717359178874}
+  towerDisableTime: 2
 --- !u!114 &114595717359178874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,11 +437,7 @@ MonoBehaviour:
   curConveyorBelt: {fileID: 0}
   horizontalOffsetOnConveyorBelt: 0
   relativeToConveyorBelt: {x: 0, y: 0, z: 0}
-  mr:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  budgetValue: 2
+  budgetValue: 5
   curEffects: []
 --- !u!198 &198338003702414882
 ParticleSystem:
@@ -3706,7 +3716,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 4
-      minColor: {r: 1, g: 0.76551723, b: 0, a: 1}
+      minColor: {r: 1, g: 0.7655172, b: 0, a: 1}
       maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -4521,7 +4531,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.76551723, b: 0, a: 1}
+        key0: {r: 1, g: 0.7655172, b: 0, a: 1}
         key1: {r: 0.99703854, g: 0.81586206, b: 0, a: 1}
         key2: {r: 0.9862069, g: 1, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6837,7 +6847,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 4
-      minColor: {r: 1, g: 0.76551723, b: 0, a: 1}
+      minColor: {r: 1, g: 0.7655172, b: 0, a: 1}
       maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2

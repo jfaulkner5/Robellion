@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RobotArmTower : Tower {
 
+    public Animator animate;
+
     //attacks everything on its side of the belt
     protected override void AttackDamage()
     {
@@ -29,5 +31,19 @@ public class RobotArmTower : Tower {
     protected override void PlayAttackSound()
     {
         GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackArm();
+    }
+
+    IEnumerator Hit()
+    {
+        animate.Play("ArmTower");
+
+        yield return new WaitForSeconds(0.4f);
+
+        animate.Play("Idle");
+    }
+
+    protected override void AttackAnimation()
+    {
+        StartCoroutine(Hit());
     }
 }

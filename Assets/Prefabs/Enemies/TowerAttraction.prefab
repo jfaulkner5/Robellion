@@ -361,10 +361,7 @@ MonoBehaviour:
   curConveyorBelt: {fileID: 0}
   horizontalOffsetOnConveyorBelt: 0
   relativeToConveyorBelt: {x: 0, y: 0, z: 0}
-  mr:
-  - {fileID: 0}
-  - {fileID: 0}
-  budgetValue: 5
+  budgetValue: 10
   curEffects: []
 --- !u!198 &198104105842779864
 ParticleSystem:
@@ -512,7 +509,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 4
-      minColor: {r: 1, g: 0.76551723, b: 0, a: 1}
+      minColor: {r: 1, g: 0.7655172, b: 0, a: 1}
       maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -1327,7 +1324,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.76551723, b: 0, a: 1}
+        key0: {r: 1, g: 0.7655172, b: 0, a: 1}
         key1: {r: 0.99703854, g: 0.81586206, b: 0, a: 1}
         key2: {r: 0.9862069, g: 1, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6774,7 +6771,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 4
-      minColor: {r: 1, g: 0.76551723, b: 0, a: 1}
+      minColor: {r: 1, g: 0.7655172, b: 0, a: 1}
       maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2

@@ -151,14 +151,14 @@ public class Tower : MonoBehaviour
 
     protected void Attack ()
     {
-		if(canAttack && CanAttack())
+        if (canAttack && CanAttack())
         {
             PlayAttackSound();
             AttackAnimation();
-
             AttackDamage();
             pulseTimer = 0;
         }
+
     }
 
     protected virtual void AttackAnimation()

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4204110855630950}
   - component: {fileID: 33798084891284124}
   - component: {fileID: 23092477544015952}
+  - component: {fileID: 95196885528655370}
   m_Layer: 0
   m_Name: CrusherHead
   m_TagString: Untagged
@@ -52,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590074383353134}
   - component: {fileID: 65379670038993522}
-  - component: {fileID: 114033484017145200}
+  - component: {fileID: 114650715523055342}
   m_Layer: 9
   m_Name: Crusher
   m_TagString: Untagged
@@ -222,7 +223,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.8, z: 2.5}
   m_Center: {x: 0, y: 0.4, z: 1}
---- !u!114 &114033484017145200
+--- !u!95 &95196885528655370
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1097004946958094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb2710974c9f7a24cbb19071fca0ef37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114650715523055342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -236,7 +254,7 @@ MonoBehaviour:
   type: 1
   damType: 0
   range: 1
-  damage: 5
+  damage: 100
   pulsesBetweenAttacks: 5
   enemiesWithinRange: []
   target: {fileID: 0}
@@ -244,5 +262,6 @@ MonoBehaviour:
   rotateToTarget: 0
   towerPlatform: {fileID: 0}
   mr:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 23092477544015952}
+  - {fileID: 23847177804648920}
+  animate: {fileID: 95196885528655370}
