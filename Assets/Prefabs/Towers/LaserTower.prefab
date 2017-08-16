@@ -242,7 +242,7 @@ MonoBehaviour:
   enemiesWithinRange: []
   target: {fileID: 0}
   canAttack: 1
-  rotateToTarget: 0
+  rotateToTarget: 1
   towerPlatform: {fileID: 0}
   mr:
   - {fileID: 23514173279209046}

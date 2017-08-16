@@ -10,6 +10,8 @@ public class TowerPlatform : MonoBehaviour
     public ConveyorBelt firstConveyorInRange;
     public TowerPlatform oppositePlatform;
 
+    public bool innerCorner;
+
 	void Start ()
 	{
 		facingDirection = CalculateFacingDirection();
@@ -87,7 +89,18 @@ public class TowerPlatform : MonoBehaviour
 
                 curConveyor.OnEnemyEnter.AddListener(t.AddEnemyToRange);
 
-                for (int index = 1; index < t.range + t.range-1; ++index)
+                int num = 0;
+
+                if (innerCorner && t.range > 1)
+                {
+                    num = -1;
+                }
+                else
+                {
+                    num = 1;
+                }
+
+                for (int index = num; index < t.range + t.range - 1; ++index)
                 {
                     if (!curConveyor.isFinalConveyorBelt)
                     {
@@ -96,6 +109,18 @@ public class TowerPlatform : MonoBehaviour
                 }
 
                 curConveyor.OnEnemyLeave.AddListener(t.RemoveEnemyFromRange);
+
+
+                //this is more for adding new towers, not good for our towers
+                //if (innerCorner && t.range <= 1 )
+                //{
+                //    curConveyor = curConveyor.nextConveyorBelt.nextConveyorBelt;
+
+                //    curConveyor.OnEnemyEnter.AddListener(t.AddEnemyToRange);
+                //    curConveyor.OnEnemyLeave.AddListener(t.RemoveEnemyFromRange);
+                //}
+
+                
 
                 hasTower = true;
 

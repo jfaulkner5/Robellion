@@ -6290,6 +6290,11 @@ Prefab:
       propertyPath: firstConveyorInRange
       value: 
       objectReference: {fileID: 30800746}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: innerCorner
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -10515,6 +10520,11 @@ Prefab:
       propertyPath: firstConveyorInRange
       value: 
       objectReference: {fileID: 92295947}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: innerCorner
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -11363,6 +11373,11 @@ Prefab:
       propertyPath: firstConveyorInRange
       value: 
       objectReference: {fileID: 1560164250}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: innerCorner
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
@@ -14249,6 +14264,11 @@ Prefab:
       propertyPath: firstConveyorInRange
       value: 
       objectReference: {fileID: 1416030093}
+    - target: {fileID: 114605401311799356, guid: e7e427405a2d8444b9895846d8db2628,
+        type: 2}
+      propertyPath: innerCorner
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7e427405a2d8444b9895846d8db2628, type: 2}
   m_IsPrefabParent: 0
