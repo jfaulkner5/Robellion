@@ -16,6 +16,7 @@ public class ConveyorBelt : MonoBehaviour
 	private bool switcherBeltLeft;			//Does the switcher belt go left or right?
 
     public Animator animate;
+    public bool flip = true;
 
     [System.Serializable]
     public class UnityEventEnemyEvent : UnityEngine.Events.UnityEvent<EnemyData> { }
@@ -83,11 +84,22 @@ public class ConveyorBelt : MonoBehaviour
 
     IEnumerator Move()
     {
-        animate.Play("Belt");
+        if (type == ConveyorBeltType.Straight || flip == true)
+        {
+            animate.Play("Belt");
+            yield return new WaitForSeconds(0.5f);
+            flip = false;
+        }
 
-        yield return new WaitForSeconds(0.5f);
+        else if (flip == false)
+        {
+            animate.Play("BeltReverse");
+            yield return new WaitForSeconds(0.5f);
+            flip = true;
+        }
 
         animate.Play("Idle");
+
     }
 
     //Called every pulse.
