@@ -2650,9 +2650,9 @@ MonoBehaviour:
   winMenu: {fileID: 1645753063581336}
   textHUD: {fileID: 1870843276558824}
   isSurvival: 0
-  StarOne: {fileID: 0}
-  StarTwo: {fileID: 0}
-  StarThree: {fileID: 0}
+  StarOne: {fileID: 1317622801593790}
+  StarTwo: {fileID: 1798516044116942}
+  StarThree: {fileID: 1275474689033926}
 --- !u!114 &114907574168722390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3344,7 +3344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 57, y: -166.00002}
+  m_AnchoredPosition: {x: 57, y: -166}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224221947915604506
@@ -3385,7 +3385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 185.19995, y: -166.00002}
+  m_AnchoredPosition: {x: 185.19995, y: -166}
   m_SizeDelta: {x: 175, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224298208712385138
