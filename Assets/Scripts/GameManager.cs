@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         }
 
 		//WIN if check 
-		if(enemyParentObject.childCount == 0 && curWave == totalWave /* && isSurvival == false */)
+		if(enemyParentObject.childCount == 0 && curWave == totalWave  && ui.isSurvival == false)
 		{
 			//confirms that it isn't between waves and survival mode isn't on
 			if(curGameState == GameState.WaveDone)

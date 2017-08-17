@@ -94,11 +94,13 @@ public class GameUI : MonoBehaviour
         winMenu.SetActive(true);
         textHUD.SetActive(false);
 
+        isSurvival = true;
+
         //score calculator
         float starScore = health / starTotal;
         Debug.Log("health: " + health);
         Debug.Log("starScore: " + starScore);
-        Debug.Log("total stars: " + starTotal); ;
+        Debug.Log("total stars: " + starTotal);
         starText.text = "you have scored " + starScore + " out of a possible " + starTotal + " total stars";
     }
 
