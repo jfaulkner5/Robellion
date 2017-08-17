@@ -395,32 +395,26 @@ MonoBehaviour:
       - {x: -0.2, y: 0, z: -0.2}
     - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       ConveyorLocation:
       - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       ConveyorLocation:
-      - {x: 0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
       - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
       ConveyorLocation:
       - {x: 0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
       - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
@@ -431,6 +425,28 @@ MonoBehaviour:
       - {x: -0.2, y: 0, z: 0.2}
       - {x: -0.2, y: 0, z: -0.2}
       - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
   - conveyors:
     - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
@@ -442,16 +458,8 @@ MonoBehaviour:
       - {x: -0.2, y: 0, z: -0.2}
       - {x: -0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
-    - enemies:
-      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
-      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      ConveyorLocation:
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       ConveyorLocation:
@@ -463,31 +471,15 @@ MonoBehaviour:
     - enemies:
       - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
       - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       ConveyorLocation:
       - {x: 0.2, y: 0, z: 0.2}
       - {x: -0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: -0.2}
     - enemies:
       - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
-      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
-      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
       ConveyorLocation:
       - {x: -0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: -0.2}
-    - enemies:
-      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      ConveyorLocation:
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
@@ -498,16 +490,10 @@ MonoBehaviour:
       - {x: -0.2, y: 0, z: -0.2}
       - {x: -0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
-    - enemies:
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      ConveyorLocation:
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
       - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
@@ -518,51 +504,152 @@ MonoBehaviour:
       - {x: -0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
       - {x: 0.2, y: 0, z: 0.2}
-  - conveyors:
     - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
       - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      ConveyorLocation:
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies:
       - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
       - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
       ConveyorLocation:
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: 0.2}
-    - enemies:
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      ConveyorLocation:
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
       - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
       - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
-      ConveyorLocation:
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: -0.2}
-    - enemies:
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       ConveyorLocation:
       - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: -0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-    - enemies:
-      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
-      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
-      ConveyorLocation:
       - {x: -0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
   - conveyors:
     - enemies:
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+  - conveyors:
+    - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
@@ -610,23 +697,69 @@ MonoBehaviour:
       - {x: 0.2, y: 0, z: -0.2}
     - enemies:
       - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
       ConveyorLocation:
       - {x: -0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: 0.2}
   - conveyors:
-    - enemies:
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
-      ConveyorLocation:
-      - {x: -0.2, y: 0, z: -0.2}
-      - {x: 0.2, y: 0, z: 0.2}
-      - {x: -0.2, y: 0, z: 0.2}
-      - {x: 0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
       - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      - {fileID: 1548140588717410, guid: 97bd55e5380495f44ad1533cff7e964a, type: 2}
       ConveyorLocation:
       - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: -0.2}
     - enemies:
       - {fileID: 1544350755494516, guid: 739bae737fbbd2448919d01ee84aab8f, type: 2}
       - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
@@ -637,12 +770,90 @@ MonoBehaviour:
       - {x: 0.2, y: 0, z: 0.2}
       - {x: -0.2, y: 0, z: 0.2}
       - {x: 0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
     - enemies:
-      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
-      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       ConveyorLocation:
       - {x: -0.2, y: 0, z: -0.2}
       - {x: 0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies:
+      - {fileID: 1279139459047964, guid: 2266dbdc4f9c4834788bfccc99cba9a1, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
+    - enemies: []
+      ConveyorLocation: []
+    - enemies: []
+      ConveyorLocation: []
+    - enemies:
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      - {fileID: 1378247251591134, guid: a4f8367b27d76b3488bd65cffc1e82bb, type: 2}
+      - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
+      ConveyorLocation:
+      - {x: -0.2, y: 0, z: -0.2}
+      - {x: 0.2, y: 0, z: 0.2}
+      - {x: 0.2, y: 0, z: -0.2}
+      - {x: -0.2, y: 0, z: 0.2}
     - enemies:
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}
       - {fileID: 1834515300421928, guid: 8db04be5650bfc74cac75e7ceccaf6fc, type: 2}

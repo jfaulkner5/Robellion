@@ -5047,6 +5047,11 @@ Prefab:
       propertyPath: ui
       value: 
       objectReference: {fileID: 580805686}
+    - target: {fileID: 114215558837832442, guid: 986ad64756ad60c419f7b1fa01079466,
+        type: 2}
+      propertyPath: wavesToWin
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 986ad64756ad60c419f7b1fa01079466, type: 2}
   m_IsPrefabParent: 0
