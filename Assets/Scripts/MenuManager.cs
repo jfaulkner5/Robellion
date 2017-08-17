@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour {
 
     public GameObject MainMenu; //Main menu || menu that is displayed by default
     public GameObject OtherMenu; //menu that is toggled off by default
+	public GameObject InstrucMenu; 
     public int lvlSelect; //int for scene selector. allows multiple uses in different scenes
 
 
@@ -42,6 +43,21 @@ public class MenuManager : MonoBehaviour {
         }
     }
 
+	public void InstructionsMenu()
+	{
+		if (MainMenu.activeSelf)
+		{
+			MainMenu.SetActive(false);
+			InstrucMenu.SetActive(true);
+		}
+		else
+		{
+			MainMenu.SetActive(true);
+			InstrucMenu.SetActive(false);
+		}
+
+	}
+
     //Quits from application
     public void QuitGame()
     {
@@ -54,12 +70,16 @@ public class MenuManager : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
-		
+    void Start () 
+	{
+		MainMenu.SetActive (true);
+		OtherMenu.SetActive (false);
+		InstrucMenu.SetActive (false);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
 
