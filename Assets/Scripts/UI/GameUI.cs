@@ -16,7 +16,7 @@ public class GameUI : MonoBehaviour
     public GameObject scrapIconTarget;
 
     //Star System
-    public float starScore; //stores the final score for lvl
+    public int starScore; //stores the final score for lvl
     public float starTotal; //total stars per level
 
     public Text starText; //textbox to show score
@@ -26,10 +26,22 @@ public class GameUI : MonoBehaviour
     public GameObject textHUD;
     public bool isSurvival; // determines survive mode
 
+    // stars 
+    public GameObject StarOne;
+    public GameObject StarTwo;
+    public GameObject StarThree;
+
     void Start ()
 	{
 		healthBar.maxValue = GameManager.gm.health;
-	}
+        isSurvival = false;
+
+        //reset star score
+
+        StarOne.SetActive(false);
+        StarTwo.SetActive(false);
+        StarThree.SetActive(false);
+    }
 
     void Update()
     {
@@ -97,7 +109,7 @@ public class GameUI : MonoBehaviour
         isSurvival = true;
 
         //score calculator
-        float starScore = health / starTotal;
+        starScore = (int)health / (int)starTotal;
         Debug.Log("health: " + health);
         Debug.Log("starScore: " + starScore);
         Debug.Log("total stars: " + starTotal);
@@ -124,5 +136,27 @@ public class GameUI : MonoBehaviour
         textHUD.SetActive(true);
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+
+    }
+
+    public void StarSystem()
+    {
+        if (starScore == 1)
+        {
+            StarOne.SetActive(true);
+        }
+        if (starScore == 2)
+        {
+            StarOne.SetActive(true);
+            StarTwo.SetActive(true);
+        }
+
+        if (starScore == 3)
+        {
+            StarOne.SetActive(true);
+            StarTwo.SetActive(true);
+            StarThree.SetActive(true);
+        }
+
     }
 }
