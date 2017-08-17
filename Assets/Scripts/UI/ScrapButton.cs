@@ -17,12 +17,26 @@ public class ScrapButton : MonoBehaviour
 
     public float lifeTimer;
 
+    private void Awake()
+    {
+        moveToContainer = true;
+    }
     void Update ()
     { 
-        if(moveToContainer)
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, containerPos, toContainerSpeed * Time.deltaTime);
+        //if(moveToContainer)
+        {
+            lifeTimer += Time.deltaTime;
 
-        if(moveToTarget)
+            if (!begunShake)
+            {
+                moveToContainer = false;
+                begunShake = true;
+                StartCoroutine(ScrapShake());
+            }
+        }
+        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, containerPos, toContainerSpeed * Time.deltaTime);
+
+        if (moveToTarget)
             transform.position = Vector3.MoveTowards(transform.position, endTarget.transform.position, toTargetSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, endTarget.transform.position) < 0.2f)
@@ -31,17 +45,8 @@ public class ScrapButton : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(Vector3.Distance(transform.localPosition, containerPos) < 5.0f)
-        {
-            lifeTimer += Time.deltaTime;
-
-            if(!begunShake)
-            {
-                moveToContainer = false;
-                begunShake = true;
-                StartCoroutine(ScrapShake());
-            }
-        }
+        //if(Vector3.Distance(transform.localPosition, containerPos) < 5.0f)
+        
 
         if(lifeTimer >= 5.0f)
         {
