@@ -80,7 +80,7 @@ public class LazerTower : Tower {
 
     public override void Upgrade()
     {
-        if (GameManager.gm.curScrap >= ScrapValues.GetTowerUpgradePrice(type))
+        if (GameManager.gm.curScrap >= ScrapValues.GetTowerUpgradePrice(type) && remainingNumOfUpgrades > 0)
         {
             maxAttackNumber++;
             base.Upgrade();

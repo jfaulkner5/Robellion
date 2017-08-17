@@ -41,6 +41,9 @@ public class Tower : MonoBehaviour
     protected Vector3 baseLookTarget;
 
 
+    public int remainingNumOfUpgrades = 3;
+    public ParticleSystem upgradeEffect;
+
     public TowerPlatform towerPlatform; //Tower platform that this tower is on.
 
 	public MeshRenderer[] mr;   //Array of all model mesh renderers.
@@ -49,6 +52,7 @@ public class Tower : MonoBehaviour
     {
         GlobalEvents.OnPulse.AddListener(OnPulse);
         GlobalEvents.OnAlternatePulse.AddListener(OnAlternatePulse);
+        upgradeEffect.Stop();
     }
 
     void OnDisable()
@@ -189,14 +193,49 @@ public class Tower : MonoBehaviour
 
 	public virtual void Upgrade ()
 	{
-        if (GameManager.gm.curScrap >= ScrapValues.GetTowerUpgradePrice(type))
+        if (GameManager.gm.curScrap >= ScrapValues.GetTowerUpgradePrice(type) && remainingNumOfUpgrades > 0)
         {
             damage += amountOfDamagePerUpgrade;
             GameManager.gm.RemoveScrap(ScrapValues.GetTowerUpgradePrice(type));
+            remainingNumOfUpgrades--;
+
+            StartCoroutine(UpgradeEffect());
+            StartCoroutine(UpgradeModelEffect());
+            StartCoroutine(Flash(Color.grey));
+
+            CameraShake.cs.Shake(0.15f, 0.2f, 35.0f);
         }
     }
 
-	public void EMPDisable (float disableTime)
+    IEnumerator UpgradeModelEffect()
+    {
+        transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+        yield return new WaitForSeconds(0.3f);
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+    }
+
+    IEnumerator UpgradeEffect()
+    {
+        upgradeEffect.Play();
+        yield return new WaitForSeconds(upgradeEffect.main.duration);
+        upgradeEffect.Stop();
+    }
+
+    IEnumerator Flash(Color col)
+    {
+        Color startColour = mr[0].material.color;
+
+        for (int x = 0; x < mr.Length; ++x)
+            mr[x].material.color = col;
+
+        yield return new WaitForSeconds(0.3f);
+
+        for (int x = 0; x < mr.Length; ++x)
+            mr[x].material.color = startColour;
+    }
+
+
+    public void EMPDisable (float disableTime)
 	{
 		canAttack = false;
 

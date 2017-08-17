@@ -33,6 +33,20 @@ public class WaveData
     public List<float> resistPercentages = new List<float>();
 }
 
+[System.Serializable]
+public class AConveyor
+{
+    public List<GameObject> enemies = new List<GameObject>();
+    [Header("-0.2 or 0.2 for x and z")]
+    public List<Vector3> ConveyorLocation = new List<Vector3>();
+}
+
+[System.Serializable]
+public class AWave
+{
+    public List<AConveyor> conveyors = new List<AConveyor>();
+}
+
 public class EnemySpawner : MonoBehaviour 
 {
     public Transform enemyParentObject;
@@ -53,6 +67,8 @@ public class EnemySpawner : MonoBehaviour
 
     public Animator animateLeft;
     public Animator animateRight;
+
+    public List<AWave> waves = new List<AWave>();
 
     public void Awake()
     {
@@ -117,26 +133,40 @@ public class EnemySpawner : MonoBehaviour
         {
             StartCoroutine(Play());
             oneExtraOpen = true;
-            List<Vector3> offsets = new List<Vector3>();
-            offsets.Add(new Vector3(-0.2f, 0, -0.2f));
-            offsets.Add(new Vector3(-0.2f, 0, 0.2f));
-            offsets.Add(new Vector3(0.2f, 0, -0.2f));
-            offsets.Add(new Vector3(0.2f, 0, 0.2f));
-
-            for (int i = 0; i<Random.Range(0,4); ++i)
+            if(GameManager.gm.ui.isSurvival)
             {
-                if (currentWave.enemies.Count > 0)
+                List<Vector3> offsets = new List<Vector3>();
+                offsets.Add(new Vector3(-0.2f, 0, -0.2f));
+                offsets.Add(new Vector3(-0.2f, 0, 0.2f));
+                offsets.Add(new Vector3(0.2f, 0, -0.2f));
+                offsets.Add(new Vector3(0.2f, 0, 0.2f));
+
+                for (int i = 0; i < Random.Range(0, 4); ++i)
                 {
-                    int num = Random.Range(0, offsets.Count);
-                    CreateEnemy(offsets[num]);
-                    offsets.RemoveAt(num);
+                    if (currentWave.enemies.Count > 0)
+                    {
+                        int num = Random.Range(0, offsets.Count);
+                        CreateEnemy(currentWave.enemies[0], offsets[num]);
+                        offsets.RemoveAt(num);
+                    }
                 }
             }
-            
+            else
+            {
+                if (waves[currentWave.waveNumber - 1].conveyors.Count > 0)
+                {
+                    for (int x = 0; x < waves[currentWave.waveNumber - 1].conveyors[0].enemies.Count; ++x)
+                    {
+                        CreateEnemy(waves[currentWave.waveNumber - 1].conveyors[0].enemies[x], waves[currentWave.waveNumber - 1].conveyors[0].ConveyorLocation[x]);
+                    }
+
+                    waves[currentWave.waveNumber - 1].conveyors.RemoveAt(0);
+                }
+            }
         }
     }
   
-    public Enemy CreateEnemy(Vector3 offset)
+    public Enemy CreateEnemy(GameObject e, Vector3 offset)
     {
         //Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
@@ -147,8 +177,10 @@ public class EnemySpawner : MonoBehaviour
         //else { offset.z = -0.2f; }
 
         //Instantiate the enemy.
-        GameObject enemy = Instantiate(currentWave.enemies[0], transform.position + offset, Quaternion.identity, enemyParentObject);
-        currentWave.enemies.RemoveAt(0);
+        GameObject enemy = Instantiate(e, transform.position + offset, Quaternion.identity, enemyParentObject);
+
+        if(GameManager.gm.ui.isSurvival)
+            currentWave.enemies.RemoveAt(0);
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         enemyScript.horizontalOffsetOnConveyorBelt = offset.z;
         //Set values.
