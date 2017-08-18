@@ -236,9 +236,10 @@ public class RadialMenu : MonoBehaviour
     {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
 
-        #if UNITY_EDITOR
+        #if UNITY_STANDALONE
             eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
+		#elif UNITY_EDITOR
+			eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         #elif UNITY_ANDROID
             eventDataCurrentPosition.position = Input.GetTouch(0).position;
         #endif
