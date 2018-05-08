@@ -64,9 +64,10 @@ public class Tower : MonoBehaviour
     void Start()
     {
         GlobalEvents.OnEnemyDeath.AddListener(RemoveEnemyFromRange);
+        FMOD_AudioManager.instance.OnBuild();
     }
 
-    public void setLookTargets(Vector3 look)
+    public void SetLookTargets(Vector3 look)
     {
         baseLookTarget = look;
         lookTarget = look;

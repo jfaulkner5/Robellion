@@ -89,7 +89,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDamage();
+            FMOD_AudioManager.instance.OnBotDamage();
+            //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDamage();
             curHealth -= (int)damTaken;
             CheckDamageParticleEffects();
         }
@@ -163,7 +164,10 @@ public class Enemy : MonoBehaviour
         death.finalBlowDamageType = dmgType;
 
         GlobalEvents.OnEnemyDeath.Invoke(death);
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
+
+        //updated to FMOD
+        FMOD_AudioManager.instance.OnBotDeath();
+        //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnBotDeath();
 
         curConveyorBelt.curEnemies.Remove(this);
         

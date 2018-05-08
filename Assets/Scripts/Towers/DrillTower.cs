@@ -6,6 +6,7 @@ public class DrillTower : Tower {
 
     protected override void PlayAttackSound()
     {
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackDrill();
+        FMOD_AudioManager.instance.OnAttack("Drill");
+        //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackDrill();
     }
 }

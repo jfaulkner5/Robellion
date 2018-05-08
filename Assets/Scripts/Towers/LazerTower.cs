@@ -89,6 +89,7 @@ public class LazerTower : Tower {
 
     protected override void PlayAttackSound()
     {
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
+        FMOD_AudioManager.instance.OnAttack("laser");
+        //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackLazer();
     }
 }

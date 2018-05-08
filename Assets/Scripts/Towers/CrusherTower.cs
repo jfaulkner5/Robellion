@@ -17,7 +17,8 @@ public class CrusherTower : Tower {
 
     protected override void PlayAttackSound()
     {
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackCrusher();
+        FMOD_AudioManager.instance.OnAttack("crusher");
+        //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackCrusher();
     }
 
     IEnumerator Crush()
