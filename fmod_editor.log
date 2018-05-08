@@ -99,3 +99,12 @@
 [LOG] SoundI::release                          : Master Disorder (0000000005B87E58)
 [LOG] SoundI::release                          :     Master Disorder (000000006BB6ECC8)
 [LOG] SoundI::release                          :     Master Disorder (000000006A5DD3E8)
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
+[LOG] SystemI::close                           : Closed.
