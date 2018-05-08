@@ -42,7 +42,7 @@ public class FMOD_AudioManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        backgroundMusic.EventInstance.start();
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class FMOD_AudioManager : MonoBehaviour
 
     public void OnBuild()
     {
-        towerBuild.eventInstance.start();
+        towerBuild.EventInstance.start();
     }
 
     public void OnAttack(string attackType)
@@ -67,19 +67,19 @@ public class FMOD_AudioManager : MonoBehaviour
                 break;
 
             case "Acid":
-                acidAttack.eventInstance.start();
+                acidAttack.EventInstance.start();
                 break;
             case "Crusher":
-                crusherAttack.eventInstance.start();
+                crusherAttack.EventInstance.start();
                 break;
             case "Drill":
-                drillAttack.eventInstance.start();
+                drillAttack.EventInstance.start();
                 break;
             case "Laser":
-                laserAttack.eventInstance.start();
+                laserAttack.EventInstance.start();
                 break;
             case "Melee":
-                armAttack.eventInstance.start();
+                armAttack.EventInstance.start();
                 break;
 
         }
@@ -90,12 +90,12 @@ public class FMOD_AudioManager : MonoBehaviour
 
     public void OnBotDamage()
     {
-        botDamage.eventInstance.start();
+        botDamage.EventInstance.start();
     }
 
     public void OnBotDeath()
     {
-        botDeath.eventInstance.start();
+        botDeath.EventInstance.start();
     }
     #endregion
 
@@ -103,7 +103,7 @@ public class FMOD_AudioManager : MonoBehaviour
 
     public void OnPickupScrap()
     {
-        pickup.eventInstance.start();
+        pickup.EventInstance.start();
     }
 
     #endregion
