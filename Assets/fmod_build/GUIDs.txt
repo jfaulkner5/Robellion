@@ -1,3 +1,5 @@
+{cfc81546-1d24-4b16-bec2-86b4e211e5d1} event:/Bot/bot damage
+{b4a6ce83-e914-4855-a251-8b2db065398e} event:/Bot/bot death
 {4157838d-cd67-41a3-8e93-a02a9f1c5907} event:/Interactions/pick up
 {774992b2-a259-4252-b321-f81d8145235c} event:/Music/Master Disorder
 {ab2d5f3e-36e8-4b6c-9e82-ed006a85269f} event:/Tower/acid attack
@@ -6,10 +8,8 @@
 {32df8cc3-f293-43f3-8c73-334a4ae5fd42} event:/Tower/drill attack
 {36fcc1e0-d426-474c-ad3b-0173bce534d8} event:/Tower/lazer attack
 {82f7992f-a17f-4143-a761-e91168b38631} event:/Tower/tower build
-{cfc81546-1d24-4b16-bec2-86b4e211e5d1} event:/Bot/bot damage
-{b4a6ce83-e914-4855-a251-8b2db065398e} event:/Bot/bot death
 {f1ba50fb-0364-4e8e-8109-3a035f532f99} bus:/
 {54a9b9a8-1a4b-4bf7-86e2-a3bda54869ca} bus:/Reverb
-{57a51358-fc3c-4d97-8d42-48a6dac67157} bank:/Master Bank
 {b5294418-0ddb-4beb-9ec0-e498ca227be9} bank:/Bots
 {a4a03249-79e0-4854-bb8e-84258b13c624} bank:/Towers
+{57a51358-fc3c-4d97-8d42-48a6dac67157} bank:/Master Bank
