@@ -77,7 +77,7 @@ public class TowerPlatform : MonoBehaviour
 				tower.transform.eulerAngles = new Vector3(0, GetYRotation(), 0);
 
                 Tower t = tower.GetComponent<Tower>();
-                t.setLookTargets(tower.transform.position + tower.transform.forward);
+                t.SetLookTargets(tower.transform.position + tower.transform.forward);
 
                 ConveyorBelt curConveyor = firstConveyorInRange;
 				GameManager.gm.towers.Add(t);

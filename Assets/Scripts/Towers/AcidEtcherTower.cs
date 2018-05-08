@@ -31,6 +31,11 @@ public class AcidEtcherTower : Tower {
         StartCoroutine(AcidBurst());
     }
 
+    protected override void PlayAttackSound()
+    {
+        FMOD_AudioManager.instance.OnAttack("Acid");
+    }
+
     protected override void AttackDamage()
     {
         for (int index = enemiesWithinRange.Count - 1; index >= 0; --index)

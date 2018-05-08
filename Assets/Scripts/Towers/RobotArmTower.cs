@@ -31,7 +31,8 @@ public class RobotArmTower : Tower {
 
     protected override void PlayAttackSound()
     {
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackArm();
+        FMOD_AudioManager.instance.OnAttack("Melee");
+        //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().OnAttackArm();
     }
 
     IEnumerator Hit()
