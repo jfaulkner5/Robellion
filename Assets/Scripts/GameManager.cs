@@ -34,7 +34,9 @@ public class PulseHandler
 
 public class GameManager : MonoBehaviour 
 {
-	public GameState curGameState;
+    #region Variables
+
+    public GameState curGameState;
     public int health;
 	public int curScrap;
 
@@ -67,11 +69,10 @@ public class GameManager : MonoBehaviour
 	//UI
 	public GameUI ui;
 
-    
-
     //Pulse
     public PulseHandler pulse;
 
+    #endregion
 
     void Awake ()
     {
@@ -96,8 +97,6 @@ public class GameManager : MonoBehaviour
 		canBuildOrModify = true;
 		ui.isSurvival = false;
 		Time.timeScale = 1;
-
-
 	}
 
     void Update ()
