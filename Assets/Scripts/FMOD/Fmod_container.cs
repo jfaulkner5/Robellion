@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace FMOD_hotfixes
 {
-
-
     [System.Serializable]
     public class Fmod_container //: UnityEditor.PropertyDrawer
     {
@@ -30,13 +28,5 @@ namespace FMOD_hotfixes
 
     }
 
-
-    //Unsure if this is neccesary...
-
-    //public class FMOD_eventpack : MonoBehaviour
-    //{
-    //    public Fmod_container test;
-
-    //}
 
 }
