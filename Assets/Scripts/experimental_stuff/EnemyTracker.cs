@@ -59,7 +59,7 @@ public class EnemyTracker : MonoBehaviour
 		
 		foreach(EnemySpawned e in currentEnemies)
 		{
-			if(currentlySelected == null)
+			if(currentlySelected.GameObject == null)
 			{
 				currentlySelected = e;
 				break;	 
@@ -70,18 +70,49 @@ public class EnemyTracker : MonoBehaviour
 				currentEnemies.RemoveAt(e);
 				break;
 			}
-			else 
+			
+			else
 			{
+				//TODO add more setting here for methods of targetting.
 				if(e.CurrentAge > currentlySelected.CurrentAge && e.DistToTower < 15 /*change to var tower range*/)
 				{
 					currentlySelected = e;
-				}
-			
+				}		
 			}
 		}
 		return currentlySelected.spawnedEnemy;
 	}
 	
+	public void TargetingType()
+	{
+		switch (targetMode)
+		{
+			case targetMode.closest:
+				
+				break;
+				
+			case targetMode.lowestHealth:
+					break;
+			
+			case targetMode.highestHealth:
+				break;
+				
+			case targetMode.furthest:
+				break;
+				
+		}
+		
+		
+		}
+	
+	//changes targeting credentials for switch in TargetingType()
+	public enum	targetMode
+	{
+		closest:
+		lowestHealth:
+		highestHealth:
+		furthest
+	}	
 }
 
 //Stores data for enemies spawned and when etc 
