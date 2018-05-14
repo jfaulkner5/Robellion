@@ -100,10 +100,8 @@ public class EnemyTracker : MonoBehaviour
 			case targetMode.furthest:
 				break;
 				
-		}
-		
-		
-		}
+		}	
+	}
 	
 	//changes targeting credentials for switch in TargetingType()
 	public enum	targetMode
